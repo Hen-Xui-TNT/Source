@@ -22,7 +22,7 @@ public class DuAn1 {
     public static frm_main frm_m = new frm_main();
     public static void main(String[] args) {
         // TODO code application logic here
-        frm_m.show();
+        frm_m.setVisible(true);
     }
     
              public static void ThongBao(String tieude, String noidung){
