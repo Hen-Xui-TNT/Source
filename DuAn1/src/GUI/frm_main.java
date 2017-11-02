@@ -434,9 +434,14 @@ public class frm_main extends javax.swing.JFrame {
 
         btn_phanquyen.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         btn_phanquyen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Actions-rating-icon.png"))); // NOI18N
-        btn_phanquyen.setText("Phân quyền");
+        btn_phanquyen.setText("quyền");
         btn_phanquyen.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btn_phanquyen.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btn_phanquyen.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_phanquyenActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnl_nhanvienLayout = new javax.swing.GroupLayout(pnl_nhanvien);
         pnl_nhanvien.setLayout(pnl_nhanvienLayout);
@@ -606,6 +611,11 @@ public class frm_main extends javax.swing.JFrame {
         jButton26.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton26.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         jButton26.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton26.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton26ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnl_tacgiatheloaiLayout = new javax.swing.GroupLayout(pnl_tacgiatheloai);
         pnl_tacgiatheloai.setLayout(pnl_tacgiatheloaiLayout);
@@ -768,6 +778,16 @@ public class frm_main extends javax.swing.JFrame {
         frm_thongtinsach frm = new frm_thongtinsach();
         frm.setVisible(true);
     }//GEN-LAST:event_jButton20ActionPerformed
+
+    private void btn_phanquyenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_phanquyenActionPerformed
+        pnl_Quyen pnl = new pnl_Quyen();
+        BLL_main.themtab("Quyền", tbn_main, pnl);
+    }//GEN-LAST:event_btn_phanquyenActionPerformed
+
+    private void jButton26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton26ActionPerformed
+        pnl_TheLoai pnl = new pnl_TheLoai();
+        BLL_main.themtab("Thể Loại", tbn_main, pnl);
+    }//GEN-LAST:event_jButton26ActionPerformed
 
     /**
      * @param args the command line arguments

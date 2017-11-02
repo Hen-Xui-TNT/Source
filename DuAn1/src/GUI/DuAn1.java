@@ -4,33 +4,23 @@
  * and open the template in the editor.
  */
 package GUI;
-
-import DAL.DBConnection;
+import GUI.*;
+import DAL.DAL_DBConnection;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-
 /**
  *
  * @author Huy Nhan
  */
 public class DuAn1 {
-
+public static DAL.DAL_DBConnection conn = new DAL_DBConnection();
     /**
      * @param args the command line arguments
      */
-   public static DAL.DBConnection conn = new DBConnection();
-    public static frm_main frm_m = new frm_main();
     public static void main(String[] args) {
         // TODO code application logic here
-        frm_m.setVisible(true);
-    }
+        frm_main frm = new frm_main();
+        frm.setVisible(true);
     
-             public static void ThongBao(String tieude, String noidung){
-        JOptionPane.showMessageDialog(new JFrame(), noidung, tieude, 0);
     }
-    
-    public static void ThongBaoOK(String tieude, String noidung){
-        JOptionPane.showMessageDialog(new JFrame(), noidung, tieude, JOptionPane.NO_OPTION);
-    }
-    
 }
