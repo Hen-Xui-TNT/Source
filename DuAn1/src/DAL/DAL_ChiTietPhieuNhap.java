@@ -21,7 +21,7 @@ public class DAL_ChiTietPhieuNhap {
     }
 
     public static int Them_ChiTietPhieuNhap(DTO_ChiTietPhieuNhap item) {
-        String query = "insert into ChiTietPhieuNhap values("+item.getMaPhieuNhap()+","+item.getMaSach()+","
+        String query = "set dateformat dmy insert into ChiTietPhieuNhap values("+item.getMaPhieuNhap()+","+item.getMaSach()+","
                 + ""+item.getGiaNhap()+","+item.getSoLuong()+","+item.getThanhTien()+",N'"+item.getGhiChu()+"')";
         return DuAn1.conn.ExcuteNonQuery(query);
     }
@@ -32,11 +32,17 @@ public class DAL_ChiTietPhieuNhap {
     }
 
     public static int Sua_ChiTietPhieuNhap(DTO_ChiTietPhieuNhap item) {
-        String query = "update ChiTietPhieuNhap set MaPhieuNhap =" + item.getMaPhieuNhap()+ ""
+        String query = "set dateformat dmy update ChiTietPhieuNhap set MaPhieuNhap =" + item.getMaPhieuNhap()+ ""
                 + ",MaSach=" + item.getMaSach() + ", GiaNhap=" + item.getGiaNhap()+ ""
                 + ", SoLuong='" + item.getSoLuong() + "',ThanhTien=" + item.getThanhTien() + ""
                 + ",GhiChu=N'" + item.getGhiChu() + "' "
                 + "where MaChiTietPhieuNhap =" + item.getMaChiTietPhieuNhap();
         return DuAn1.conn.ExcuteNonQuery(query);
+    }
+     public static ResultSet Seach_ChiTietPhieuNhap(String seach) {
+        String seach1 = "select * from ChiTietPhieuNhap where   MaPhieuNhap like  '%" + seach + "%'"
+                + " or MaSach like '%" + seach + "%' or SoLuong like '%" + seach + "%' "
+                + " or GiaNhap like '%" + seach + "%' or ThanhTien like '%" + seach + "%'  or MaChiTietPhieuNhap like '%" + seach + "%' ";
+        return DuAn1.conn.ExcuteQuerySelect(seach1);
     }
 }

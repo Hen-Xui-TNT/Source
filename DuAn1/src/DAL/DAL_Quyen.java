@@ -35,7 +35,12 @@ public class DAL_Quyen {
     
     public static int Sua_Quyen(DTO_Quyen item){
     String query = "update Quyen set TenQuyen = N'" +item.getTenQuyen() +"',"
-            + " MoTa = N'"+item.getGhiChu()+"' where MaQuyen = "+ item.getMaQuyen();
+            + " GhiChu = N'"+item.getGhiChu()+"' where MaQuyen = "+ item.getMaQuyen();
     return DuAn1.conn.ExcuteNonQuery(query);
     }
+     public static ResultSet Seach_Quyen(String seach) {
+        String seach1 = "select * from Quyen where   TenQuyen like  N'%" + seach + "%'"
+                + " or MaQuyen like '%" + seach + "%'";
+        return DuAn1.conn.ExcuteQuerySelect(seach1);
+     }
 }
