@@ -217,6 +217,11 @@ public class frm_main extends javax.swing.JFrame {
         btn_trasachgiahan.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btn_trasachgiahan.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         btn_trasachgiahan.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btn_trasachgiahan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_trasachgiahanActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnl_muontragiahanLayout = new javax.swing.GroupLayout(pnl_muontragiahan);
         pnl_muontragiahan.setLayout(pnl_muontragiahanLayout);
@@ -788,6 +793,10 @@ public class frm_main extends javax.swing.JFrame {
         pnl_TheLoai pnl = new pnl_TheLoai();
         BLL_main.themtab("Thể Loại", tbn_main, pnl);
     }//GEN-LAST:event_jButton26ActionPerformed
+
+    private void btn_trasachgiahanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_trasachgiahanActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_trasachgiahanActionPerformed
 
     /**
      * @param args the command line arguments
