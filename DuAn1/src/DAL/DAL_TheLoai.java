@@ -24,18 +24,23 @@ public class DAL_TheLoai {
         String query = "select TenTheLoai, MaTheLoai from TheLoai";
         return DuAn1.conn.ExcuteQuerySelect(query);
 }  
-    public static int Them_Quyen(DTO_TheLoai item){
-    String query = "insert into Quyen values ( N'" +item.getTenTheLoai()+"', N'" + item.getGhiChu()+ "')";
+    public static int Them_TheLoai(DTO_TheLoai item){
+    String query = "insert into TheLoai values ( N'" +item.getTenTheLoai()+"', N'" + item.getGhiChu()+ "')";
     return DuAn1.conn.ExcuteNonQuery(query);
 }
- public static int Xoa_Quyen(String MaTheLoai){
-     String query = "delete from Quyen where MaQuyen = "+ MaTheLoai;
+ public static int Xoa_TheLoai(String MaTheLoai){
+     String query = "delete from TheLoai where MaTheLoai = "+ MaTheLoai;
      return DuAn1.conn.ExcuteNonQuery(query);
     }
     
-    public static int Sua_Quyen(DTO_TheLoai item){
-    String query = "update Quyen set TenQuyen = N'" +item.getTenTheLoai()+"',"
-            + " MoTa = N'"+item.getGhiChu()+"' where MaQuyen = "+ item.getMaTheLoai();
+    public static int Sua_TheLoai(DTO_TheLoai item){
+    String query = "update TheLoai set TenTheLoai = N'" +item.getTenTheLoai()+"',"
+            + " GhiChu = N'"+item.getGhiChu()+"' where MaTheLoai = "+ item.getMaTheLoai();
     return DuAn1.conn.ExcuteNonQuery(query);
     }
+    public static ResultSet Seach_TheLoai(String seach) {
+        String seach1 = "select * from TheLoai where   TenTheLoai like  N'%" + seach + "%'"
+                + " or MaTheLoai like '%" + seach + "%'";
+        return DuAn1.conn.ExcuteQuerySelect(seach1);
+     }
 }
