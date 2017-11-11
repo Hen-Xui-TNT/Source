@@ -10,20 +10,20 @@ package DTO;
  * @author Huy Nhan
  */
 public class DTO_ChiTietTacGia {
-    int MaChiTietTacGia,MaSach,MaTheLoai;
-    String MoTa;
+    int MaChiTietTacGia,MaSach,MaTacGia;
+    String GhiChu;
 
-    public DTO_ChiTietTacGia(int MaChiTietTacGia, int MaSach, int MaTheLoai, String MoTa) {
+    public DTO_ChiTietTacGia(int MaChiTietTacGia, int MaSach, int MaTacGia, String GhiChu) {
         this.MaChiTietTacGia = MaChiTietTacGia;
         this.MaSach = MaSach;
-        this.MaTheLoai = MaTheLoai;
-        this.MoTa = MoTa;
+        this.MaTacGia = MaTacGia;
+        this.GhiChu = GhiChu;
     }
 
-    public DTO_ChiTietTacGia(int MaSach, int MaTheLoai, String MoTa) {
+    public DTO_ChiTietTacGia(int MaSach, int MaTacGia, String GhiChu) {
         this.MaSach = MaSach;
-        this.MaTheLoai = MaTheLoai;
-        this.MoTa = MoTa;
+        this.MaTacGia = MaTacGia;
+        this.GhiChu = GhiChu;
     }
 
     public DTO_ChiTietTacGia() {
@@ -45,20 +45,20 @@ public class DTO_ChiTietTacGia {
         this.MaSach = MaSach;
     }
 
-    public int getMaTheLoai() {
-        return MaTheLoai;
+    public int getMaTacGia() {
+        return MaTacGia;
     }
 
-    public void setMaTheLoai(int MaTheLoai) {
-        this.MaTheLoai = MaTheLoai;
+    public void setMaTacGia(int MaTacGia) {
+        this.MaTacGia = MaTacGia;
     }
 
-    public String getMoTa() {
-        return MoTa;
+    public String getGhiChu() {
+        return GhiChu;
     }
 
-    public void setMoTa(String MoTa) {
-        this.MoTa = MoTa;
+    public void setGhiChu(String GhiChu) {
+        this.GhiChu = GhiChu;
     }
     
 }

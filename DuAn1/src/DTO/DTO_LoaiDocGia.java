@@ -10,31 +10,25 @@ package DTO;
  * @author Huy Nhan
  */
 public class DTO_LoaiDocGia {
-    int MaDocGia,UuDai;
+    int MaLoaiDocGia,UuDai;
     String TenLoai,MoTa;
-
-    public DTO_LoaiDocGia(int MaDocGia, int UuDai, String TenLoai, String MoTa) {
-        this.MaDocGia = MaDocGia;
-        this.UuDai = UuDai;
-        this.TenLoai = TenLoai;
-        this.MoTa = MoTa;
-    }
-
-    public DTO_LoaiDocGia(int UuDai, String TenLoai, String MoTa) {
-        this.UuDai = UuDai;
-        this.TenLoai = TenLoai;
-        this.MoTa = MoTa;
-    }
 
     public DTO_LoaiDocGia() {
     }
 
-    public int getMaDocGia() {
-        return MaDocGia;
+    public DTO_LoaiDocGia(int MaLoaiDocGia, int UuDai, String TenLoai, String MoTa) {
+        this.MaLoaiDocGia = MaLoaiDocGia;
+        this.UuDai = UuDai;
+        this.TenLoai = TenLoai;
+        this.MoTa = MoTa;
     }
 
-    public void setMaDocGia(int MaDocGia) {
-        this.MaDocGia = MaDocGia;
+    public int getMaLoaiDocGia() {
+        return MaLoaiDocGia;
+    }
+
+    public void setMaLoaiDocGia(int MaLoaiDocGia) {
+        this.MaLoaiDocGia = MaLoaiDocGia;
     }
 
     public int getUuDai() {
@@ -60,5 +54,7 @@ public class DTO_LoaiDocGia {
     public void setMoTa(String MoTa) {
         this.MoTa = MoTa;
     }
+
+   
     
 }

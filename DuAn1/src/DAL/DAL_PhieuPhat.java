@@ -19,7 +19,7 @@ public class DAL_PhieuPhat {
         return DuAn1.conn.ExcuteQuerySelect(query);
     }
         public static int Them_PhieuPhat(DTO_PhieuPhat item){
-    String query ="insert into PhieuPhat values('"+item.getSoPhieuPhat()+"',"+item.getMaDocGia()+""
+    String query ="set dateformat dmy insert into PhieuPhat values('"+item.getSoPhieuPhat()+"',"+item.getMaDocGia()+""
             + ","+item.getMaNhanVien()+",'"+item.getNgayPhat()+"',"+item.getTongTien()+",N'"+item.getGhiChu()+"' )";
     return DuAn1.conn.ExcuteNonQuery(query);
 }   
@@ -28,11 +28,23 @@ public class DAL_PhieuPhat {
      return DuAn1.conn.ExcuteNonQuery(query);
     }
     public static int Sua_PhieuPhat(DTO_PhieuPhat item){
-    String query = "update PhieuPhat set SoPhieuPhat ="+item.getSoPhieuPhat()+""
+    String query = "set dateformat dmy update PhieuPhat set SoPhieuPhat ="+item.getSoPhieuPhat()+""
             + ",MaDocGia="+item.getMaDocGia()+", MaNhanVien="+item.getMaNhanVien()+""
             + ", NgayPhat='"+item.getNgayPhat()+"',TongTien="+item.getTongTien()+""
             + ",GhiChu=N'"+item.getGhiChu()+"' "
             + "where MaPhieuPhat =" +item.getMaPhieuPhat();
     return DuAn1.conn.ExcuteNonQuery(query);
+    }
+     public static ResultSet Seach_PhieuPhat(String seach) {
+        String seach1 = "select * from PhieuPhat where   SoPhieuPhat like  '%" + seach + "%'  or MaDocGia like "
+                + " '%" + seach + "%' or MaNhanVien like '%" + seach + "%' or NgayPhat like '%" + seach + "%' "
+                + " or TongTien like '%" + seach + "%'  or MaPhieuPhat like '%" + seach + "%' ";
+        return DuAn1.conn.ExcuteQuerySelect(seach1);
+    }
+     public static ResultSet LayMaPhieuPhatTuSoPhieuPhat(String SoPhieuPhat){
+        ResultSet rs;
+        String SQL = "select MaPhieuPhat from  PhieuPhat where SoPhieuPhat = '"+SoPhieuPhat+"'";
+        rs =   DuAn1.conn.ExcuteQuerySelect(SQL);
+        return rs;
     }
 }

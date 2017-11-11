@@ -224,6 +224,11 @@ public class frm_main extends javax.swing.JFrame {
         btn_trasachgiahan.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btn_trasachgiahan.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         btn_trasachgiahan.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btn_trasachgiahan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_trasachgiahanActionPerformed(evt);
+            }
+        });
 
         btn_chomuon1.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         btn_chomuon1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/theory48x48.png"))); // NOI18N
@@ -863,6 +868,11 @@ public class frm_main extends javax.swing.JFrame {
     private void btn_danhsachnhanvienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_danhsachnhanvienActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_danhsachnhanvienActionPerformed
+
+    private void btn_trasachgiahanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_trasachgiahanActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_trasachgiahanActionPerformed
+
 
     /**
      * @param args the command line arguments

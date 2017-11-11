@@ -12,7 +12,7 @@ package DTO;
  * @author Asus
  */
 public class DTO_NhanVien {
-    int MaVN;
+    int MaNV;
     String TenNV;
     String TenDangNhap;
     String MatKhau;
@@ -26,12 +26,12 @@ public class DTO_NhanVien {
     String SoDienThoai;
     String GhiChu;
 
-    public int getMaVN() {
-        return MaVN;
+    public int getMaNV() {
+        return MaNV;
     }
 
-    public void setMaVN(int MaVN) {
-        this.MaVN = MaVN;
+    public void setMaNV(int MaNV) {
+        this.MaNV = MaNV;
     }
 
     public String getTenNV() {
@@ -130,8 +130,8 @@ public class DTO_NhanVien {
         this.GhiChu = GhiChu;
     }
 
-    public DTO_NhanVien(int MaVN, String TenNV, String TenDangNhap, String MatKhau, int MaQuyen, Double Luong, String NgaySinh, String NgayLam, int GioiTinh, String CMND, String DiaChi, String SoDienThoai, String GhiChu) {
-        this.MaVN = MaVN;
+    public DTO_NhanVien(int MaNV, String TenNV, String TenDangNhap, String MatKhau, int MaQuyen, Double Luong, String NgaySinh, String NgayLam, int GioiTinh, String CMND, String DiaChi, String SoDienThoai, String GhiChu) {
+        this.MaNV = MaNV;
         this.TenNV = TenNV;
         this.TenDangNhap = TenDangNhap;
         this.MatKhau = MatKhau;

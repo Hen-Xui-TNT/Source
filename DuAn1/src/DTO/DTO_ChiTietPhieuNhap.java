@@ -10,7 +10,8 @@ package DTO;
  * @author Administrator
  */
 public class DTO_ChiTietPhieuNhap {
-      int MaChiTietPhieuNhap, MaPhieuNhap, MaSach, SoLuong;
+
+    int MaChiTietPhieuNhap, MaPhieuNhap, MaSach, SoLuong;
     String GhiChu;
     double GiaNhap, ThanhTien;
 
@@ -82,6 +83,5 @@ public class DTO_ChiTietPhieuNhap {
     public void setThanhTien(double ThanhTien) {
         this.ThanhTien = ThanhTien;
     }
-    
-    
+
 }
