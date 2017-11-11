@@ -43,8 +43,10 @@ public class pnl_TheLoai extends javax.swing.JPanel {
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(0, 153, 255));
+
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 102));
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("THÔNG TIN THỂ LOẠI");
         jLabel1.setVerticalAlignment(javax.swing.SwingConstants.TOP);
@@ -62,14 +64,16 @@ public class pnl_TheLoai extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(tblTheLoai);
 
+        jPanel1.setBackground(new java.awt.Color(0, 153, 255));
+
         txtTenTheLoai.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
 
         lblTenTheLoai.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        lblTenTheLoai.setForeground(new java.awt.Color(0, 0, 102));
+        lblTenTheLoai.setForeground(new java.awt.Color(255, 255, 255));
         lblTenTheLoai.setText("Tên thể loại");
 
         lblMaTheLoai.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        lblMaTheLoai.setForeground(new java.awt.Color(0, 0, 102));
+        lblMaTheLoai.setForeground(new java.awt.Color(255, 255, 255));
         lblMaTheLoai.setText("Mã thể loại");
 
         txtMaTheLoai.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -77,7 +81,7 @@ public class pnl_TheLoai extends javax.swing.JPanel {
         txtGhiChu.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
 
         lblGhiChu.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        lblGhiChu.setForeground(new java.awt.Color(0, 0, 102));
+        lblGhiChu.setForeground(new java.awt.Color(255, 255, 255));
         lblGhiChu.setText("Ghi chú");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -115,6 +119,8 @@ public class pnl_TheLoai extends javax.swing.JPanel {
                     .addComponent(txtGhiChu, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(166, 166, 166))
         );
+
+        jPanel2.setBackground(new java.awt.Color(0, 153, 255));
 
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jButton1.setText("Thêm");
