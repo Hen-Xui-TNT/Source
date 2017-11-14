@@ -27,6 +27,7 @@ public class frm_login extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jToolBar1 = new javax.swing.JToolBar();
         pnl_dangnhap = new javax.swing.JPanel();
         lbl_taikhoan = new javax.swing.JLabel();
         lbl_matkhau = new javax.swing.JLabel();
@@ -41,6 +42,9 @@ public class frm_login extends javax.swing.JFrame {
         jTextField2 = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        jCheckBox1 = new javax.swing.JCheckBox();
+
+        jToolBar1.setRollover(true);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Đăng nhập");
@@ -48,7 +52,7 @@ public class frm_login extends javax.swing.JFrame {
         setBackground(new java.awt.Color(0, 153, 255));
         setResizable(false);
 
-        pnl_dangnhap.setBackground(new java.awt.Color(204, 255, 255));
+        pnl_dangnhap.setBackground(new java.awt.Color(204, 204, 204));
 
         lbl_taikhoan.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         lbl_taikhoan.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -59,8 +63,8 @@ public class frm_login extends javax.swing.JFrame {
         lbl_matkhau.setText("Mật Khẩu :");
 
         txt_taikhoan.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        txt_taikhoan.setToolTipText("");
-        txt_taikhoan.setName(""); // NOI18N
+        txt_taikhoan.setToolTipText("username");
+        txt_taikhoan.setName("username"); // NOI18N
 
         pwt_matkhau.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
@@ -77,7 +81,7 @@ public class frm_login extends javax.swing.JFrame {
 
         lbl_tieude.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         lbl_tieude.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbl_tieude.setText("Library");
+        lbl_tieude.setText("Login");
 
         jScrollPane3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Thông tin tự sách", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 12))); // NOI18N
 
@@ -95,9 +99,11 @@ public class frm_login extends javax.swing.JFrame {
         jScrollPane3.setViewportView(jTable2);
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel4.setText("Tìm kiếm :");
+        jLabel4.setText("Tìm kiếm tài liệu :");
 
         jLabel5.setText("Nhập dữ liệu cần tìm kiếm (Tên tác giả, thể loại, tên sách, nhà xuất bản)");
+
+        jCheckBox1.setText("Lưu mật khẩu");
 
         javax.swing.GroupLayout pnl_dangnhapLayout = new javax.swing.GroupLayout(pnl_dangnhap);
         pnl_dangnhap.setLayout(pnl_dangnhapLayout);
@@ -106,34 +112,39 @@ public class frm_login extends javax.swing.JFrame {
             .addComponent(lbl_tieude, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(pnl_dangnhapLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(pnl_dangnhapLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 837, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(pnl_dangnhapLayout.createSequentialGroup()
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addGroup(pnl_dangnhapLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel5)
-                            .addComponent(jTextField2))))
-                .addGap(11, 11, 11))
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(pnl_dangnhapLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel5)
+                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 694, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnl_dangnhapLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 837, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
             .addGroup(pnl_dangnhapLayout.createSequentialGroup()
-                .addGap(140, 140, 140)
+                .addGap(126, 126, 126)
                 .addComponent(txt_icon)
-                .addGap(118, 118, 118)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(pnl_dangnhapLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnl_dangnhapLayout.createSequentialGroup()
-                        .addGroup(pnl_dangnhapLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnl_dangnhapLayout.createSequentialGroup()
-                                .addComponent(lbl_matkhau, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(pwt_matkhau, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnl_dangnhapLayout.createSequentialGroup()
+                        .addGroup(pnl_dangnhapLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(pnl_dangnhapLayout.createSequentialGroup()
                                 .addComponent(lbl_taikhoan, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txt_taikhoan, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(20, 20, 20)
+                                .addComponent(txt_taikhoan, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(20, 20, 20))
+                            .addGroup(pnl_dangnhapLayout.createSequentialGroup()
+                                .addComponent(lbl_matkhau, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(pwt_matkhau, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)))
                         .addComponent(btn_dangnhap, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(btn_dangky, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(11, 11, 11))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnl_dangnhapLayout.createSequentialGroup()
+                        .addComponent(jCheckBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btn_dangky, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(76, 76, 76))
         );
         pnl_dangnhapLayout.setVerticalGroup(
             pnl_dangnhapLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -150,32 +161,34 @@ public class frm_login extends javax.swing.JFrame {
                                 .addGroup(pnl_dangnhapLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(lbl_taikhoan, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(txt_taikhoan, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(pnl_dangnhapLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(lbl_matkhau, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(pwt_matkhau, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(btn_dangnhap, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btn_dangky, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(btn_dangnhap, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(9, 9, 9)
+                        .addGroup(pnl_dangnhapLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btn_dangky, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jCheckBox1))))
                 .addGap(13, 13, 13)
                 .addGroup(pnl_dangnhapLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel5)
-                .addGap(16, 16, 16)
+                .addGap(18, 18, 18)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 288, Short.MAX_VALUE)
-                .addGap(11, 11, 11))
+                .addGap(9, 9, 9))
         );
 
-        txt_taikhoan.getAccessibleContext().setAccessibleName("");
+        txt_taikhoan.getAccessibleContext().setAccessibleName("username");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
+                .addGap(0, 1, Short.MAX_VALUE)
                 .addComponent(pnl_dangnhap, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0))
         );
@@ -226,11 +239,13 @@ public class frm_login extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_dangky;
     private javax.swing.JButton btn_dangnhap;
+    private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTable jTable2;
     private javax.swing.JTextField jTextField2;
+    private javax.swing.JToolBar jToolBar1;
     private javax.swing.JLabel lbl_matkhau;
     private javax.swing.JLabel lbl_taikhoan;
     private javax.swing.JLabel lbl_tieude;

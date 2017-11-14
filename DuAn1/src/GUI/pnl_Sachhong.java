@@ -9,12 +9,12 @@ package GUI;
  *
  * @author Huy Nhan
  */
-public class pnl_danhmucsach extends javax.swing.JPanel {
+public class pnl_Sachhong extends javax.swing.JPanel {
 
     /**
      * Creates new form pnl_danhmucsach
      */
-    public pnl_danhmucsach() {
+    public pnl_Sachhong() {
         initComponents();
     }
 
@@ -95,7 +95,7 @@ public class pnl_danhmucsach extends javax.swing.JPanel {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel2)
-                        .addContainerGap(205, Short.MAX_VALUE))
+                        .addContainerGap(253, Short.MAX_VALUE))
                     .addComponent(jTextField1)))
         );
         jPanel1Layout.setVerticalGroup(

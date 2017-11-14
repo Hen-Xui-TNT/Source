@@ -51,7 +51,7 @@ public class pnl_TacGia extends javax.swing.JPanel {
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(51, 153, 255));
+        setBackground(new java.awt.Color(204, 204, 204));
 
         PnlThongTinTacGia.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 51, 0)), "Thông Tin Tác Giả", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP));
 
@@ -86,15 +86,14 @@ public class pnl_TacGia extends javax.swing.JPanel {
             PnlThongTinTacGiaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PnlThongTinTacGiaLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 363, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel24.setBackground(new java.awt.Color(51, 153, 255));
+        jPanel24.setBackground(new java.awt.Color(204, 204, 204));
         jPanel24.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED), "Chức Năng", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Times New Roman", 1, 14))); // NOI18N
 
         MaNV4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        MaNV4.setForeground(new java.awt.Color(255, 255, 255));
         MaNV4.setText("Mã Tác Giả");
 
         txtMaKH_KH.setPreferredSize(new java.awt.Dimension(6, 32));
@@ -102,11 +101,9 @@ public class pnl_TacGia extends javax.swing.JPanel {
         txtTenKH_KH.setPreferredSize(new java.awt.Dimension(6, 32));
 
         lblUser2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        lblUser2.setForeground(new java.awt.Color(255, 255, 255));
         lblUser2.setText("Tên Tác Giả");
 
         lblUser5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        lblUser5.setForeground(new java.awt.Color(255, 255, 255));
         lblUser5.setText("Bút Danh");
 
         txtDiaChi_KH.setPreferredSize(new java.awt.Dimension(6, 32));
@@ -119,21 +116,17 @@ public class pnl_TacGia extends javax.swing.JPanel {
         });
 
         lblUser3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        lblUser3.setForeground(new java.awt.Color(255, 255, 255));
         lblUser3.setText("Ngày Sinh");
 
         MaNV5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        MaNV5.setForeground(new java.awt.Color(255, 255, 255));
         MaNV5.setText("Giới Tính");
 
         lblUser6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        lblUser6.setForeground(new java.awt.Color(255, 255, 255));
         lblUser6.setText("Nơi Sinh");
 
         txtDiaChi_KH1.setPreferredSize(new java.awt.Dimension(6, 32));
 
         lblUser7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        lblUser7.setForeground(new java.awt.Color(255, 255, 255));
         lblUser7.setText("Ghi Chú");
 
         txtDiaChi_KH2.setPreferredSize(new java.awt.Dimension(6, 32));
@@ -205,7 +198,7 @@ public class pnl_TacGia extends javax.swing.JPanel {
                 .addGap(80, 80, 80))
         );
 
-        jPanel3.setBackground(new java.awt.Color(51, 153, 255));
+        jPanel3.setBackground(new java.awt.Color(204, 204, 204));
         jPanel3.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         jButton1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -262,15 +255,15 @@ public class pnl_TacGia extends javax.swing.JPanel {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jPanel24, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(PnlThongTinTacGia, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(jPanel24, javax.swing.GroupLayout.PREFERRED_SIZE, 493, Short.MAX_VALUE))
-                .addGap(11, 11, 11))
+                        .addComponent(PnlThongTinTacGia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

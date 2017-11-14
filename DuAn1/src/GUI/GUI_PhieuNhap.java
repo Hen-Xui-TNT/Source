@@ -74,10 +74,7 @@ public class GUI_PhieuNhap extends javax.swing.JPanel {
         PnlNhaCungCap.setLayout(PnlNhaCungCapLayout);
         PnlNhaCungCapLayout.setHorizontalGroup(
             PnlNhaCungCapLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PnlNhaCungCapLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane12, javax.swing.GroupLayout.DEFAULT_SIZE, 697, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jScrollPane12, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 717, Short.MAX_VALUE)
         );
         PnlNhaCungCapLayout.setVerticalGroup(
             PnlNhaCungCapLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
