@@ -23,12 +23,12 @@ public class DAL_Quyen {
      public static ResultSet GetAllCombobox() {
         String query = "select TenQuyen, MaQuyen from Quyen";
         return DuAn1.conn.ExcuteQuerySelect(query);
-}
+    }
       public static int Them_Quyen(DTO_Quyen item){
     String query = "insert into Quyen values ( N'" +item.getTenQuyen() +"', N'" + item.getGhiChu()+ "')";
     return DuAn1.conn.ExcuteNonQuery(query);
-}
- public static int Xoa_Quyen(String MaQuyen){
+    }
+    public static int Xoa_Quyen(String MaQuyen){
      String query = "delete from Quyen where MaQuyen = "+ MaQuyen;
      return DuAn1.conn.ExcuteNonQuery(query);
     }
