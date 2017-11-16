@@ -47,10 +47,7 @@ public class frm_main extends javax.swing.JFrame {
         btn_chomuon1 = new javax.swing.JButton();
         pnl_baocao = new javax.swing.JPanel();
         lbl_baocaotieude = new javax.swing.JLabel();
-        btn_quahan = new javax.swing.JButton();
         btn_sachcon = new javax.swing.JButton();
-        btn_sachmuon = new javax.swing.JButton();
-        btn_sachhong = new javax.swing.JButton();
         btn_doanhthu = new javax.swing.JButton();
         pnl_CapnhapQuanly = new javax.swing.JPanel();
         pnl_docgia = new javax.swing.JPanel();
@@ -87,8 +84,8 @@ public class frm_main extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Phần Mềm Quản Lý Thư Viên");
         setBackground(new java.awt.Color(51, 153, 255));
-        setMinimumSize(new java.awt.Dimension(1365, 700));
-        setPreferredSize(new java.awt.Dimension(1365, 700));
+        setMinimumSize(new java.awt.Dimension(1365, 710));
+        setPreferredSize(new java.awt.Dimension(1365, 710));
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
                 formWindowOpened(evt);
@@ -297,40 +294,16 @@ public class frm_main extends javax.swing.JFrame {
         lbl_baocaotieude.setText("Báo Cáo - Thống Kê");
         lbl_baocaotieude.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
-        btn_quahan.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        btn_quahan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/book-error-icon32x32.png"))); // NOI18N
-        btn_quahan.setText("Quá hạn");
-        btn_quahan.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        btn_quahan.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btn_quahan.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        btn_quahan.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-
         btn_sachcon.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         btn_sachcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/0012-Books-icon32x32.png"))); // NOI18N
-        btn_sachcon.setText("Sách còn");
+        btn_sachcon.setText("Sách");
         btn_sachcon.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btn_sachcon.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btn_sachcon.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         btn_sachcon.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-
-        btn_sachmuon.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        btn_sachmuon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/books-icon32x32.png"))); // NOI18N
-        btn_sachmuon.setText("Sách mượn");
-        btn_sachmuon.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        btn_sachmuon.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btn_sachmuon.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        btn_sachmuon.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-
-        btn_sachhong.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        btn_sachhong.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Filesystem-file-broken32x32.png"))); // NOI18N
-        btn_sachhong.setText("Sách hỏng");
-        btn_sachhong.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        btn_sachhong.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btn_sachhong.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        btn_sachhong.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        btn_sachhong.addActionListener(new java.awt.event.ActionListener() {
+        btn_sachcon.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_sachhongActionPerformed(evt);
+                btn_sachconActionPerformed(evt);
             }
         });
 
@@ -353,14 +326,8 @@ public class frm_main extends javax.swing.JFrame {
             pnl_baocaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnl_baocaoLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(btn_quahan, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btn_sachcon, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btn_sachmuon, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btn_sachhong, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addComponent(btn_doanhthu, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(lbl_baocaotieude, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -370,11 +337,7 @@ public class frm_main extends javax.swing.JFrame {
             .addGroup(pnl_baocaoLayout.createSequentialGroup()
                 .addGroup(pnl_baocaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btn_sachcon, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btn_sachmuon, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(pnl_baocaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(btn_sachhong, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btn_doanhthu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(btn_quahan, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btn_doanhthu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lbl_baocaotieude, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -387,7 +350,7 @@ public class frm_main extends javax.swing.JFrame {
                 .addComponent(pnl_muontragiahan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(pnl_baocao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 512, Short.MAX_VALUE))
+                .addGap(0, 776, Short.MAX_VALUE))
         );
         pnl_muonthongkeLayout.setVerticalGroup(
             pnl_muonthongkeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -619,6 +582,11 @@ public class frm_main extends javax.swing.JFrame {
         jButton24.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton24.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         jButton24.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton24.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton24ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnl_khoLayout = new javax.swing.GroupLayout(pnl_kho);
         pnl_kho.setLayout(pnl_khoLayout);
@@ -807,9 +775,9 @@ public class frm_main extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnl_thongtin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(tbn_menu)
             .addComponent(tbn_main)
+            .addComponent(pnl_thongtin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -821,17 +789,13 @@ public class frm_main extends javax.swing.JFrame {
                 .addComponent(pnl_thongtin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        setSize(new java.awt.Dimension(1386, 739));
+        setSize(new java.awt.Dimension(1386, 749));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btn_sachhongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_sachhongActionPerformed
-        pnl_Sachhong pnl = new pnl_Sachhong();
-        BLL_main.themtab("Sách hỏng", tbn_main, pnl);
-    }//GEN-LAST:event_btn_sachhongActionPerformed
-
     private void btn_doanhthuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_doanhthuActionPerformed
-        // TODO add your handling code here:
+        pnl_doanhthu pnl = new pnl_doanhthu();
+        BLL_main.themtab("Doanh thu", tbn_main, pnl);
     }//GEN-LAST:event_btn_doanhthuActionPerformed
 
     private void btn_nguoidungActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_nguoidungActionPerformed
@@ -896,11 +860,13 @@ public class frm_main extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_danhsachnhanvienActionPerformed
 
     private void btn_trasachgiahanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_trasachgiahanActionPerformed
-        // TODO add your handling code here:
+        pnl_giahan_trasach pnl = new pnl_giahan_trasach();
+        BLL_main.themtab("Gia hạn-Trả sách", tbn_main, pnl);
     }//GEN-LAST:event_btn_trasachgiahanActionPerformed
 
     private void jButton27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton27ActionPerformed
-        // TODO add your handling code here:
+        pnl_nhacungcap pnl = new pnl_nhacungcap();
+        BLL_main.themtab("NNhà cung cấp", tbn_main, pnl);
     }//GEN-LAST:event_jButton27ActionPerformed
 
     private void jButton21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton21ActionPerformed
@@ -923,6 +889,16 @@ public class frm_main extends javax.swing.JFrame {
         pnl_PhieuThanhLy pnl = new pnl_PhieuThanhLy();
         BLL_main.themtab("Thanh lý", tbn_main, pnl);
     }//GEN-LAST:event_jButton23ActionPerformed
+
+    private void jButton24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton24ActionPerformed
+       pnl_nhapkho pnl = new pnl_nhapkho();
+        BLL_main.themtab("Nhập kho", tbn_main, pnl);
+    }//GEN-LAST:event_jButton24ActionPerformed
+
+    private void btn_sachconActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_sachconActionPerformed
+        pnl_baocao_sach pnl = new pnl_baocao_sach();
+        BLL_main.themtab("Báo cáo", tbn_main, pnl);
+    }//GEN-LAST:event_btn_sachconActionPerformed
 
 
     /**
@@ -974,10 +950,7 @@ public class frm_main extends javax.swing.JFrame {
     private javax.swing.JButton btn_nhapexdocgia;
     private javax.swing.JButton btn_nhapexdocgia1;
     private javax.swing.JButton btn_phanquyen;
-    private javax.swing.JButton btn_quahan;
     private javax.swing.JButton btn_sachcon;
-    private javax.swing.JButton btn_sachhong;
-    private javax.swing.JButton btn_sachmuon;
     private javax.swing.JButton btn_trasachgiahan;
     private javax.swing.Box.Filler filler1;
     private javax.swing.JButton jButton19;
