@@ -606,6 +606,11 @@ public class frm_main extends javax.swing.JFrame {
         jButton23.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton23.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         jButton23.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton23.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton23ActionPerformed(evt);
+            }
+        });
 
         jButton24.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         jButton24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/import-icon48x48.png"))); // NOI18N
@@ -913,6 +918,11 @@ public class frm_main extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_formWindowOpened
+
+    private void jButton23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton23ActionPerformed
+        pnl_PhieuThanhLy pnl = new pnl_PhieuThanhLy();
+        BLL_main.themtab("Thanh lý", tbn_main, pnl);
+    }//GEN-LAST:event_jButton23ActionPerformed
 
 
     /**
