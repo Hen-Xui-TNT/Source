@@ -28,7 +28,7 @@ public class DAL_Quyen {
     String query = "insert into Quyen values ( N'" +item.getTenQuyen() +"', N'" + item.getGhiChu()+ "')";
     return DuAn1.conn.ExcuteNonQuery(query);
     }
-    public static int Xoa_Quyen(String MaQuyen){
+    public static int Xoa_Quyen(int MaQuyen){
      String query = "delete from Quyen where MaQuyen = "+ MaQuyen;
      return DuAn1.conn.ExcuteNonQuery(query);
     }

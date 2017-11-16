@@ -36,9 +36,9 @@ public class BLL_Quyen {
         try {
             while(rs.next()){
                 item[0] = table.getRowCount() + 1;
-                item[1] = rs.getString("MAQUYEN");
-                item[2] = rs.getString("TENQUYEN");
-                item[3] = rs.getString("MOTA");
+                item[1] = rs.getString("MaQuyen");
+                item[2] = rs.getString("TenQuyen");
+                item[3] = rs.getString("GhiChu");
                 
                 table.addRow(item);
             }
@@ -46,42 +46,42 @@ public class BLL_Quyen {
             Logger.getLogger(BLL_Quyen.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-//    public static void them(String Ten,String MoTa) {
-//        boolean kiemtra = check(Ten, MoTa);
-//        if (kiemtra == true) {
-//            DTO_Quyen Q = new DTO_Quyen(Ten, MoTa);
-//            System.out.println("thanh cong");
-//            DAL_Quyen.ThemQuyen(Q);
-//        }
-//    }
-//    public static void sua(String ID,String Ten,String MoTa) {
-//        boolean kiemtra = check(Ten, MoTa);
-//        if (ID.equals("")) {
-//            ChuyenDoi_ThongBao.ThongBao_Loi("Chưa Nhập Mã Quyền !!!", "Lỗi Dữ Liệu");
-//        }else{
-//            try {
-//                Integer.parseInt(ID);
-//                if (kiemtra == true) {
-//                    DTO_Quyen Q = new DTO_Quyen(Integer.parseInt(ID), Ten, MoTa);
-//                    System.out.println("thanh cong");
-//                    DAL_Quyen.SuaQuyen(Q);
-//                }
-//            } catch (NumberFormatException e) {
-//                ChuyenDoi_ThongBao.ThongBao_Loi("ID Phải Là Số !!!" + e.getMessage(), "Lỗi Chuyển Đổi Dữ Liệu");
-//            }
-//        }
-//        
-//    }
-//    public static void xoa(String ID) {
-//        if (ID.equals("")) {
-//            ChuyenDoi_ThongBao.ThongBao_Loi("Chưa Nhập Mã Quyền !!!", "Lỗi Dữ Liệu");
-//        }else{
-//            try {
-//            DAL_Quyen.XoaQuyen(Integer.parseInt(ID));
-//            System.out.println("thanh cong");
-//        } catch (NumberFormatException e) {
-//                ChuyenDoi_ThongBao.ThongBao_Loi("ID Phải Là Số !!!" + e.getMessage(), "Lỗi Chuyển Đổi Dữ Liệu");
-//            }
-//        }
-//    }
+    public static void them(String Ten,String MoTa) {
+        boolean kiemtra = check(Ten, MoTa);
+        if (kiemtra == true) {
+            DTO_Quyen Q = new DTO_Quyen(Ten, MoTa);
+            System.out.println("thanh cong");
+            DAL_Quyen.Them_Quyen(Q);
+        }
+    }
+    public static void sua(String ID,String Ten,String MoTa) {
+        boolean kiemtra = check(Ten, MoTa);
+        if (ID.equals("")) {
+            ChuyenDoi_ThongBao.ThongBao_Loi("Chưa Nhập Mã Quyền !!!", "Lỗi Dữ Liệu");
+        }else{
+            try {
+                Integer.parseInt(ID);
+                if (kiemtra == true) {
+                    DTO_Quyen Q = new DTO_Quyen(Integer.parseInt(ID), Ten, MoTa);
+                    System.out.println("thanh cong");
+                    DAL_Quyen.Sua_Quyen(Q);
+                }
+            } catch (NumberFormatException e) {
+                ChuyenDoi_ThongBao.ThongBao_Loi("ID Phải Là Số !!!" + e.getMessage(), "Lỗi Chuyển Đổi Dữ Liệu");
+            }
+        }
+        
+    }
+    public static void xoa(String ID) {
+        if (ID.equals("")) {
+            ChuyenDoi_ThongBao.ThongBao_Loi("Chưa Nhập Mã Quyền !!!", "Lỗi Dữ Liệu");
+        }else{
+            try {
+            DAL_Quyen.Xoa_Quyen(Integer.parseInt(ID));
+            System.out.println("thanh cong");
+        } catch (NumberFormatException e) {
+                ChuyenDoi_ThongBao.ThongBao_Loi("ID Phải Là Số !!!" + e.getMessage(), "Lỗi Chuyển Đổi Dữ Liệu");
+            }
+        }
+    }
 }

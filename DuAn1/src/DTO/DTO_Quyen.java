@@ -17,8 +17,9 @@ public class DTO_Quyen {
     public DTO_Quyen() {
     }
 
-    public DTO_Quyen(int MaQuyen) {
-        this.MaQuyen = MaQuyen;
+    public DTO_Quyen(String TenQuyen, String GhiChu) {
+        this.TenQuyen = TenQuyen;
+        this.GhiChu = GhiChu;
     }
     
     
