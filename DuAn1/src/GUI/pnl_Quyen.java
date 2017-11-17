@@ -235,6 +235,7 @@ public class pnl_Quyen extends javax.swing.JPanel {
     private void btnxoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnxoaActionPerformed
         BLL_Quyen.xoa(txtMaQuyen.getText());
         BLL.BLL_Quyen.DLTable(tblQuyen,DAL_Quyen.GetAll());
+        //...
     }//GEN-LAST:event_btnxoaActionPerformed
 
     private void btncapnhapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncapnhapActionPerformed
