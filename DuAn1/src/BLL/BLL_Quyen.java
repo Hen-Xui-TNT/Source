@@ -39,7 +39,7 @@ public class BLL_Quyen {
                 item[1] = rs.getString("MaQuyen");
                 item[2] = rs.getString("TenQuyen");
                 item[3] = rs.getString("GhiChu");
-                
+                //them
                 table.addRow(item);
             }
         } catch (SQLException ex) {

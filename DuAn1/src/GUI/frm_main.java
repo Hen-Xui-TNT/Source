@@ -11,6 +11,14 @@ import javax.swing.ImageIcon;
 import BLL.*;
 import DAL.DAL_Quyen;
 import static GUI.pnl_Quyen.tblQuyen;
+//import DAL.DAL_DocGia;
+//import static GUI.pnl_DocGia.*;
+//import DAL.DAL_TacGia;
+//import static GUI.pnl_TacGia.*;
+//import DAL.DAL_NhaCungCap;
+//import static GUI.pnl_Quyen.tblQuyen;
+//import DAL.DAL_ChiTietPhieuPhat;
+//import static GUI.pnl_Quyen.tblQuyen;
 /**
  *
  * @author Huy Nhan

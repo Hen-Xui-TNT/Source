@@ -4,7 +4,8 @@
  * and open the template in the editor.
  */
 package GUI;
-
+import BLL.BLL_DocGia;
+import DAL.DAL_DocGia;
 /**
  *
  * @author Yuuki
@@ -27,7 +28,7 @@ public class pnl_DocGia extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        PnlThongTinTacGia = new javax.swing.JPanel();
+        PnlDocGia = new javax.swing.JPanel();
         jScrollPane12 = new javax.swing.JScrollPane();
         tblDocGia = new javax.swing.JTable();
         jPanel24 = new javax.swing.JPanel();
@@ -57,7 +58,7 @@ public class pnl_DocGia extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(204, 204, 204));
 
-        PnlThongTinTacGia.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 51, 0)), "Thông Tin Tác Giả", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP));
+        PnlDocGia.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 51, 0)), "Thông Tin Tác Giả", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP));
 
         tblDocGia.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -81,18 +82,18 @@ public class pnl_DocGia extends javax.swing.JPanel {
             tblDocGia.getColumnModel().getColumn(4).setPreferredWidth(50);
         }
 
-        javax.swing.GroupLayout PnlThongTinTacGiaLayout = new javax.swing.GroupLayout(PnlThongTinTacGia);
-        PnlThongTinTacGia.setLayout(PnlThongTinTacGiaLayout);
-        PnlThongTinTacGiaLayout.setHorizontalGroup(
-            PnlThongTinTacGiaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PnlThongTinTacGiaLayout.createSequentialGroup()
+        javax.swing.GroupLayout PnlDocGiaLayout = new javax.swing.GroupLayout(PnlDocGia);
+        PnlDocGia.setLayout(PnlDocGiaLayout);
+        PnlDocGiaLayout.setHorizontalGroup(
+            PnlDocGiaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PnlDocGiaLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane12, javax.swing.GroupLayout.DEFAULT_SIZE, 1248, Short.MAX_VALUE)
                 .addContainerGap())
         );
-        PnlThongTinTacGiaLayout.setVerticalGroup(
-            PnlThongTinTacGiaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PnlThongTinTacGiaLayout.createSequentialGroup()
+        PnlDocGiaLayout.setVerticalGroup(
+            PnlDocGiaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PnlDocGiaLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(107, 107, 107))
@@ -320,7 +321,7 @@ public class pnl_DocGia extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(PnlThongTinTacGia, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(PnlDocGia, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel24, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -328,7 +329,7 @@ public class pnl_DocGia extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(PnlThongTinTacGia, javax.swing.GroupLayout.PREFERRED_SIZE, 219, Short.MAX_VALUE)
+                .addComponent(PnlDocGia, javax.swing.GroupLayout.PREFERRED_SIZE, 219, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -347,7 +348,7 @@ public class pnl_DocGia extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel MaNV4;
     private javax.swing.JLabel MaNV5;
-    private javax.swing.JPanel PnlThongTinTacGia;
+    private javax.swing.JPanel PnlDocGia;
     private javax.swing.JComboBox<String> cbbGioiTinh_KH;
     private javax.swing.JComboBox<String> cbbGioiTinh_KH1;
     private javax.swing.JButton jButton10;
