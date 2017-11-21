@@ -104,7 +104,7 @@ public class frm_main extends javax.swing.JFrame {
         pnl_hethong.setBackground(new java.awt.Color(0, 153, 204));
 
         pnl_ht.setBackground(new java.awt.Color(0, 153, 204));
-        pnl_ht.setBorder(new javax.swing.border.SoftBevelBorder(0));
+        pnl_ht.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         btn_nguoidung.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         btn_nguoidung.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/user48x48.png"))); // NOI18N
@@ -217,12 +217,12 @@ public class frm_main extends javax.swing.JFrame {
         pnl_muonthongke.setBackground(new java.awt.Color(0, 153, 204));
 
         pnl_muontragiahan.setBackground(new java.awt.Color(0, 153, 204));
-        pnl_muontragiahan.setBorder(new javax.swing.border.SoftBevelBorder(0));
+        pnl_muontragiahan.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         lbl_muontratieude.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         lbl_muontratieude.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbl_muontratieude.setText("Mượn - trả - gia hạn sách-phạt");
-        lbl_muontratieude.setBorder(new javax.swing.border.SoftBevelBorder(1));
+        lbl_muontratieude.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
         btn_chomuon.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         btn_chomuon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/theory48x48.png"))); // NOI18N
@@ -289,12 +289,12 @@ public class frm_main extends javax.swing.JFrame {
         );
 
         pnl_baocao.setBackground(new java.awt.Color(0, 153, 204));
-        pnl_baocao.setBorder(new javax.swing.border.SoftBevelBorder(0));
+        pnl_baocao.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         lbl_baocaotieude.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         lbl_baocaotieude.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbl_baocaotieude.setText("Báo Cáo - Thống Kê");
-        lbl_baocaotieude.setBorder(new javax.swing.border.SoftBevelBorder(1));
+        lbl_baocaotieude.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
         btn_sachcon.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         btn_sachcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/0012-Books-icon32x32.png"))); // NOI18N
@@ -365,12 +365,12 @@ public class frm_main extends javax.swing.JFrame {
         pnl_CapnhapQuanly.setBackground(new java.awt.Color(0, 153, 204));
 
         pnl_docgia.setBackground(new java.awt.Color(0, 153, 204));
-        pnl_docgia.setBorder(new javax.swing.border.SoftBevelBorder(0));
+        pnl_docgia.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         lbl_docgiatieude.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         lbl_docgiatieude.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbl_docgiatieude.setText("Độc giả");
-        lbl_docgiatieude.setBorder(new javax.swing.border.SoftBevelBorder(1));
+        lbl_docgiatieude.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
         btn_danhsachdocgia.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         btn_danhsachdocgia.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/user-group48x48.png"))); // NOI18N
@@ -418,12 +418,12 @@ public class frm_main extends javax.swing.JFrame {
         );
 
         pnl_nhanvien.setBackground(new java.awt.Color(0, 153, 204));
-        pnl_nhanvien.setBorder(new javax.swing.border.SoftBevelBorder(0));
+        pnl_nhanvien.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         lbl_nhanvientieude.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         lbl_nhanvientieude.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbl_nhanvientieude.setText("Nhân viên thư viện");
-        lbl_nhanvientieude.setBorder(new javax.swing.border.SoftBevelBorder(1));
+        lbl_nhanvientieude.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
         btn_danhsachnhanvien.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         btn_danhsachnhanvien.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/user-group-icon48x48.png"))); // NOI18N
@@ -485,12 +485,12 @@ public class frm_main extends javax.swing.JFrame {
         );
 
         pnl_sach.setBackground(new java.awt.Color(0, 153, 204));
-        pnl_sach.setBorder(new javax.swing.border.SoftBevelBorder(0));
+        pnl_sach.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel9.setText("Sách");
-        jLabel9.setBorder(new javax.swing.border.SoftBevelBorder(1));
+        jLabel9.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
         jButton19.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         jButton19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/research48x48.png"))); // NOI18N
@@ -557,12 +557,12 @@ public class frm_main extends javax.swing.JFrame {
         );
 
         pnl_kho.setBackground(new java.awt.Color(0, 153, 204));
-        pnl_kho.setBorder(new javax.swing.border.SoftBevelBorder(0));
+        pnl_kho.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel10.setText("Kho");
-        jLabel10.setBorder(new javax.swing.border.SoftBevelBorder(1));
+        jLabel10.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
         jButton23.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         jButton23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/payment-icon48x48.png"))); // NOI18N
@@ -616,12 +616,12 @@ public class frm_main extends javax.swing.JFrame {
         );
 
         pnl_tacgiatheloai.setBackground(new java.awt.Color(0, 153, 204));
-        pnl_tacgiatheloai.setBorder(new javax.swing.border.SoftBevelBorder(0));
+        pnl_tacgiatheloai.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel11.setText("Tác giả - Thể loại - Nhà cung cấp");
-        jLabel11.setBorder(new javax.swing.border.SoftBevelBorder(1));
+        jLabel11.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
         jButton25.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         jButton25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/authors-icon48x48.png"))); // NOI18N
@@ -734,7 +734,7 @@ public class frm_main extends javax.swing.JFrame {
         tbn_menu.addTab("Công Cụ", pnl_Congcu);
 
         pnl_thongtin.setBackground(new java.awt.Color(51, 153, 255));
-        pnl_thongtin.setBorder(new javax.swing.border.SoftBevelBorder(0));
+        pnl_thongtin.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         lbl_maytru.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         lbl_maytru.setText("Máy chủ :");
@@ -819,6 +819,7 @@ public class frm_main extends javax.swing.JFrame {
     private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton19ActionPerformed
         pnl_danhmucsach pnl = new pnl_danhmucsach();
         BLL_main.themtab("Danh mục sách", tbn_main, pnl);
+        
     }//GEN-LAST:event_jButton19ActionPerformed
 
     private void jButton20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton20ActionPerformed

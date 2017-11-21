@@ -29,7 +29,7 @@ public class pnl_danhmucsach extends javax.swing.JPanel {
 
         jPanel1 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tbl_sach = new javax.swing.JTable();
         jTextField1 = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -65,18 +65,26 @@ public class pnl_danhmucsach extends javax.swing.JPanel {
 
         jScrollPane2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Thông tin tự sách", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 12))); // NOI18N
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tbl_sach.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "STT", "Mã", "Tên Sách", "Số Lượng", "Tình Trạng", "Giá Sách", "Giá Nhập", "Nhà Xuất bản", "Mô Tả"
             }
         ));
-        jScrollPane2.setViewportView(jTable1);
+        jScrollPane2.setViewportView(tbl_sach);
+        if (tbl_sach.getColumnModel().getColumnCount() > 0) {
+            tbl_sach.getColumnModel().getColumn(0).setResizable(false);
+            tbl_sach.getColumnModel().getColumn(1).setResizable(false);
+            tbl_sach.getColumnModel().getColumn(2).setResizable(false);
+            tbl_sach.getColumnModel().getColumn(3).setResizable(false);
+            tbl_sach.getColumnModel().getColumn(4).setResizable(false);
+            tbl_sach.getColumnModel().getColumn(5).setResizable(false);
+            tbl_sach.getColumnModel().getColumn(6).setResizable(false);
+            tbl_sach.getColumnModel().getColumn(7).setResizable(false);
+            tbl_sach.getColumnModel().getColumn(8).setResizable(false);
+        }
 
         jLabel2.setText("Nhập dữ liệu cần tìm kiếm (Tên tác giả, thể loại, tên sách, nhà xuất bản)");
 
@@ -95,7 +103,7 @@ public class pnl_danhmucsach extends javax.swing.JPanel {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel2)
-                        .addContainerGap(205, Short.MAX_VALUE))
+                        .addContainerGap(409, Short.MAX_VALUE))
                     .addComponent(jTextField1)))
         );
         jPanel1Layout.setVerticalGroup(
@@ -202,7 +210,7 @@ public class pnl_danhmucsach extends javax.swing.JPanel {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(83, 83, 83)
+                .addGap(11, 11, 11)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -224,7 +232,7 @@ public class pnl_danhmucsach extends javax.swing.JPanel {
                     .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(93, Short.MAX_VALUE))
+                .addGap(11, 11, 11))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -320,7 +328,6 @@ public class pnl_danhmucsach extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
@@ -329,5 +336,6 @@ public class pnl_danhmucsach extends javax.swing.JPanel {
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
+    private javax.swing.JTable tbl_sach;
     // End of variables declaration//GEN-END:variables
 }
