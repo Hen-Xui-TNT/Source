@@ -3,12 +3,16 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/C:/Users/HuyNhan/Documents/GitHub/Source/DuAn1/src/BLL/BLL_ChiTietTacGia.java</file>
             <file>file:/C:/Users/HuyNhan/Documents/GitHub/Source/DuAn1/src/GUI/frm_main.java</file>
             <file>file:/C:/Users/HuyNhan/Documents/GitHub/Source/DuAn1/src/GUI/pnl_danhmucsach.java</file>
             <file>file:/C:/Users/HuyNhan/Documents/GitHub/Source/DuAn1/src/BLL/BLL_sach.java</file>
             <file>file:/C:/Users/HuyNhan/Documents/GitHub/Source/DuAn1/src/BLL/BLL_ChiTietTheLoai.java</file>
             <file>file:/C:/Users/HuyNhan/Documents/GitHub/Source/DuAn1/src/DTO/DTO_Sach.java</file>
+=======
+            <file>file:/C:/Users/Yuuki/Documents/GitHub/Source/DuAn1/src/GUI/pnl_gioithieu.java</file>
+>>>>>>> a56fd13617a28987e213bb498f58685c1114de67
         </group>
     </open-files>
 </project-private>
