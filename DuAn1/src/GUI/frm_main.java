@@ -18,9 +18,15 @@ import static GUI.pnl_DocGia.cbbLoaiDG;
 import static GUI.pnl_TacGia.tblTacGia;
 import static GUI.pnl_khuyenmai.tblKhuyenMai;
 import static GUI.pnl_PhieuPhat.tblSach;
+import static GUI.pnl_nhacungcap.tblNCC;
 import static GUI.pnl_PhieuPhat.tblSachPhat;
 import static GUI.pnl_nhapkho.tbl_spnhap;
 import static GUI.pnl_nhapkho.tblNhapKho;
+
+import static GUI.pnl_danhmucsach.tbl_sach;
+import static GUI.pnl_nhanvien.tblnhanvien;
+import static GUI.pnl_nhanvien.cbbQuyen;
+
 //import DAL.DAL_DocGia;
 //import static GUI.pnl_DocGia.*;
 //import DAL.DAL_TacGia;
@@ -91,7 +97,7 @@ public class frm_main extends javax.swing.JFrame {
         jButton24 = new javax.swing.JButton();
         pnl_tacgiatheloai = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
-        jButton25 = new javax.swing.JButton();
+        btnTacGia = new javax.swing.JButton();
         jButton26 = new javax.swing.JButton();
         jButton27 = new javax.swing.JButton();
         pnl_Congcu = new javax.swing.JPanel();
@@ -657,16 +663,16 @@ public class frm_main extends javax.swing.JFrame {
         jLabel11.setText("Tác giả - Thể loại - Nhà cung cấp");
         jLabel11.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
-        jButton25.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        jButton25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/authors-icon48x48.png"))); // NOI18N
-        jButton25.setText("Tác giả");
-        jButton25.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jButton25.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton25.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jButton25.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jButton25.addActionListener(new java.awt.event.ActionListener() {
+        btnTacGia.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        btnTacGia.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/authors-icon48x48.png"))); // NOI18N
+        btnTacGia.setText("Tác giả");
+        btnTacGia.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnTacGia.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnTacGia.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        btnTacGia.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnTacGia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton25ActionPerformed(evt);
+                btnTacGiaActionPerformed(evt);
             }
         });
 
@@ -702,7 +708,7 @@ public class frm_main extends javax.swing.JFrame {
             pnl_tacgiatheloaiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnl_tacgiatheloaiLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jButton25, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnTacGia, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton26, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -718,7 +724,7 @@ public class frm_main extends javax.swing.JFrame {
                     .addComponent(jButton26, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(pnl_tacgiatheloaiLayout.createSequentialGroup()
                         .addGroup(pnl_tacgiatheloaiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton25)
+                            .addComponent(btnTacGia)
                             .addComponent(jButton27))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -853,16 +859,20 @@ public class frm_main extends javax.swing.JFrame {
     private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton19ActionPerformed
         pnl_danhmucsach pnl = new pnl_danhmucsach();
         BLL_main.themtab("Danh mục sách", tbn_main, pnl);
-        BLL_sach.DLTable(pnl_danhmucsach.tbl_sach, DAL_Sach.GetAll());
-    }//GEN-LAST:event_jButton19ActionPerformed
 
+<<<<<<< HEAD
     private void jButton20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton20ActionPerformed
 
         DuAn1.frm_TTsach.setVisible(true);
         CNSach = 2; 
 
     }//GEN-LAST:event_jButton20ActionPerformed
+=======
+        BLL_sach.DLTable(tbl_sach, DAL.DAL_Sach.GetAll());
+    }//GEN-LAST:event_jButton19ActionPerformed
+>>>>>>> 5d9ad6c333dcb3651d5f2c8dc19ec6176d9c7ec5
 
+  
     private void btn_phanquyenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_phanquyenActionPerformed
         pnl_Quyen pnl = new pnl_Quyen();
         BLL_main.themtab("Quyền", tbn_main, pnl);
@@ -886,11 +896,11 @@ public class frm_main extends javax.swing.JFrame {
         BLL_DocGia.FillDataToCBB_DocGia(cbbLoaiDG);
     }//GEN-LAST:event_btn_danhsachdocgiaActionPerformed
 
-    private void jButton25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton25ActionPerformed
+    private void btnTacGiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTacGiaActionPerformed
         pnl_TacGia pnl = new pnl_TacGia();
         BLL_main.themtab("Tác Giả", tbn_main, pnl);
-   //      BLL.BLL_Quyen.DLTable(tblQuyen,DAL_Quyen.GetAll());
-    }//GEN-LAST:event_jButton25ActionPerformed
+     BLL.BLL_TacGia.DuLieuDatabase_Table(tblTacGia,DAL.DAL_TacGia.GetAll());
+    }//GEN-LAST:event_btnTacGiaActionPerformed
 
     private void btn_chomuon1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_chomuon1ActionPerformed
         pnl_PhieuPhat pnl = new pnl_PhieuPhat();
@@ -902,6 +912,8 @@ public class frm_main extends javax.swing.JFrame {
     private void btn_danhsachnhanvienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_danhsachnhanvienActionPerformed
         pnl_nhanvien pnl = new pnl_nhanvien();
         BLL_main.themtab("Nhân Viên", tbn_main, pnl);
+        BLL.BLL_NhanVien.DuLieuDatabase_Table(tblnhanvien,DAL.DAL_NhanVien.GetAll());
+        BLL_NhanVien.FillDataToCBB_NhanVien(cbbQuyen);
     }//GEN-LAST:event_btn_danhsachnhanvienActionPerformed
 
     private void btn_trasachgiahanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_trasachgiahanActionPerformed
@@ -912,6 +924,7 @@ public class frm_main extends javax.swing.JFrame {
     private void jButton27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton27ActionPerformed
         pnl_nhacungcap pnl = new pnl_nhacungcap();
         BLL_main.themtab("NNhà cung cấp", tbn_main, pnl);
+        BLL.BLL_NhaCungCap.DuLieuDatabase_Table(tblNCC,DAL.DAL_NhaCungCap.GetAll()); 
     }//GEN-LAST:event_jButton27ActionPerformed
 
     private void jButton21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton21ActionPerformed
@@ -946,10 +959,27 @@ public class frm_main extends javax.swing.JFrame {
         BLL_main.themtab("Báo cáo", tbn_main, pnl);
     }//GEN-LAST:event_btn_sachconActionPerformed
 
+
+    private void btn_nhapexdocgia2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_nhapexdocgia2ActionPerformed
+        pnl_LoaiDocGia pnl = new pnl_LoaiDocGia();
+        BLL_main.themtab("Loại độc giả", tbn_main, pnl);
+    }//GEN-LAST:event_btn_nhapexdocgia2ActionPerformed
+
     private void btn_LoaiDocGiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_LoaiDocGiaActionPerformed
         pnl_LoaiDocGia pnl = new pnl_LoaiDocGia();
         BLL_main.themtab("Loại độc giả", tbn_main, pnl);
     }//GEN-LAST:event_btn_LoaiDocGiaActionPerformed
+
+    private void jButton20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton20ActionPerformed
+        // TODO add your handling code here:
+        
+        DuAn1.frm_TTsach.setVisible(true);
+        CNSach = 2; 
+
+        frm_thongtinsach frm = new frm_thongtinsach();
+        frm.setVisible(true);
+    }//GEN-LAST:event_jButton20ActionPerformed
+
 
 
     /**
@@ -988,6 +1018,7 @@ public class frm_main extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnTacGia;
     private javax.swing.JButton btn_LoaiDocGia;
     private javax.swing.JButton btn_chomuon;
     private javax.swing.JButton btn_chomuon1;
@@ -1010,7 +1041,6 @@ public class frm_main extends javax.swing.JFrame {
     private javax.swing.JButton jButton21;
     private javax.swing.JButton jButton23;
     private javax.swing.JButton jButton24;
-    private javax.swing.JButton jButton25;
     private javax.swing.JButton jButton26;
     private javax.swing.JButton jButton27;
     private javax.swing.JLabel jLabel10;

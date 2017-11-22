@@ -29,23 +29,23 @@ public class BLL_Combobox {
             System.out.println(ex.toString());
         }
     }
-    public static void setSelectedCombobox(JComboBox tenCBB, String tenLoai){
-        for(int i = 0; i < tenCBB.getItemCount();i++){
-            
-            // Lấy item obj ở trên về Mycombobox
-            Object obj = tenCBB.getItemAt(i);
-            
-            // Ép kiểu của obj ở trên về Mycombobox
-            DTO_MyCombobox cbb = (DTO_MyCombobox)obj;
-            
-            
-            // Kiểm tra tên của cái cbb có bằng vs cái set lại hay k?
-            if(cbb.Value.equals(tenLoai)){
-                tenCBB.setSelectedIndex(i);
+   public static void setSelectedCombobox(JComboBox cbb, String tenloai) {
+        //Vòng lặp lấy tất cả item trong combobox
+        for (int i = 0; i < cbb.getItemCount(); i++) {
+            //Lấy từng giá Element trong combobox và gán vào 1 biến Object
+            Object obj = cbb.getItemAt(i);
+            //Nếu obj khác null
+            if (obj != null) {
+                //Ép kiểu obj về kiểu DisplayValueModel nhưng mình đã định nghĩa
+                MyCombobox m = (MyCombobox) obj;
+                //Nếu nội dung bằng với text của obj thì chọn lại combobox
+                if (m.Value.equals(tenloai)) {
+                    cbb.setSelectedItem(m);   //chọn lại combobox theo Element
+                }
             }
-            
         }
     }
+    
     public static String getSelectedItemID(JComboBox cbb) {
         String result;
         Object[] obj = cbb.getSelectedObjects();

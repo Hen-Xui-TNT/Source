@@ -17,6 +17,11 @@ public class DAL_NhanVien {
         String query = "Select * from NhanVien";
         return DuAn1.conn.ExcuteQuerySelect(query);
     }
+      
+        public static ResultSet GetAllCombobox() {
+        String query = "select TenQuyen, MaQuyen from Quyen";
+        return DuAn1.conn.ExcuteQuerySelect(query);
+    }
  public static int Them_NhanVien(DTO_NhanVien item){
      String query ="set dateformat dmy insert into NhanVien values( N'" +item.getTenNV()+"',N'"
               +item.getTenDangNhap()+"','"+item.getMatKhau()+"',"

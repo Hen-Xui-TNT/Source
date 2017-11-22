@@ -32,7 +32,7 @@ public class DAL_NhaCungCap {
          String query = "set dateformat dmy update NhaCungCap set "+
                "TenNhaCungCap= N'"+item.getTenNhaCungCap()+"',"+
                "DiaChi       = N'"+item.getDiaChi()+"',"+
-               "SoDienThoai  = '"+item.getSoDienThoai()+ "',"+
+               "SDT  = '"+item.getSoDienThoai()+ "',"+
                "Gmail        = N'"+item.getGmail()+"',"+
                "GhiChu       = N' "+item.getGhiChu()+"' "+
               "where MaNhaCungCap = "+ item.getMaNhaCungCap();

@@ -89,7 +89,7 @@ public class BLL_NhaCungCap {
                 item[1] = rs.getString("MaNhaCungCap");
                 item[2] = rs.getString("TenNhaCungCap");
                 item[3] = rs.getString("DiaChi");
-                item[4] = rs.getString("SoDienThoai"); 
+                item[4] = rs.getString("SDT"); 
                 item[5] = rs.getString("Gmail");
                 item[6] = rs.getString("GhiChu");   
                 //them
