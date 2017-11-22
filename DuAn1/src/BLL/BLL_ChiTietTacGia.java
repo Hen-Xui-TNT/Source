@@ -5,6 +5,7 @@
  */
 package BLL;
 
+import DTO.DTO_ChiTietTacGia;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
@@ -45,5 +46,10 @@ public class BLL_ChiTietTacGia {
         } catch (SQLException ex) {
             Logger.getLogger(BLL_Quyen.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+    public static void them(int masach,String matacgia) {
+        //update thông tin của tác giả
+            DTO.DTO_ChiTietTacGia item = new DTO_ChiTietTacGia(masach, Integer.parseInt(matacgia), "");
+            DAL.DAL_ChiTietTacGia.Them_ChiTietTacGia(item);
     }
 }

@@ -849,7 +849,7 @@ public class frm_main extends javax.swing.JFrame {
 
     private void jButton20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton20ActionPerformed
         DuAn1.frm_TTsach.setVisible(true);
-        CNSach = 0; 
+        CNSach = 2; 
     }//GEN-LAST:event_jButton20ActionPerformed
    
     private void btn_phanquyenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_phanquyenActionPerformed
