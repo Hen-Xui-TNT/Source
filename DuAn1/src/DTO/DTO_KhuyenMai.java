@@ -12,22 +12,38 @@ import java.util.Date;
  * @author Administrator
  */
 public class DTO_KhuyenMai {
-     int MaKhuyenMai, MaSach, SoLuong, KhuyenMai;
-    Date NgayBatDau, NgayKetThuc;
-    double SoTienHoaDon,GiaSach;
+
+    int MaKhuyenMai;
+    Date NgayBatDau;
+    Date NgayKetThuc;
+    double SoTienHoaDon;
+    int SoLuong;
+    int MaSach;
+    Double GiaSach;
+    int KhuyenMai;
 
     public DTO_KhuyenMai() {
     }
 
-    public DTO_KhuyenMai(int MaKhuyenMai, int MaSach, int SoLuong, int KhuyenMai, Date NgayBatDau, Date NgayKetThuc, double SoTienHoaDon, double GiaSach) {
-        this.MaKhuyenMai = MaKhuyenMai;
-        this.MaSach = MaSach;
-        this.SoLuong = SoLuong;
-        this.KhuyenMai = KhuyenMai;
+    public DTO_KhuyenMai(Date NgayBatDau, Date NgayKetThuc, double SoTienHoaDon, int SoLuong, int MaSach, Double GiaSach, int KhuyenMai) {
         this.NgayBatDau = NgayBatDau;
         this.NgayKetThuc = NgayKetThuc;
         this.SoTienHoaDon = SoTienHoaDon;
+        this.SoLuong = SoLuong;
+        this.MaSach = MaSach;
         this.GiaSach = GiaSach;
+        this.KhuyenMai = KhuyenMai;
+    }
+
+    public DTO_KhuyenMai(int MaKhuyenMai, Date NgayBatDau, Date NgayKetThuc, double SoTienHoaDon, int SoLuong, int MaSach, Double GiaSach, int KhuyenMai) {
+        this.MaKhuyenMai = MaKhuyenMai;
+        this.NgayBatDau = NgayBatDau;
+        this.NgayKetThuc = NgayKetThuc;
+        this.SoTienHoaDon = SoTienHoaDon;
+        this.SoLuong = SoLuong;
+        this.MaSach = MaSach;
+        this.GiaSach = GiaSach;
+        this.KhuyenMai = KhuyenMai;
     }
 
     public int getMaKhuyenMai() {
@@ -36,30 +52,6 @@ public class DTO_KhuyenMai {
 
     public void setMaKhuyenMai(int MaKhuyenMai) {
         this.MaKhuyenMai = MaKhuyenMai;
-    }
-
-    public int getMaSach() {
-        return MaSach;
-    }
-
-    public void setMaSach(int MaSach) {
-        this.MaSach = MaSach;
-    }
-
-    public int getSoLuong() {
-        return SoLuong;
-    }
-
-    public void setSoLuong(int SoLuong) {
-        this.SoLuong = SoLuong;
-    }
-
-    public int getKhuyenMai() {
-        return KhuyenMai;
-    }
-
-    public void setKhuyenMai(int KhuyenMai) {
-        this.KhuyenMai = KhuyenMai;
     }
 
     public Date getNgayBatDau() {
@@ -86,14 +78,37 @@ public class DTO_KhuyenMai {
         this.SoTienHoaDon = SoTienHoaDon;
     }
 
-    public double getGiaSach() {
+    public int getSoLuong() {
+        return SoLuong;
+    }
+
+    public void setSoLuong(int SoLuong) {
+        this.SoLuong = SoLuong;
+    }
+
+    public int getMaSach() {
+        return MaSach;
+    }
+
+    public void setMaSach(int MaSach) {
+        this.MaSach = MaSach;
+    }
+
+    public Double getGiaSach() {
         return GiaSach;
     }
 
-    public void setGiaSach(double GiaSach) {
+    public void setGiaSach(Double GiaSach) {
         this.GiaSach = GiaSach;
     }
-    
+
+    public int getKhuyenMai() {
+        return KhuyenMai;
+    }
+
+    public void setKhuyenMai(int KhuyenMai) {
+        this.KhuyenMai = KhuyenMai;
+    }
+
     
 }
-

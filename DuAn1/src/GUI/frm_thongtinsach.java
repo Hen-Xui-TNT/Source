@@ -452,7 +452,7 @@ public class frm_thongtinsach extends javax.swing.JFrame {
         txt_timkiemtheloai.setText("");
         tbl_tacgia.setRowMargin(0);
         tbl_theloai.setRowMargin(0);
-        frm_main.CNSach = 0;
+    //    frm_main.CNSach = 0;
         this.setVisible(false);
     }//GEN-LAST:event_formWindowClosing
 
@@ -461,11 +461,11 @@ public class frm_thongtinsach extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        if (frm_main.CNSach == 1) {// Sửa dữ liệu sách
-            
-        } else if(frm_main.CNSach == 2) {// Thêm Dữ liệu sách
-            
-        }
+//        if (frm_main.CNSach == 1) {// Sửa dữ liệu sách
+//            
+//        } else if(frm_main.CNSach == 2) {// Thêm Dữ liệu sách
+//            
+//        }
     }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
