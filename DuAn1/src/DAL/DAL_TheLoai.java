@@ -43,4 +43,8 @@ public class DAL_TheLoai {
                 + " or MaTheLoai like '%" + seach + "%'";
         return DuAn1.conn.ExcuteQuerySelect(seach1);
      }
+    public static ResultSet timkiemPmn(String key) {
+        String query = "Select * from TheLoai where TenTheLoai like N'%" + key +"%'";
+        return DuAn1.conn.ExcuteQuerySelect(query);
+    }
 }

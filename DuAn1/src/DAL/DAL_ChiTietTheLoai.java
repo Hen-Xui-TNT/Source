@@ -24,8 +24,8 @@ public class DAL_ChiTietTheLoai {
              +item.getMaTheLoai()+",N'"+item.getGhiChu()+"')";
      return DuAn1.conn.ExcuteNonQuery(query);
  }
-   public static int Delete_ChiTietTheLoai(String MaChiTietTheLoai){
-        String query = "Delete ChiTietTheLoai where MaChiTietTheLoai = " + MaChiTietTheLoai;
+   public static int Delete_ChiTietTheLoai(String MaSach){
+        String query = "Delete ChiTietTheLoai where MaSach = " + MaSach;
         return DuAn1.conn.ExcuteNonQuery(query);
     }
    public static int Update_ChiTietTheLoai(DTO_ChiTietTheLoai item){

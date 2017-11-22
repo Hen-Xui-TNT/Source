@@ -11,21 +11,34 @@ package DTO;
  */
 public class DTO_ChiTietPhieuNhap {
 
-    int MaChiTietPhieuNhap, MaPhieuNhap, MaSach, SoLuong;
+    int MaChiTietPhieuNhap;
+    int MaPhieuNhap;
+    int MaSach;
+    double GiaNhap;
+    int SoLuong;
+    Double ThanhTien;
     String GhiChu;
-    double GiaNhap, ThanhTien;
 
     public DTO_ChiTietPhieuNhap() {
     }
 
-    public DTO_ChiTietPhieuNhap(int MaChiTietPhieuNhap, int MaPhieuNhap, int MaSach, int SoLuong, String GhiChu, double GiaNhap, double ThanhTien) {
+    public DTO_ChiTietPhieuNhap(int MaChiTietPhieuNhap, int MaPhieuNhap, int MaSach, double GiaNhap, int SoLuong, Double ThanhTien, String GhiChu) {
         this.MaChiTietPhieuNhap = MaChiTietPhieuNhap;
         this.MaPhieuNhap = MaPhieuNhap;
         this.MaSach = MaSach;
-        this.SoLuong = SoLuong;
-        this.GhiChu = GhiChu;
         this.GiaNhap = GiaNhap;
+        this.SoLuong = SoLuong;
         this.ThanhTien = ThanhTien;
+        this.GhiChu = GhiChu;
+    }
+
+    public DTO_ChiTietPhieuNhap(int MaPhieuNhap, int MaSach, double GiaNhap, int SoLuong, Double ThanhTien, String GhiChu) {
+        this.MaPhieuNhap = MaPhieuNhap;
+        this.MaSach = MaSach;
+        this.GiaNhap = GiaNhap;
+        this.SoLuong = SoLuong;
+        this.ThanhTien = ThanhTien;
+        this.GhiChu = GhiChu;
     }
 
     public int getMaChiTietPhieuNhap() {
@@ -52,12 +65,28 @@ public class DTO_ChiTietPhieuNhap {
         this.MaSach = MaSach;
     }
 
+    public double getGiaNhap() {
+        return GiaNhap;
+    }
+
+    public void setGiaNhap(double GiaNhap) {
+        this.GiaNhap = GiaNhap;
+    }
+
     public int getSoLuong() {
         return SoLuong;
     }
 
     public void setSoLuong(int SoLuong) {
         this.SoLuong = SoLuong;
+    }
+
+    public Double getThanhTien() {
+        return ThanhTien;
+    }
+
+    public void setThanhTien(Double ThanhTien) {
+        this.ThanhTien = ThanhTien;
     }
 
     public String getGhiChu() {
@@ -68,20 +97,5 @@ public class DTO_ChiTietPhieuNhap {
         this.GhiChu = GhiChu;
     }
 
-    public double getGiaNhap() {
-        return GiaNhap;
-    }
-
-    public void setGiaNhap(double GiaNhap) {
-        this.GiaNhap = GiaNhap;
-    }
-
-    public double getThanhTien() {
-        return ThanhTien;
-    }
-
-    public void setThanhTien(double ThanhTien) {
-        this.ThanhTien = ThanhTien;
-    }
-
+    
 }

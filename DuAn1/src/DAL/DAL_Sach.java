@@ -38,8 +38,8 @@ public class DAL_Sach {
                 + "TinhTrangSach  = N'" + item.getTinhTrangSach() + "',"
                 + "GiaSach      = " + item.getGiaSach() + ","
                 + "GiaNhap      = " + item.getGiaNhap() + ", "
-                + "NhaXuatBan      = " + item.getNhaXuatBan() + ","
-                + "MoTa     = " + item.getMoTa() + " "
+                + "NhaXuatBan      = N'" + item.getNhaXuatBan() + "',"
+                + "MoTa     = N'" + item.getMoTa() + "' "
                 + "where MaSach = " + item.getMaSach();
         return DuAn1.conn.ExcuteNonQuery(query);
     }
@@ -48,5 +48,9 @@ public class DAL_Sach {
                 + " or TenSach like N'%" + seach + "%' or SoLuongSach like '%" + seach + "%' or TinhTrangSach like N'%" + seach + "%' "
                 + " or GiaNhap like '%" + seach + "%'  or GiaSach like '%" + seach + "%' or NhaXuatBan like N'%" + seach + "%'  or MoTa like N'%" + seach + "%' ";
         return DuAn1.conn.ExcuteQuerySelect(seach1);
+    }
+    public static ResultSet Get_IP() {
+        String query = "SELECT Top 1 MaSach FROM Sach ORDER BY MaSach DESC"; 
+        return DuAn1.conn.ExcuteQuerySelect(query);
     }
 }

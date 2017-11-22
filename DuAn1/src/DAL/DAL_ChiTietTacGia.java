@@ -24,8 +24,8 @@ public class DAL_ChiTietTacGia {
              +item.getMaTacGia()+",N'"+item.getGhiChu()+"')";
      return DuAn1.conn.ExcuteNonQuery(query);
  }
-   public static int Delete_ChiTietTacGia(String MaChiTietTacGia){
-        String query = "Delete ChiTietTacGia where MaChiTietTacGia = " + MaChiTietTacGia;
+   public static int Delete_ChiTietTacGia(String MaSach){
+        String query = "Delete ChiTietTacGia where MaSach =  " + MaSach;
         return DuAn1.conn.ExcuteNonQuery(query);
     }
    public static int Update_ChiTietTacGia(DTO_ChiTietTacGia item){

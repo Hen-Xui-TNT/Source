@@ -144,6 +144,11 @@ public class pnl_danhmucsach extends javax.swing.JPanel {
 
         btn_capnhap.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         btn_capnhap.setText("Cập nhập");
+        btn_capnhap.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_capnhapActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -211,11 +216,6 @@ public class pnl_danhmucsach extends javax.swing.JPanel {
 
         cbb_cttacgia.setBackground(new java.awt.Color(51, 153, 255));
         cbb_cttacgia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        cbb_cttacgia.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cbb_cttacgiaActionPerformed(evt);
-            }
-        });
 
         txt_masach.setEditable(false);
 
@@ -369,6 +369,18 @@ public class pnl_danhmucsach extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void tbl_sachMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbl_sachMouseClicked
+        //reset toàn bộ giá trị trong các trường
+        txt_masach.setText("");
+        txt_tensach.setText("");
+        cbb_cttacgia.setModel(new javax.swing.DefaultComboBoxModel());
+        cbb_cttheloai.setModel(new javax.swing.DefaultComboBoxModel());
+        txt_soluong.setText("");
+        txt_tinhtrangsach.setText("");
+        txt_gianhap.setText("");
+        txt_giasach.setText("");
+        txt_nhaxuatban.setText("");
+        txt_mota.setText("");
+        //đổi lại dữ liệu
         int viTriDong = tbl_sach.getSelectedRow();        
         txt_masach.setText(tbl_sach.getValueAt(viTriDong, 1).toString());
         txt_tensach.setText(tbl_sach.getValueAt(viTriDong, 2).toString());
@@ -383,12 +395,9 @@ public class pnl_danhmucsach extends javax.swing.JPanel {
         
     }//GEN-LAST:event_tbl_sachMouseClicked
 
-    private void cbb_cttacgiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbb_cttacgiaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cbb_cttacgiaActionPerformed
-
     private void btn_suaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_suaActionPerformed
         DuAn1.frm_TTsach.setVisible(true);
+        frm_main.CNSach = 1;
         int viTriDong = tbl_sach.getSelectedRow();        
         DuAn1.frm_TTsach.txt_masach.setText(tbl_sach.getValueAt(viTriDong, 1).toString());
         DuAn1.frm_TTsach.txt_tensach.setText(tbl_sach.getValueAt(viTriDong, 2).toString());
@@ -400,8 +409,23 @@ public class pnl_danhmucsach extends javax.swing.JPanel {
         DuAn1.frm_TTsach.txt_giasach.setText(tbl_sach.getValueAt(viTriDong, 6).toString());
         DuAn1.frm_TTsach.txt_nhaxuatban.setText(tbl_sach.getValueAt(viTriDong, 7).toString());
         DuAn1.frm_TTsach.txt_mota.setText(tbl_sach.getValueAt(viTriDong, 8).toString());
+        
     }//GEN-LAST:event_btn_suaActionPerformed
 
+    private void btn_capnhapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_capnhapActionPerformed
+        //reset toàn bộ giá trị trong các trường
+        txt_masach.setText("");
+        txt_tensach.setText("");
+        cbb_cttacgia.setModel(new javax.swing.DefaultComboBoxModel());
+        cbb_cttheloai.setModel(new javax.swing.DefaultComboBoxModel());
+        txt_soluong.setText("");
+        txt_tinhtrangsach.setText("");
+        txt_gianhap.setText("");
+        txt_giasach.setText("");
+        txt_nhaxuatban.setText("");
+        txt_mota.setText("");
+        BLL.BLL_sach.DLTable(tbl_sach, DAL.DAL_Sach.GetAll());
+    }//GEN-LAST:event_btn_capnhapActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_capnhap;

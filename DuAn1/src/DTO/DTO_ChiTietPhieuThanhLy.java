@@ -11,21 +11,34 @@ package DTO;
  */
 public class DTO_ChiTietPhieuThanhLy {
 
-    int MaChiTietPhieuThanhLy, MaPhieuThanhLy, MaSach, SoLuong;
+    int MaChiTietPhieuThanhLy;
+    int MaPhieuThanhLy;
+    int MaSach;
+    double GiaThanhLy;
+    int SoLuong;
+    double ThanhTien;
     String GhiChu;
-    double GiaThanhLy, ThanhTien;
 
     public DTO_ChiTietPhieuThanhLy() {
     }
 
-    public DTO_ChiTietPhieuThanhLy(int MaChiTietPhieuThanhLy, int MaPhieuThanhLy, int MaSach, int SoLuong, String GhiChu, double GiaThanhLy, double ThanhTien) {
+    public DTO_ChiTietPhieuThanhLy(int MaChiTietPhieuThanhLy, int MaPhieuThanhLy, int MaSach, double GiaThanhLy, int SoLuong, double ThanhTien, String GhiChu) {
         this.MaChiTietPhieuThanhLy = MaChiTietPhieuThanhLy;
         this.MaPhieuThanhLy = MaPhieuThanhLy;
         this.MaSach = MaSach;
-        this.SoLuong = SoLuong;
-        this.GhiChu = GhiChu;
         this.GiaThanhLy = GiaThanhLy;
+        this.SoLuong = SoLuong;
         this.ThanhTien = ThanhTien;
+        this.GhiChu = GhiChu;
+    }
+
+    public DTO_ChiTietPhieuThanhLy(int MaPhieuThanhLy, int MaSach, double GiaThanhLy, int SoLuong, double ThanhTien, String GhiChu) {
+        this.MaPhieuThanhLy = MaPhieuThanhLy;
+        this.MaSach = MaSach;
+        this.GiaThanhLy = GiaThanhLy;
+        this.SoLuong = SoLuong;
+        this.ThanhTien = ThanhTien;
+        this.GhiChu = GhiChu;
     }
 
     public int getMaChiTietPhieuThanhLy() {
@@ -52,12 +65,28 @@ public class DTO_ChiTietPhieuThanhLy {
         this.MaSach = MaSach;
     }
 
+    public double getGiaThanhLy() {
+        return GiaThanhLy;
+    }
+
+    public void setGiaThanhLy(double GiaThanhLy) {
+        this.GiaThanhLy = GiaThanhLy;
+    }
+
     public int getSoLuong() {
         return SoLuong;
     }
 
     public void setSoLuong(int SoLuong) {
         this.SoLuong = SoLuong;
+    }
+
+    public double getThanhTien() {
+        return ThanhTien;
+    }
+
+    public void setThanhTien(double ThanhTien) {
+        this.ThanhTien = ThanhTien;
     }
 
     public String getGhiChu() {
@@ -68,21 +97,6 @@ public class DTO_ChiTietPhieuThanhLy {
         this.GhiChu = GhiChu;
     }
 
-    public double getGiaThanhLy() {
-        return GiaThanhLy;
-    }
-
-    public void setGiaThanhLy(double GiaThanhLy) {
-        this.GiaThanhLy = GiaThanhLy;
-    }
-
-    public double getThanhTien() {
-        return ThanhTien;
-    }
-
-    public void setThanhTien(double ThanhTien) {
-        this.ThanhTien = ThanhTien;
-    }
     
     
 }

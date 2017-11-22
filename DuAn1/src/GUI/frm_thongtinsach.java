@@ -9,6 +9,7 @@ import java.awt.PopupMenu;
 import java.awt.event.KeyEvent;
 import javax.swing.JMenuItem;
 import GUI.frm_main.*;
+import static GUI.pnl_danhmucsach.tbl_sach;
 import javax.swing.table.DefaultTableModel;
 /**
  *
@@ -34,7 +35,6 @@ public class frm_thongtinsach extends javax.swing.JFrame {
 
         Pmn_tacgia = new javax.swing.JPopupMenu();
         Pmn_theloai = new javax.swing.JPopupMenu();
-        jMenuItem4 = new javax.swing.JMenuItem();
         jPanel1 = new javax.swing.JPanel();
         txt_nhaxuatban = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
@@ -62,18 +62,15 @@ public class frm_thongtinsach extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         txt_gianhap = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
-        jButton3 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        btn_save = new javax.swing.JButton();
+        btn_reset = new javax.swing.JButton();
         txt_tinhtrangsach = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
 
         Pmn_tacgia.setAutoscrolls(true);
 
-        Pmn_theloai.add(jMenuItem4);
-
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setTitle("Thông tin sách");
-        setAlwaysOnTop(true);
         setResizable(false);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent evt) {
@@ -123,6 +120,7 @@ public class frm_thongtinsach extends javax.swing.JFrame {
         txt_mota.setRows(5);
         jScrollPane1.setViewportView(txt_mota);
 
+        txt_masach.setEditable(false);
         txt_masach.setInheritsPopupMenu(true);
         txt_masach.setMaximumSize(new java.awt.Dimension(250, 25));
         txt_masach.setMinimumSize(new java.awt.Dimension(250, 25));
@@ -237,19 +235,19 @@ public class frm_thongtinsach extends javax.swing.JFrame {
         jPanel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel2.setInheritsPopupMenu(true);
 
-        jButton3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton3.setText("Save");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        btn_save.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btn_save.setText("Save");
+        btn_save.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                btn_saveActionPerformed(evt);
             }
         });
 
-        jButton5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton5.setText("Reset");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        btn_reset.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btn_reset.setText("Reset");
+        btn_reset.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                btn_resetActionPerformed(evt);
             }
         });
 
@@ -259,9 +257,9 @@ public class frm_thongtinsach extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addGap(54, 54, 54)
-                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btn_reset, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btn_save, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(44, 44, 44))
         );
         jPanel2Layout.setVerticalGroup(
@@ -269,8 +267,8 @@ public class frm_thongtinsach extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btn_save, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_reset, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
@@ -428,14 +426,14 @@ public class frm_thongtinsach extends javax.swing.JFrame {
     private void txt_timkiemtacgiaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_timkiemtacgiaKeyReleased
         //Pmn_tacgia.show(txt_timkiemtacgia, 0, 25);
         String key = txt_timkiemtacgia.getText();
-        DefaultTableModel table = (DefaultTableModel)tbl_tacgia.getModel();
         BLL.BLL_TacGia.DLPopupMenu(Pmn_tacgia, DAL.DAL_TacGia.timkiemPmn(key));
         
     }//GEN-LAST:event_txt_timkiemtacgiaKeyReleased
 
     private void txt_timkiemtheloaiKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_timkiemtheloaiKeyReleased
-        Pmn_theloai.show(txt_timkiemtheloai, 0, 25);
-        
+        String key = txt_timkiemtheloai.getText();
+ //       BLL.BLL_TheLoai.DLPopupMenu(Pmn_theloai, DAL.DAL_TheLoai.timkiemPmn(key));
+        BLL.BLL_TheLoai.DLPopupMenu(Pmn_theloai, DAL.DAL_TheLoai.timkiemPmn(key));
         
     }//GEN-LAST:event_txt_timkiemtheloaiKeyReleased
 
@@ -452,21 +450,90 @@ public class frm_thongtinsach extends javax.swing.JFrame {
         txt_timkiemtheloai.setText("");
         tbl_tacgia.setRowMargin(0);
         tbl_theloai.setRowMargin(0);
-        frm_main.CNSach = 0;
+    //    frm_main.CNSach = 0;
         this.setVisible(false);
     }//GEN-LAST:event_formWindowClosing
+
+    private void btn_resetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_resetActionPerformed
+        txt_gianhap.setText("");
+        txt_giasach.setText("");
+        txt_masach.setText("");
+        txt_mota.setText("");
+        txt_nhaxuatban.setText("");
+        txt_soluong.setText("");
+        txt_tensach.setText("");
+        txt_tinhtrangsach.setText("");
+        txt_timkiemtacgia.setText("");
+        txt_timkiemtheloai.setText("");
+        tbl_tacgia.setRowMargin(0);
+        tbl_theloai.setRowMargin(0);
+    }//GEN-LAST:event_btn_resetActionPerformed
+
+    private void btn_saveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_saveActionPerformed
+        int ipsach;
+        switch (frm_main.CNSach) {
+            case 1:
+                // Sửa dữ liệu sách
+                System.out.println("Sửa");
+                BLL.BLL_sach.sua(txt_masach.getText(), txt_tensach.getText()
+                        , txt_soluong.getText(), txt_tinhtrangsach.getText()
+                        , txt_giasach.getText(), txt_gianhap.getText()
+                        , txt_nhaxuatban.getText(), txt_mota.getText());
+                BLL.BLL_sach.DLTable(tbl_sach, DAL.DAL_Sach.GetAll());
+                //Xóa thông tin của chi tiết tác giả của sách
+                DAL.DAL_ChiTietTacGia.Delete_ChiTietTacGia(txt_masach.getText());
+                //sửa lại chi tiết tác giả của sách
+                for (int i = 0; i < tbl_tacgia.getRowCount(); i++) {
+                    
+                    BLL.BLL_ChiTietTacGia.them(Integer.parseInt(txt_masach.getText()),tbl_tacgia.getValueAt(i, 1).toString());
+                }
+                //Xóa thông tin thể loại của sách
+                DAL.DAL_ChiTietTheLoai.Delete_ChiTietTheLoai(txt_masach.getText());
+                //sửa lại chi tiết thể loại của sách
+                for (int i = 0; i < tbl_theloai.getRowCount(); i++) {
+                    BLL.BLL_ChiTietTheLoai.them(Integer.parseInt(txt_masach.getText()), tbl_theloai.getValueAt(i, 1).toString());
+                }
+                break;
+            case 2:
+                // Thêm Dữ liệu sách
+                BLL.BLL_sach.them(txt_tensach.getText()
+                        , txt_soluong.getText(), txt_tinhtrangsach.getText()
+                        , txt_giasach.getText(), txt_gianhap.getText()
+                        , txt_nhaxuatban.getText(), txt_mota.getText());
+                //lấy mã sách mới thêm
+                ipsach = BLL.BLL_sach.LayIPSach();
+                //sửa lại chi tiết tác giả của sách
+                
+                for (int i = 0; i < tbl_tacgia.getRowCount(); i++) {
+                    System.out.println(ipsach);
+                    System.out.println(tbl_tacgia.getValueAt(i, 1).toString());
+                    BLL.BLL_ChiTietTacGia.them(ipsach,tbl_tacgia.getValueAt(i, 1).toString());
+                }
+                //sửa lại chi tiết thể loại của sách
+                for (int i = 0; i < tbl_theloai.getRowCount(); i++) {
+                    BLL.BLL_ChiTietTheLoai.them(ipsach, tbl_theloai.getValueAt(i, 1).toString());
+                }
+                this.setVisible(false);
+                System.out.println("Thêm");
+                break;
+            default:
+                System.out.println("lỗi");
+                break;
+        }
+    }//GEN-LAST:event_btn_saveActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        if (frm_main.CNSach == 1) {// Sửa dữ liệu sách
-            
-        } else if(frm_main.CNSach == 2) {// Thêm Dữ liệu sách
-            
-        }
+//        if (frm_main.CNSach == 1) {// Sửa dữ liệu sách
+//            
+//        } else if(frm_main.CNSach == 2) {// Thêm Dữ liệu sách
+//            
+//        }
     }//GEN-LAST:event_jButton3ActionPerformed
+
 
     /**
      * @param args the command line arguments
@@ -509,8 +576,8 @@ public class frm_thongtinsach extends javax.swing.JFrame {
     public static javax.swing.JPopupMenu Pmn_theloai;
     private javax.swing.JButton btn_addtacgia;
     private javax.swing.JButton btn_addtheloai;
-    public static javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton5;
+    private javax.swing.JButton btn_reset;
+    public static javax.swing.JButton btn_save;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -521,7 +588,6 @@ public class frm_thongtinsach extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
