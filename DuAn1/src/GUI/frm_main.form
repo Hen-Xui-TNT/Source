@@ -575,7 +575,10 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="btn_danhsachdocgia" min="-2" pref="88" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                          <Component id="btn_nhapexdocgia" min="-2" pref="140" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="btn_nhapexdocgia" min="-2" pref="140" max="-2" attributes="0"/>
+                              <Component id="btn_nhapexdocgia2" min="-2" pref="140" max="-2" attributes="0"/>
+                          </Group>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
@@ -587,6 +590,8 @@
                               <Component id="btn_danhsachdocgia" max="32767" attributes="0"/>
                               <Group type="102" attributes="0">
                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  <Component id="btn_nhapexdocgia2" min="-2" pref="30" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
                                   <Component id="btn_nhapexdocgia" min="-2" pref="30" max="-2" attributes="0"/>
                               </Group>
                           </Group>
@@ -645,6 +650,24 @@
                     </Property>
                     <Property name="horizontalAlignment" type="int" value="2"/>
                   </Properties>
+                </Component>
+                <Component class="javax.swing.JButton" name="btn_nhapexdocgia2">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Tahoma" size="10" style="0"/>
+                    </Property>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/Images/excel-icon24x24.png"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Lo&#xe0;i &#x111;&#x1ed9;c gi&#x1ea3;"/>
+                    <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                      <Color id="Default Cursor"/>
+                    </Property>
+                    <Property name="horizontalAlignment" type="int" value="2"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_nhapexdocgia2ActionPerformed"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>

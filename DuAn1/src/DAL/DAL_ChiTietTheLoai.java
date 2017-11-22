@@ -36,6 +36,10 @@ public class DAL_ChiTietTheLoai {
               "where MaChiTietTheLoai = "+ item.getMaChiTietTheLoai();
         return DuAn1.conn.ExcuteNonQuery(query);
     }
-   
+    public static ResultSet DoDLCombobox(String MaSach) {
+        String query = "select ChiTietTheLoai.MaChiTietTheLoai,TheLoai.MaTheLoai,TheLoai.TenTheLoai from TheLoai,ChiTietTheLoai "
+                + "where ChiTietTheLoai.MaTheLoai = TheLoai.MaTheLoai and ChiTietTheLoai.MaSach = "+ MaSach;
+        return DuAn1.conn.ExcuteQuerySelect(query);
+    }
      
 }

@@ -41,6 +41,10 @@ public class DAL_TacGia {
               "where MaTacGia = "+ item.getMaTacGia();
         return DuAn1.conn.ExcuteNonQuery(query);
     }
+   public static ResultSet timkiemPmn(String key) {
+        String query = "Select * from TacGia where TenTacGia like N'%" + key +"%'";
+        return DuAn1.conn.ExcuteQuerySelect(query);
+    }
    
     
 }
