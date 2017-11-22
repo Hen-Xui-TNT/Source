@@ -861,8 +861,6 @@ public class frm_main extends javax.swing.JFrame {
         DuAn1.frm_TTsach.setVisible(true);
         CNSach = 2; 
 
-        frm_thongtinsach frm = new frm_thongtinsach();
-        frm.setVisible(true);
     }//GEN-LAST:event_jButton20ActionPerformed
 
     private void btn_phanquyenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_phanquyenActionPerformed
