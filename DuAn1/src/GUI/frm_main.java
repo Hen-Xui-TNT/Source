@@ -9,8 +9,18 @@ import java.awt.Dimension;
 import java.awt.Graphics;
 import javax.swing.ImageIcon;
 import BLL.*;
+import DAL.*;
+import DTO.*;
 import DAL.DAL_Quyen;
 import static GUI.pnl_Quyen.tblQuyen;
+import static GUI.pnl_DocGia.tblDocGia;
+import static GUI.pnl_DocGia.cbbLoaiDG;
+import static GUI.pnl_TacGia.tblTacGia;
+import static GUI.pnl_khuyenmai.tblKhuyenMai;
+import static GUI.pnl_PhieuPhat.tblSach;
+import static GUI.pnl_PhieuPhat.tblSachPhat;
+import static GUI.pnl_nhapkho.tbl_spnhap;
+import static GUI.pnl_nhapkho.tblNhapKho;
 //import DAL.DAL_DocGia;
 //import static GUI.pnl_DocGia.*;
 //import DAL.DAL_TacGia;
@@ -852,17 +862,22 @@ public class frm_main extends javax.swing.JFrame {
 
     private void btn_danhsachdocgiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_danhsachdocgiaActionPerformed
         pnl_DocGia pnl = new pnl_DocGia();
-        BLL_main.themtab("Độc giả", tbn_main, pnl);
+        BLL_main.themtab("Độc giả", tbn_main, pnl);        
+        BLL.BLL_DocGia.DuLieuDatabase_Table(tblDocGia,DAL.DAL_DocGia.GetAll());
+        BLL_DocGia.FillDataToCBB_DocGia(cbbLoaiDG);
     }//GEN-LAST:event_btn_danhsachdocgiaActionPerformed
 
     private void jButton25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton25ActionPerformed
         pnl_TacGia pnl = new pnl_TacGia();
         BLL_main.themtab("Tác Giả", tbn_main, pnl);
+   //      BLL.BLL_Quyen.DLTable(tblQuyen,DAL_Quyen.GetAll());
     }//GEN-LAST:event_jButton25ActionPerformed
 
     private void btn_chomuon1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_chomuon1ActionPerformed
         pnl_PhieuPhat pnl = new pnl_PhieuPhat();
         BLL_main.themtab("Phiếu Phạt", tbn_main, pnl);
+        
+        
     }//GEN-LAST:event_btn_chomuon1ActionPerformed
 
     private void btn_danhsachnhanvienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_danhsachnhanvienActionPerformed
@@ -904,6 +919,7 @@ public class frm_main extends javax.swing.JFrame {
     private void jButton24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton24ActionPerformed
        pnl_nhapkho pnl = new pnl_nhapkho();
         BLL_main.themtab("Nhập kho", tbn_main, pnl);
+ //        BLL.BLL_Quyen.DLTable(tblQuyen,DAL_Quyen.GetAll());
     }//GEN-LAST:event_jButton24ActionPerformed
 
     private void btn_sachconActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_sachconActionPerformed

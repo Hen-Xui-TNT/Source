@@ -17,14 +17,23 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
+import BLL.*;
 /**
  *
  * @author Yuuki
  */
 public class BLL_DocGia {
+    
+    public static void FillDataToCBB_DocGia(JComboBox cbb){
+        //Lấy danh sách Tên và Mã Quyền từ tầng DAL_Quyen
+        ResultSet rs = DAL.DAL_DocGia.GetAllCombobox();
+        BLL.BLL_Combobox.FillDataToCombobox(cbb, rs);
+    }
+    
      public static boolean Check(String TenDocGia,String MaLoaiDG,int GioiTinh,
              String NgaySinh,String SDT,String DiaChi,String TrangThai,String MoTa){
        
@@ -101,7 +110,7 @@ public class BLL_DocGia {
                 item[3] = rs.getString("MaLoaiDocGia");
                 item[4] = rs.getString("GioiTinh"); 
                 item[5] = rs.getString("NgaySinh");             
-                item[6] = rs.getString("SoDienThoai");   
+                item[6] = rs.getString("SDT");   
                 item[7] = rs.getString("DiaChi");             
                 item[8] = rs.getString("TrangThai");   
                 item[9] = rs.getString("MoTa");   

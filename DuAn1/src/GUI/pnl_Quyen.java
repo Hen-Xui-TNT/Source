@@ -132,7 +132,7 @@ public class pnl_Quyen extends javax.swing.JPanel {
         );
 
         jPanel3.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel3.setBorder(new javax.swing.border.SoftBevelBorder(0));
+        jPanel3.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         btnsua.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         btnsua.setText("Sửa");

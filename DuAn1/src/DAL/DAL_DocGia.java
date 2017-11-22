@@ -19,6 +19,11 @@ public class DAL_DocGia {
         String query = "Select * from DocGia";
         return DuAn1.conn.ExcuteQuerySelect(query);
     }
+     
+    public static ResultSet GetAllCombobox() {
+        String query = "select TenLoaiDocGia, MaLoaiDocGia from LoaiDocGia";
+        return DuAn1.conn.ExcuteQuerySelect(query);
+    }
  public static int Them_DocGia(DTO_DocGia item){
      String query ="set dateformat dmy insert into DocGia values( N'" +item.getTenDocGia()+"',"
              +item.getMaLoaiDocGia()+","+item.getGioiTinh()+",'"+item.getNgaySinh()+"','"
