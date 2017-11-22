@@ -13,23 +13,37 @@ import java.util.Date;
  */
 public class DTO_PhieuThue {
     
-    int MaPhieuThue, MaDocGia, MaNhanVien;
-    String SoPhieuThue, GhiChu;
-    Date NgayThue, NgayTra;
+    int MaPhieuThue;
+    String SoPhieuThue;
+     int MaDocGia;
+     int MaNhanVien;
+    Date NgayThue; 
+    Date NgayTra;
     double TongTien;
+    String GhiChu;
 
     public DTO_PhieuThue() {
     }
 
-    public DTO_PhieuThue(int MaPhieuThue, int MaDocGia, int MaNhanVien, String SoPhieuThue, String GhiChu, Date NgayThue,Date NgayTra, double TongTien) {
+    public DTO_PhieuThue(int MaPhieuThue, String SoPhieuThue, int MaDocGia, int MaNhanVien, Date NgayThue, Date NgayTra, double TongTien, String GhiChu) {
         this.MaPhieuThue = MaPhieuThue;
+        this.SoPhieuThue = SoPhieuThue;
         this.MaDocGia = MaDocGia;
         this.MaNhanVien = MaNhanVien;
-        this.SoPhieuThue = SoPhieuThue;
-        this.GhiChu = GhiChu;
         this.NgayThue = NgayThue;
-         this.NgayTra = NgayTra;
+        this.NgayTra = NgayTra;
         this.TongTien = TongTien;
+        this.GhiChu = GhiChu;
+    }
+
+    public DTO_PhieuThue(String SoPhieuThue, int MaDocGia, int MaNhanVien, Date NgayThue, Date NgayTra, double TongTien, String GhiChu) {
+        this.SoPhieuThue = SoPhieuThue;
+        this.MaDocGia = MaDocGia;
+        this.MaNhanVien = MaNhanVien;
+        this.NgayThue = NgayThue;
+        this.NgayTra = NgayTra;
+        this.TongTien = TongTien;
+        this.GhiChu = GhiChu;
     }
 
     public int getMaPhieuThue() {
@@ -38,6 +52,14 @@ public class DTO_PhieuThue {
 
     public void setMaPhieuThue(int MaPhieuThue) {
         this.MaPhieuThue = MaPhieuThue;
+    }
+
+    public String getSoPhieuThue() {
+        return SoPhieuThue;
+    }
+
+    public void setSoPhieuThue(String SoPhieuThue) {
+        this.SoPhieuThue = SoPhieuThue;
     }
 
     public int getMaDocGia() {
@@ -56,28 +78,20 @@ public class DTO_PhieuThue {
         this.MaNhanVien = MaNhanVien;
     }
 
-    public String getSoPhieuThue() {
-        return SoPhieuThue;
-    }
-
-    public void setSoPhieuThue(String SoPhieuThue) {
-        this.SoPhieuThue = SoPhieuThue;
-    }
-
-    public String getGhiChu() {
-        return GhiChu;
-    }
-
-    public void setGhiChu(String GhiChu) {
-        this.GhiChu = GhiChu;
-    }
-
     public Date getNgayThue() {
         return NgayThue;
     }
 
     public void setNgayThue(Date NgayThue) {
         this.NgayThue = NgayThue;
+    }
+
+    public Date getNgayTra() {
+        return NgayTra;
+    }
+
+    public void setNgayTra(Date NgayTra) {
+        this.NgayTra = NgayTra;
     }
 
     public double getTongTien() {
@@ -88,13 +102,13 @@ public class DTO_PhieuThue {
         this.TongTien = TongTien;
     }
 
-    public Date getNgayTra() {
-        return NgayTra;
+    public String getGhiChu() {
+        return GhiChu;
     }
 
-    public void setNgayTra(Date NgayTra) {
-        this.NgayTra = NgayTra;
+    public void setGhiChu(String GhiChu) {
+        this.GhiChu = GhiChu;
     }
-    
+
     
 }

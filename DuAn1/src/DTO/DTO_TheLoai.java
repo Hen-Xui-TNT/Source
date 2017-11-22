@@ -21,6 +21,11 @@ public class DTO_TheLoai {
         this.MaTheLoai = MaTheLoai;
     }
 
+    public DTO_TheLoai(String TenTheLoai, String GhiChu) {
+        this.TenTheLoai = TenTheLoai;
+        this.GhiChu = GhiChu;
+    }
+
     public DTO_TheLoai(int MaTheLoai, String TenTheLoai, String GhiChu) {
         this.MaTheLoai = MaTheLoai;
         this.TenTheLoai = TenTheLoai;

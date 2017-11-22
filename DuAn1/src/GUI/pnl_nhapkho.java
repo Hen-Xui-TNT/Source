@@ -69,7 +69,7 @@ public class pnl_nhapkho extends javax.swing.JPanel {
         btn_xuat_reset1 = new javax.swing.JButton();
         btn_xuat_xoa1 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tblNhapKho = new javax.swing.JTable();
 
         jPanel5.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
@@ -372,7 +372,7 @@ public class pnl_nhapkho extends javax.swing.JPanel {
             }
         });
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblNhapKho.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -383,7 +383,7 @@ public class pnl_nhapkho extends javax.swing.JPanel {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tblNhapKho);
 
         javax.swing.GroupLayout pnl_xuat_ttct1Layout = new javax.swing.GroupLayout(pnl_xuat_ttct1);
         pnl_xuat_ttct1.setLayout(pnl_xuat_ttct1Layout);
@@ -505,7 +505,6 @@ public class pnl_nhapkho extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane12;
     private javax.swing.JScrollPane jScrollPane15;
     private javax.swing.JScrollPane jScrollPane16;
-    private javax.swing.JTable jTable1;
     private javax.swing.JLabel lbl_TongTien2;
     private javax.swing.JLabel lbl_tienTra2;
     private javax.swing.JLabel lbl_xuat_KH2;
@@ -519,7 +518,8 @@ public class pnl_nhapkho extends javax.swing.JPanel {
     private javax.swing.JLabel lbl_xuat_tinhtrang2;
     private javax.swing.JPanel pnl_xuat_khachHang2;
     private javax.swing.JPanel pnl_xuat_ttct1;
-    private javax.swing.JTable tbl_spnhap;
+    public static javax.swing.JTable tblNhapKho;
+    public static javax.swing.JTable tbl_spnhap;
     private javax.swing.JTextArea txa_ghichu2;
     private javax.swing.JTextField txt_TienNhan2;
     private javax.swing.JTextField txt_xuat_diachi2;

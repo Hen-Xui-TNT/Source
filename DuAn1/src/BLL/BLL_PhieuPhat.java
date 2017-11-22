@@ -7,6 +7,8 @@ package BLL;
 import BLL.ChuyenDoi_ThongBao;
 import DTO.DTO_ChiTietPhieuPhat;
 import DAL.DAL_ChiTietPhieuPhat;
+import DTO.DTO_PhieuPhat;
+import DAL.DAL_PhieuPhat;
 import java.awt.Color;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -23,8 +25,10 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author Yuuki
  */
- public class BLL_ChiTietPhieuPhat {
-     public static boolean Check(String MaPhieuPhat,String MaSach,String LoiPhat,
+ public class BLL_PhieuPhat {
+     
+     // Chi tiết phiếu phạt
+    public static boolean Check(String MaPhieuPhat,String MaSach,String LoiPhat,
              String TienPhat,String SoLuong,String ThanhTien,String GhiChu){
        
     if(MaPhieuPhat.trim().equals("")){
@@ -121,7 +125,7 @@ import javax.swing.table.DefaultTableModel;
                 table.addRow(item);
             }
         } catch (SQLException ex) {
-            Logger.getLogger(BLL_ChiTietPhieuPhat.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(BLL_PhieuPhat.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     
@@ -141,7 +145,7 @@ import javax.swing.table.DefaultTableModel;
     }         
       /*------------------------------------------------*/  
    
-     public static int Sua(String MaCTPP,String MaPhieuPhat,String MaSach,String LoiPhat,
+    public static int Sua(String MaCTPP,String MaPhieuPhat,String MaSach,String LoiPhat,
              String TienPhat,String SoLuong,String ThanhTien,String GhiChu) {
          
       if(MaCTPP.trim().equals("")){
@@ -196,4 +200,6 @@ import javax.swing.table.DefaultTableModel;
      
         return rs;    // Lựa chọn là No       
      }
+    
+    
 }

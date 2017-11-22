@@ -497,8 +497,8 @@ public class pnl_PhieuPhat extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel8;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable tblSach;
-    private javax.swing.JTable tblSachPhat;
+    public static javax.swing.JTable tblSach;
+    public static javax.swing.JTable tblSachPhat;
     private javax.swing.JTextField txtDiaChi;
     private javax.swing.JTextField txtMaPhieuPhat;
     private javax.swing.JTextField txtSDT;

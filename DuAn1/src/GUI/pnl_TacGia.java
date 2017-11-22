@@ -289,7 +289,7 @@ public class pnl_TacGia extends javax.swing.JPanel {
     private javax.swing.JLabel lblUser5;
     private javax.swing.JLabel lblUser6;
     private javax.swing.JLabel lblUser7;
-    private javax.swing.JTable tblTacGia;
+    public static javax.swing.JTable tblTacGia;
     private javax.swing.JTextField txtDiaChi_KH;
     private javax.swing.JTextField txtDiaChi_KH1;
     private javax.swing.JTextField txtDiaChi_KH2;

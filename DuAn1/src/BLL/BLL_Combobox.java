@@ -6,6 +6,7 @@
 package BLL;
 
 import DTO.DTO_MyCombobox;
+import DTO.MyCombobox;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.DefaultComboBoxModel;
@@ -51,5 +52,20 @@ public class BLL_Combobox {
         DTO_MyCombobox item = (DTO_MyCombobox) obj[0];
         result = item.Value.toString();
         return result;
+    }
+    
+     public static void FillDataToCombobox(JComboBox cbb,ResultSet rs){
+        try {
+            DefaultComboBoxModel cbbModel = new DefaultComboBoxModel();
+            while(rs.next()){
+                MyCombobox item = new MyCombobox(
+                        rs.getString(1),  //Giá trị hiển thị (Text)
+                        rs.getString(2)); //Giá trị thao tác với CSDL (value - thường là mã) 
+                cbbModel.addElement(item);
+            }
+            cbb.setModel(cbbModel);
+        } catch (SQLException ex) {
+            System.out.println("Lỗi xảy ra: " + ex.getMessage());
+        }
     }
 }

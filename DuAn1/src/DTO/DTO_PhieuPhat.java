@@ -12,21 +12,34 @@ import java.util.Date;
  * @author Administrator
  */
 public class DTO_PhieuPhat {
-    int MaPhieuPhat, MaDocGia, MaNhanVien;
-    String SoPhieuPhat, GhiChu;
-    double TongTien;
+    int MaPhieuPhat; 
+    String SoPhieuPhat;
+    int MaDocGia;
+    int MaNhanVien;
     Date NgayPhat;
+    double TongTien;
+    String GhiChu;
 
     public DTO_PhieuPhat() {
     }
 
-    public DTO_PhieuPhat(int MaPhieuPhat, int MaDocGia, int MaNhanVien, String SoPhieuPhat, double TongTien, Date NgayPhat) {
+    public DTO_PhieuPhat(int MaPhieuPhat, String SoPhieuPhat, int MaDocGia, int MaNhanVien, Date NgayPhat, double TongTien, String GhiChu) {
         this.MaPhieuPhat = MaPhieuPhat;
+        this.SoPhieuPhat = SoPhieuPhat;
         this.MaDocGia = MaDocGia;
         this.MaNhanVien = MaNhanVien;
-        this.SoPhieuPhat = SoPhieuPhat;
-        this.TongTien = TongTien;
         this.NgayPhat = NgayPhat;
+        this.TongTien = TongTien;
+        this.GhiChu = GhiChu;
+    }
+
+    public DTO_PhieuPhat(String SoPhieuPhat, int MaDocGia, int MaNhanVien, Date NgayPhat, double TongTien, String GhiChu) {
+        this.SoPhieuPhat = SoPhieuPhat;
+        this.MaDocGia = MaDocGia;
+        this.MaNhanVien = MaNhanVien;
+        this.NgayPhat = NgayPhat;
+        this.TongTien = TongTien;
+        this.GhiChu = GhiChu;
     }
 
     public int getMaPhieuPhat() {
@@ -35,6 +48,14 @@ public class DTO_PhieuPhat {
 
     public void setMaPhieuPhat(int MaPhieuPhat) {
         this.MaPhieuPhat = MaPhieuPhat;
+    }
+
+    public String getSoPhieuPhat() {
+        return SoPhieuPhat;
+    }
+
+    public void setSoPhieuPhat(String SoPhieuPhat) {
+        this.SoPhieuPhat = SoPhieuPhat;
     }
 
     public int getMaDocGia() {
@@ -53,20 +74,12 @@ public class DTO_PhieuPhat {
         this.MaNhanVien = MaNhanVien;
     }
 
-    public String getSoPhieuPhat() {
-        return SoPhieuPhat;
+    public Date getNgayPhat() {
+        return NgayPhat;
     }
 
-    public void setSoPhieuPhat(String SoPhieuPhat) {
-        this.SoPhieuPhat = SoPhieuPhat;
-    }
-
-    public String getGhiChu() {
-        return GhiChu;
-    }
-
-    public void setGhiChu(String GhiChu) {
-        this.GhiChu = GhiChu;
+    public void setNgayPhat(Date NgayPhat) {
+        this.NgayPhat = NgayPhat;
     }
 
     public double getTongTien() {
@@ -77,13 +90,13 @@ public class DTO_PhieuPhat {
         this.TongTien = TongTien;
     }
 
-    public Date getNgayPhat() {
-        return NgayPhat;
+    public String getGhiChu() {
+        return GhiChu;
     }
 
-    public void setNgayPhat(Date NgayPhat) {
-        this.NgayPhat = NgayPhat;
+    public void setGhiChu(String GhiChu) {
+        this.GhiChu = GhiChu;
     }
-    
-    
+
+   
 }

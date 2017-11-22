@@ -17,13 +17,14 @@ import java.util.logging.Logger;
  */
 public class DAL_DBConnection {
     //Tạo chuỗi kết nối
-    String connectionString =  "jdbc:sqlserver://DESKTOP-325I2P0\\HUYNHAN;"
+//    String connectionString =  "jdbc:sqlserver://DESKTOP-325I2P0\\HUYNHAN;"
+//            + "databaseName=TNTDuAn1; user=sa; password=123456;";
+    
+     String connectionString = "jdbc:sqlserver://DESKTOP-YUUKI\\YUUKI;" 
             + "databaseName=TNTDuAn1; user=sa; password=123456;";
-    
-//     String connectionString = "jdbc:sqlserver://DESKTOP-YUUKI\\YUUKI;" 
-//            + "databaseName=QuanLyThueXe; user=sa; password=123456;";
         
-    
+ //    String connectionString =  "jdbc:sqlserver://V5PV4SWQRRKBKF8\\SQL;"
+//            + "databaseName=TNTDuAn1; user=sa; password=123456;";   
     //Tạo biến kết nối
     Connection conn;
     
