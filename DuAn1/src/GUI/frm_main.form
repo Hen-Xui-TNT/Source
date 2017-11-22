@@ -577,7 +577,7 @@
                           <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="btn_nhapexdocgia" min="-2" pref="140" max="-2" attributes="0"/>
-                              <Component id="btn_nhapexdocgia2" min="-2" pref="140" max="-2" attributes="0"/>
+                              <Component id="btn_LoaiDocGia" min="-2" pref="140" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
@@ -590,7 +590,7 @@
                               <Component id="btn_danhsachdocgia" max="32767" attributes="0"/>
                               <Group type="102" attributes="0">
                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                  <Component id="btn_nhapexdocgia2" min="-2" pref="30" max="-2" attributes="0"/>
+                                  <Component id="btn_LoaiDocGia" min="-2" pref="30" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="btn_nhapexdocgia" min="-2" pref="30" max="-2" attributes="0"/>
                               </Group>
@@ -651,7 +651,7 @@
                     <Property name="horizontalAlignment" type="int" value="2"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JButton" name="btn_nhapexdocgia2">
+                <Component class="javax.swing.JButton" name="btn_LoaiDocGia">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Tahoma" size="10" style="0"/>
@@ -666,7 +666,7 @@
                     <Property name="horizontalAlignment" type="int" value="2"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_nhapexdocgia2ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_LoaiDocGiaActionPerformed"/>
                   </Events>
                 </Component>
               </SubComponents>

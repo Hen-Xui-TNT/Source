@@ -74,6 +74,7 @@ public class frm_main extends javax.swing.JFrame {
         lbl_docgiatieude = new javax.swing.JLabel();
         btn_danhsachdocgia = new javax.swing.JButton();
         btn_nhapexdocgia = new javax.swing.JButton();
+        btn_LoaiDocGia = new javax.swing.JButton();
         pnl_nhanvien = new javax.swing.JPanel();
         lbl_nhanvientieude = new javax.swing.JLabel();
         btn_danhsachnhanvien = new javax.swing.JButton();
@@ -409,6 +410,17 @@ public class frm_main extends javax.swing.JFrame {
         btn_nhapexdocgia.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btn_nhapexdocgia.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
 
+        btn_LoaiDocGia.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        btn_LoaiDocGia.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/excel-icon24x24.png"))); // NOI18N
+        btn_LoaiDocGia.setText("Loài độc giả");
+        btn_LoaiDocGia.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btn_LoaiDocGia.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btn_LoaiDocGia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_LoaiDocGiaActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout pnl_docgiaLayout = new javax.swing.GroupLayout(pnl_docgia);
         pnl_docgia.setLayout(pnl_docgiaLayout);
         pnl_docgiaLayout.setHorizontalGroup(
@@ -420,7 +432,9 @@ public class frm_main extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(btn_danhsachdocgia, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(10, 10, 10)
-                .addComponent(btn_nhapexdocgia, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(pnl_docgiaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btn_nhapexdocgia, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_LoaiDocGia, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pnl_docgiaLayout.setVerticalGroup(
@@ -430,6 +444,8 @@ public class frm_main extends javax.swing.JFrame {
                     .addComponent(btn_danhsachdocgia, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(pnl_docgiaLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(btn_LoaiDocGia, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btn_nhapexdocgia, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lbl_docgiatieude, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -837,6 +853,7 @@ public class frm_main extends javax.swing.JFrame {
     private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton19ActionPerformed
         pnl_danhmucsach pnl = new pnl_danhmucsach();
         BLL_main.themtab("Danh mục sách", tbn_main, pnl);
+        BLL_sach.DLTable(pnl_danhmucsach.tbl_sach, DAL_Sach.GetAll());
     }//GEN-LAST:event_jButton19ActionPerformed
 
     private void jButton20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton20ActionPerformed
@@ -931,6 +948,11 @@ public class frm_main extends javax.swing.JFrame {
         BLL_main.themtab("Báo cáo", tbn_main, pnl);
     }//GEN-LAST:event_btn_sachconActionPerformed
 
+    private void btn_LoaiDocGiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_LoaiDocGiaActionPerformed
+        pnl_LoaiDocGia pnl = new pnl_LoaiDocGia();
+        BLL_main.themtab("Loại độc giả", tbn_main, pnl);
+    }//GEN-LAST:event_btn_LoaiDocGiaActionPerformed
+
 
     /**
      * @param args the command line arguments
@@ -968,6 +990,7 @@ public class frm_main extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_LoaiDocGia;
     private javax.swing.JButton btn_chomuon;
     private javax.swing.JButton btn_chomuon1;
     private javax.swing.JButton btn_dangxuat;

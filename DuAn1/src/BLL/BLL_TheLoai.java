@@ -39,33 +39,45 @@ public class BLL_TheLoai {
                     public void actionPerformed(java.awt.event.ActionEvent evt) {
                         MNactionPerformed(evt);
                     }
-
                     private void MNactionPerformed(ActionEvent evt) {
-                        them(evt.getActionCommand());
+                        themDL(evt.getActionCommand());
                     }
                 });
+                
             }
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
         }
         Ten.show(frm_thongtinsach.txt_timkiemtheloai, 0, 25);
     }
-    public static void them(String key) {
+    public static void themDL(String key) {
         DefaultTableModel table = (DefaultTableModel)frm_thongtinsach.tbl_theloai.getModel();
        ResultSet rs = DAL_TheLoai.timkiemPmn(key);
         Object[] item = new Object[20];
+        try {
+            while(rs.next()){
+                item[0] = table.getRowCount() + 1;
+                item[1] = rs.getString("MaTheLoai");
+                item[2] = rs.getString("TenTheLoai");
+                table.addRow(item);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(BLL_Quyen.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
-         public static boolean check(String TenLoai,String MoTa) {
-            if (TenLoai.trim().equals("")) {
-                ChuyenDoi_ThongBao.ThongBao_Loi("Tên thể loại không được để trống", "Thông Báo Lỗi");
-            }
+    
+    
+    public static boolean check(String TenLoai,String MoTa) {
+    if (TenLoai.trim().equals("")) {
+        ChuyenDoi_ThongBao.ThongBao_Loi("Tên thể loại không được để trống", "Thông Báo Lỗi");
+    }
 
-            if (TenLoai.trim().length() > 50) {
-                ChuyenDoi_ThongBao.ThongBao_Loi(" Tên thể loại không quá 50 ký tự", "Thông Báo Lỗi");
-                return false;
-            }
-            return true;
-         }
+    if (TenLoai.trim().length() > 50) {
+        ChuyenDoi_ThongBao.ThongBao_Loi(" Tên thể loại không quá 50 ký tự", "Thông Báo Lỗi");
+        return false;
+    }
+    return true;
+    }
     
     public static void DLTable(JTable Ten_table,ResultSet rs) {
         DefaultTableModel table = (DefaultTableModel)Ten_table.getModel();

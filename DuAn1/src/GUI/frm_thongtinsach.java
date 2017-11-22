@@ -432,8 +432,8 @@ public class frm_thongtinsach extends javax.swing.JFrame {
 
     private void txt_timkiemtheloaiKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_timkiemtheloaiKeyReleased
         String key = txt_timkiemtheloai.getText();
+ //       BLL.BLL_TheLoai.DLPopupMenu(Pmn_theloai, DAL.DAL_TheLoai.timkiemPmn(key));
         BLL.BLL_TheLoai.DLPopupMenu(Pmn_theloai, DAL.DAL_TheLoai.timkiemPmn(key));
-        
         
     }//GEN-LAST:event_txt_timkiemtheloaiKeyReleased
 
