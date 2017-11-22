@@ -454,7 +454,6 @@ public class frm_thongtinsach extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_formWindowClosing
 
-<<<<<<< HEAD
     private void btn_resetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_resetActionPerformed
         txt_gianhap.setText("");
         txt_giasach.setText("");
@@ -522,7 +521,7 @@ public class frm_thongtinsach extends javax.swing.JFrame {
                 break;
         }
     }//GEN-LAST:event_btn_saveActionPerformed
-=======
+
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton5ActionPerformed
@@ -534,7 +533,7 @@ public class frm_thongtinsach extends javax.swing.JFrame {
 //            
 //        }
     }//GEN-LAST:event_jButton3ActionPerformed
->>>>>>> d9eef767b6461ec6697b7f8d458086d45d330f94
+
 
     /**
      * @param args the command line arguments

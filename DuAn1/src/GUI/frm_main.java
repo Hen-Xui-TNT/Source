@@ -812,7 +812,7 @@ public class frm_main extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(1386, 749));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
+    public static int CNSach;
     private void btn_doanhthuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_doanhthuActionPerformed
         pnl_doanhthu pnl = new pnl_doanhthu();
         BLL_main.themtab("Doanh thu", tbn_main, pnl);
@@ -840,13 +840,12 @@ public class frm_main extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton19ActionPerformed
 
     private void jButton20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton20ActionPerformed
-<<<<<<< HEAD
+
         DuAn1.frm_TTsach.setVisible(true);
         CNSach = 2; 
-=======
+
         frm_thongtinsach frm = new frm_thongtinsach();
         frm.setVisible(true);
->>>>>>> d9eef767b6461ec6697b7f8d458086d45d330f94
     }//GEN-LAST:event_jButton20ActionPerformed
 
     private void btn_phanquyenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_phanquyenActionPerformed

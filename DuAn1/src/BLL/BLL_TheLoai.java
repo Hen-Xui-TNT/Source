@@ -5,27 +5,21 @@
  */
 package BLL;
 
-<<<<<<< HEAD
 import static BLL.BLL_TacGia.them;
 import DAL.DAL_TacGia;
 import DAL.DAL_TheLoai;
 import GUI.frm_thongtinsach;
 import static GUI.frm_thongtinsach.txt_timkiemtacgia;
 import java.awt.event.ActionEvent;
-=======
 import DAL.DAL_TheLoai;
 import DTO.DTO_TheLoai;
->>>>>>> d9eef767b6461ec6697b7f8d458086d45d330f94
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-<<<<<<< HEAD
 import javax.swing.JMenuItem;
 import javax.swing.JPopupMenu;
-=======
 import javax.swing.JTable;
->>>>>>> d9eef767b6461ec6697b7f8d458086d45d330f94
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -60,44 +54,36 @@ public class BLL_TheLoai {
         DefaultTableModel table = (DefaultTableModel)frm_thongtinsach.tbl_theloai.getModel();
        ResultSet rs = DAL_TheLoai.timkiemPmn(key);
         Object[] item = new Object[20];
-=======
- * @author Administrator
- */
-public class BLL_TheLoai {
-     public static boolean check(String TenLoai,String MoTa) {
-        if (TenLoai.trim().equals("")) {
-            ChuyenDoi_ThongBao.ThongBao_Loi("Tên thể loại không được để trống", "Thông Báo Lỗi");
-        }
+    }
+         public static boolean check(String TenLoai,String MoTa) {
+            if (TenLoai.trim().equals("")) {
+                ChuyenDoi_ThongBao.ThongBao_Loi("Tên thể loại không được để trống", "Thông Báo Lỗi");
+            }
 
-        if (TenLoai.trim().length() > 50) {
-            ChuyenDoi_ThongBao.ThongBao_Loi(" Tên thể loại không quá 50 ký tự", "Thông Báo Lỗi");
-            return false;
-        }
-        return true;
-     }
+            if (TenLoai.trim().length() > 50) {
+                ChuyenDoi_ThongBao.ThongBao_Loi(" Tên thể loại không quá 50 ký tự", "Thông Báo Lỗi");
+                return false;
+            }
+            return true;
+         }
+    
     public static void DLTable(JTable Ten_table,ResultSet rs) {
         DefaultTableModel table = (DefaultTableModel)Ten_table.getModel();
         Object[] item = new Object[4];
         table.setRowCount(0);
->>>>>>> d9eef767b6461ec6697b7f8d458086d45d330f94
         try {
             while(rs.next()){
                 item[0] = table.getRowCount() + 1;
                 item[1] = rs.getString("MaTheLoai");
                 item[2] = rs.getString("TenTheLoai");
-<<<<<<< HEAD
-=======
                 item[3] = rs.getString("GhiChu");
                 //them
->>>>>>> d9eef767b6461ec6697b7f8d458086d45d330f94
                 table.addRow(item);
             }
         } catch (SQLException ex) {
             Logger.getLogger(BLL_Quyen.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-<<<<<<< HEAD
-=======
     public static void them(String Ten,String MoTa) {
         boolean kiemtra = check(Ten, MoTa);
         if (kiemtra == true) {
@@ -122,8 +108,11 @@ public class BLL_TheLoai {
                 ChuyenDoi_ThongBao.ThongBao_Loi("ID Phải Là Số !!!" + e.getMessage(), "Lỗi Chuyển Đổi Dữ Liệu");
             }
         }
-        
     }
+    }
+        
+        
+    
 //    public static void xoa(String ID) {
 //        if (ID.equals("")) {
 //            ChuyenDoi_ThongBao.ThongBao_Loi("Chưa Nhập Mã thể loại !!!", "Lỗi Dữ Liệu");
@@ -136,5 +125,3 @@ public class BLL_TheLoai {
 //            }
 //        }
 //    }
->>>>>>> d9eef767b6461ec6697b7f8d458086d45d330f94
-}
