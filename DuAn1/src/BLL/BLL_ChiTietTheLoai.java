@@ -5,10 +5,46 @@
  */
 package BLL;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author HuyNhan
  */
 public class BLL_ChiTietTheLoai {
-    
+    public static void DLTable(JTable Ten_table,ResultSet rs) {
+        DefaultTableModel table = (DefaultTableModel)Ten_table.getModel();
+        Object[] item = new Object[20];
+        table.setRowCount(0);
+        try {
+            while(rs.next()){
+                item[0] = table.getRowCount() + 1;
+                item[1] = rs.getString("MaTheLoai");
+                item[2] = rs.getString("TenTheLoai");
+                table.addRow(item);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(BLL_Quyen.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    public static void Themrow(JTable Ten_table,ResultSet rs) {
+        DefaultTableModel table = (DefaultTableModel)Ten_table.getModel();
+        Object[] item = new Object[20];
+        System.out.println("Đến đây rùi nè !!!");
+        try {
+            while(rs.next()){
+                item[0] = table.getRowCount() + 1;
+                item[1] = rs.getString("MaTheLoai");
+                item[2] = rs.getString("TenTheLoai");
+                table.addRow(item);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(BLL_Quyen.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 }

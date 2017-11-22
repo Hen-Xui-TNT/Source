@@ -8,6 +8,9 @@ import BLL.ChuyenDoi_ThongBao;
 import DTO.DTO_TacGia;
 import DAL.DAL_TacGia;
 import DAL.DateFormatString;
+import GUI.frm_thongtinsach;
+import static GUI.frm_thongtinsach.Pmn_tacgia;
+import static GUI.frm_thongtinsach.txt_timkiemtacgia;
 import java.awt.Color;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -20,6 +23,11 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
+import java.awt.PopupMenu;
+import java.awt.event.ActionEvent;
+import java.awt.event.MouseListener;
+import javax.swing.JMenuItem;
+import javax.swing.JPopupMenu;
 /**
  *
  * @author Yuuki
@@ -152,4 +160,43 @@ public class BLL_TacGia {
      
         return rs;    // Lựa chọn là No       
      }
+    
+    public static void DLPopupMenu(JPopupMenu Ten,ResultSet rs){
+        Ten.removeAll();// set lại số dòng của bảng về 0
+        try {
+            while(rs.next()){
+                JMenuItem MN = new JMenuItem(rs.getString("TenTacGia"));
+                Ten.add(MN);
+                MN.addActionListener(new java.awt.event.ActionListener() {
+                    @Override
+                    public void actionPerformed(java.awt.event.ActionEvent evt) {
+                        MNactionPerformed(evt);
+                    }
+
+                    private void MNactionPerformed(ActionEvent evt) {
+                        them(evt.getActionCommand());
+                    }
+                });
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+        Ten.show(txt_timkiemtacgia, 0, 25);
+    }
+    public static void them(String key) {
+        DefaultTableModel table = (DefaultTableModel)frm_thongtinsach.tbl_tacgia.getModel();
+       ResultSet rs = DAL_TacGia.timkiemPmn(key);
+        Object[] item = new Object[20];
+        try {
+            while(rs.next()){
+                item[0] = table.getRowCount() + 1;
+                item[1] = rs.getString("MaTacGia");
+                item[2] = rs.getString("TenTacGia");
+                table.addRow(item);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(BLL_Quyen.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
 }

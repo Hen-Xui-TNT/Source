@@ -17,6 +17,7 @@ public static DAL.DAL_DBConnection conn = new DAL_DBConnection();
     /**
      * @param args the command line arguments
      */
+     public static frm_thongtinsach frm_TTsach = new frm_thongtinsach();
     public static void main(String[] args) {
         // TODO code application logic here
         frm_main frm = new frm_main();

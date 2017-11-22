@@ -99,6 +99,11 @@ public class DTO_TacGia {
         this.NoiSinh = NoiSinh;
         this.GhiChu = GhiChu;
     }
+
+    public DTO_TacGia(int MaTacGia, String TenTacGia) {
+        this.MaTacGia = MaTacGia;
+        this.TenTacGia = TenTacGia;
+    }
     
     
 }
