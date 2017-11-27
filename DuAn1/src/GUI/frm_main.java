@@ -601,6 +601,8 @@ public class frm_main extends javax.swing.JFrame {
         btn_danhmuc.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_danhmucActionPerformed(evt);
+                    }
+        });
         btnSach.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         btnSach.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/research48x48.png"))); // NOI18N
         btnSach.setText("Danh mục");
