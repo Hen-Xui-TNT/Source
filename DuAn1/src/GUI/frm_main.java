@@ -1423,7 +1423,6 @@ public class frm_main extends javax.swing.JFrame {
     private javax.swing.JButton btn_themsach;
     private javax.swing.JButton btn_trasachgiahan;
     private javax.swing.Box.Filler filler1;
-    private javax.swing.Box.Filler filler1;
     private javax.swing.JButton jButton20;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
