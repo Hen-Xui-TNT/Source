@@ -84,7 +84,7 @@ public class pnl_giahan_trasach extends javax.swing.JPanel {
                 "STT", "Mã Phiếu Thuê", "Số Phiếu Thuê", "Độc Giả", "Nhân Viên", "Ngày Thuê", "Ngày Trả", "Tổng Tiền", "Ghi Chú"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tblPhieuThue_GHTS);
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Thông tin hóa đơn"));
 
