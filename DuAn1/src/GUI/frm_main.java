@@ -1146,7 +1146,7 @@ public class frm_main extends javax.swing.JFrame {
         
         BLL_PhieuNhap.FillDataToCBB_NhanVien(cbbNhanVien_GH);
         BLL_DocGia.FillDataToCBB_DocGia(cbbDocGia_GH);
-
+    }
     private void btn_nhacungcapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_nhacungcapActionPerformed
         
         if (BLL_login.quyenNhaCungCap.equals("0")) {
