@@ -58,7 +58,6 @@ public class pnl_giahan_trasach extends javax.swing.JPanel {
 
         PnlThongTinTacGia.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 51, 0)), "", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP));
 
-<<<<<<< HEAD
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -76,16 +75,13 @@ public class pnl_giahan_trasach extends javax.swing.JPanel {
         );
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
-=======
         tblPhieuThue_GHTS.setModel(new javax.swing.table.DefaultTableModel(
->>>>>>> 8fa8cecb98a0ac21f7aa75dffe0bbdc4215f970a
             new Object [][] {
 
             },
             new String [] {
                 "STT", "Mã Phiếu Thuê", "Số Phiếu Thuê", "Độc Giả", "Nhân Viên", "Ngày Thuê", "Ngày Trả", "Tổng Tiền", "Ghi Chú"
             }
-<<<<<<< HEAD
         ));
         jScrollPane1.setViewportView(jTable1);
 
@@ -157,7 +153,6 @@ public class pnl_giahan_trasach extends javax.swing.JPanel {
                                     .addComponent(txtSoPhieuThue3, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(txtSoPhieuThue4, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                 .addGap(42, 42, 42))
-=======
         ) {
             boolean[] canEdit = new boolean [] {
                 false, false, false, false, false, false, false, false, false
@@ -200,13 +195,11 @@ public class pnl_giahan_trasach extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtTimKiem_GH, javax.swing.GroupLayout.PREFERRED_SIZE, 798, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
->>>>>>> 8fa8cecb98a0ac21f7aa75dffe0bbdc4215f970a
         );
         PnlThongTinTacGiaLayout.setVerticalGroup(
             PnlThongTinTacGiaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PnlThongTinTacGiaLayout.createSequentialGroup()
                 .addContainerGap()
-<<<<<<< HEAD
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblMaPhieuThue, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtThanhTien, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -242,13 +235,11 @@ public class pnl_giahan_trasach extends javax.swing.JPanel {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblGhiChu, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtSoPhieuThue4, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-=======
                 .addGroup(PnlThongTinTacGiaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblUser4, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtTimKiem_GH, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
->>>>>>> 8fa8cecb98a0ac21f7aa75dffe0bbdc4215f970a
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
