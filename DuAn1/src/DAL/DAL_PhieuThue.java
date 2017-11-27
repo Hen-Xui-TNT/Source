@@ -25,7 +25,7 @@ public class DAL_PhieuThue {
     }
 
     public static int Them_PhieuThue(DTO_PhieuThue item) {
-        String query = "set dateformat dmy insert into PhieuThue values(" + item.getSoPhieuThue() + "," + item.getMaDocGia() + "," + item.getMaNhanVien() + ""
+        String query = "set dateformat dmy insert into PhieuThue values('" + item.getSoPhieuThue() + "'," + item.getMaDocGia() + "," + item.getMaNhanVien() + ""
                 + ",'" + item.getNgayThue() + "','" + item.getNgayTra() + "'," + item.getTongTien() + ",N'" + item.getGhiChu() + "' )";
         return DuAn1.conn.ExcuteNonQuery(query);
     }

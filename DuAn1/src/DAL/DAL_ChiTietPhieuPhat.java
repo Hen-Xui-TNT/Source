@@ -21,7 +21,7 @@ public class DAL_ChiTietPhieuPhat {
     }
  public static int Them_ChiTietPhieuPhat(DTO_ChiTietPhieuPhat item){
      String query ="set dateformat dmy insert into ChiTietPhieuPhat values( " +item.getMaPhieuPhat()+","
-             +item.getMaSach()+",N'"+item.getLoiPhat()+"',"+item.getTienPhat()+","
+             +item.getMaSach()+","+item.getLoiPhat()+","+item.getTienPhat()+","
              +item.getSoLuong()+"," +item.getThanhTien()+",N'"+item.getGhiChu()+"')";
      return DuAn1.conn.ExcuteNonQuery(query);
  }
@@ -33,7 +33,7 @@ public class DAL_ChiTietPhieuPhat {
          String query = "set dateformat dmy update ChiTietPhieuPhat set "+
                "MaPhieuPhat  = "+item.getMaPhieuPhat()+","+
                "MaSach = "+item.getMaSach()+","+
-               "LoiPhat   = N'"+item.getLoiPhat()+ "',"+
+               "LoiPhat   = "+item.getLoiPhat()+ ","+
                "TienPhat  = "+item.getTienPhat()+","+
                "SoLuong   = "+item.getSoLuong()+","+
                "ThanhTien = "+item.getThanhTien()+","+
@@ -41,5 +41,10 @@ public class DAL_ChiTietPhieuPhat {
               "where MaChiTietPhieuPhat = "+ item.getMaChiTietPhieuPhat();
         return DuAn1.conn.ExcuteNonQuery(query);
     }
-   
+    public static ResultSet getAllChiTietPhieuPhat(String MaSP){
+          
+        String query = "Select * from Sach where MaSach = '"+ MaSP+"'";
+        
+         return GUI.DuAn1.conn.ExcuteQuerySelect(query);
+        }
 }

@@ -22,11 +22,16 @@ public class DAL_NhanVien {
         String query = "select TenQuyen, MaQuyen from Quyen";
         return DuAn1.conn.ExcuteQuerySelect(query);
     }
+        
+            public static ResultSet GetAllCombobox_TenNV() {
+        String query = "select TenNhanVien, MaNhanVien from NhanVien";
+        return DuAn1.conn.ExcuteQuerySelect(query);
+    }
  public static int Them_NhanVien(DTO_NhanVien item){
-     String query ="set dateformat dmy insert into NhanVien values( N'" +item.getTenNV()+"',N'"
+     String query ="set dateformat dmy insert into NhanVien values( N'" +item.getTenNV()+"','"
               +item.getTenDangNhap()+"','"+item.getMatKhau()+"',"
-             +item.getMaQuyen()+","+item.getLuong()+",'"+item.getNgaySinh()+"','"+",'"
-             +item.getNgayLam()+"',"+item.getGioiTinh()+",'"+item.getCMND()+"'"
+             +item.getMaQuyen()+","+item.getLuong()+",'"+item.getNgaySinh()+"','"
+             +item.getNgayLam()+"'," +item.getGioiTinh()+ ",'"+item.getCMND()+"','"
              +item.getSoDienThoai()+"',N'"+item.getDiaChi()+"',N'"+item.getGhiChu()+"')";
      return DuAn1.conn.ExcuteNonQuery(query);
  }
@@ -37,7 +42,7 @@ public class DAL_NhanVien {
    public static int Update_NhanVien(DTO_NhanVien item){
          String query = "set dateformat dmy update NhanVien set "+
                "TenNhanVien  = N'"+item.getTenNV()+"',"+
-               "TenDangNhap = N'"+item.getTenDangNhap()+"',"+
+               "TenDangNhap = '"+item.getTenDangNhap()+"',"+
                "MatKhau   = '"+item.getGioiTinh()+ "',"+
                "MaQuyen    = "+item.getMaQuyen()+","+
                "Luong   = "+item.getLuong()+ ","+

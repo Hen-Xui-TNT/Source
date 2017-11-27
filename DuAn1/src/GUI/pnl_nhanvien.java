@@ -5,8 +5,11 @@
  */
 package GUI;
 
+import BLL.BLL_Combobox;
 import BLL.BLL_NhanVien;
+import BLL.ChuyenDoi_ThongBao;
 import DAL.DAL_NhanVien;
+import DAL.MyCombobox;
 
 /**
  *
@@ -201,6 +204,11 @@ public class pnl_nhanvien extends javax.swing.JPanel {
 
         jButton5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton5.setText("Sửa");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         jButton6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton6.setText("Reset");
@@ -519,6 +527,23 @@ public class pnl_nhanvien extends javax.swing.JPanel {
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         // TODO add your handling code here:
+         String maloai = (String)(BLL_Combobox.getSelectedItemID_Yuu(cbbQuyen));
+         BLL_NhanVien.Them(
+                 txtTenNV.getText(),
+                 txtTenDangNhap.getText(),
+                 txtMatKhau.getText(),
+                 maloai,
+                 txtLuong.getText(),
+                 txtNgaySinh.getText(),
+                 txtNgayLam.getText(),
+                 cbbGioiTinh.getSelectedIndex(),
+                 txtCMND.getText(),
+                 txtSDT.getText(),
+                 txtDiaChi.getText(),
+                 txtGhiChu.getText());
+         
+        BLL.BLL_NhanVien.DuLieuDatabase_Table(tblnhanvien,DAL.DAL_NhanVien.GetAll());
+
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void tblnhanvienMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblnhanvienMouseClicked
@@ -540,7 +565,7 @@ public class pnl_nhanvien extends javax.swing.JPanel {
         String MaQuyen = tblnhanvien.getValueAt(viTriDong, 5).toString();
         BLL.BLL_Combobox.setSelectedCombobox(cbbQuyen, MaQuyen);
         
-        String Luong = tblnhanvien.getValueAt(viTriDong, 6).toString();
+        String Luong = ChuyenDoi_ThongBao.TienTeVeString(tblnhanvien.getValueAt(viTriDong, 6).toString());
         txtLuong.setText(Luong);
         
         String NgaySinh = tblnhanvien.getValueAt(viTriDong, 7).toString();
@@ -568,6 +593,28 @@ public class pnl_nhanvien extends javax.swing.JPanel {
 
         
     }//GEN-LAST:event_tblnhanvienMouseClicked
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+           String maloai = (String)(BLL_Combobox.getSelectedItemID_Yuu(cbbQuyen));
+         BLL_NhanVien.Sua(
+                 txtMaNV.getText(),
+                 txtTenNV.getText(),
+                 txtTenDangNhap.getText(),
+                 txtMatKhau.getText(),
+                 maloai,
+                 txtLuong.getText(),
+                 txtNgaySinh.getText(),
+                 txtNgayLam.getText(),
+                 cbbGioiTinh.getSelectedIndex(),
+                 txtCMND.getText(),
+                 txtSDT.getText(),
+                 txtDiaChi.getText(),
+                 txtGhiChu.getText());
+         
+        BLL.BLL_NhanVien.DuLieuDatabase_Table(tblnhanvien,DAL.DAL_NhanVien.GetAll());
+        
+    }//GEN-LAST:event_jButton5ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

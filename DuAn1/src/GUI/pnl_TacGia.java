@@ -4,8 +4,16 @@
  * and open the template in the editor.
  */
 package GUI;
+import BLL.BLL_Combobox;
+import BLL.BLL_TacGia;
+import BLL.BLL_TacGia;
 import BLL.BLL_TacGia;
 import DAL.DAL_TacGia;
+import DAL.DAL_TacGia;
+import DAL.DAL_TacGia;
+import java.util.ArrayList;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -14,7 +22,7 @@ import DAL.DAL_TacGia;
 public class pnl_TacGia extends javax.swing.JPanel {
 
     /**
-     * Creates new form GUI_DocGia
+     * Creates new form GUI_TacGia
      */
     public pnl_TacGia() {
         initComponents();
@@ -45,13 +53,14 @@ public class pnl_TacGia extends javax.swing.JPanel {
         lblUser6 = new javax.swing.JLabel();
         txtNoiSinh = new javax.swing.JTextField();
         lblUser7 = new javax.swing.JLabel();
-        txtGhiChu = new javax.swing.JTextField();
         cbbGioiTinh = new javax.swing.JComboBox<>();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        txtGhiChu = new javax.swing.JTextPane();
         jPanel3 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        btnSua = new javax.swing.JButton();
+        btnXoa = new javax.swing.JButton();
+        btnLamMoi = new javax.swing.JButton();
+        btnThem = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(204, 204, 204));
 
@@ -136,9 +145,9 @@ public class pnl_TacGia extends javax.swing.JPanel {
         lblUser7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblUser7.setText("Ghi Chú");
 
-        txtGhiChu.setPreferredSize(new java.awt.Dimension(6, 32));
-
         cbbGioiTinh.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nam", "Nữ" }));
+
+        jScrollPane2.setViewportView(txtGhiChu);
 
         javax.swing.GroupLayout jPanel24Layout = new javax.swing.GroupLayout(jPanel24);
         jPanel24.setLayout(jPanel24Layout);
@@ -167,8 +176,8 @@ public class pnl_TacGia extends javax.swing.JPanel {
                         .addGroup(jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtNoiSinh, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 197, Short.MAX_VALUE)
                             .addComponent(txtNgaySinh, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(txtGhiChu, javax.swing.GroupLayout.DEFAULT_SIZE, 197, Short.MAX_VALUE)
-                            .addComponent(cbbGioiTinh, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(cbbGioiTinh, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jScrollPane2))))
                 .addContainerGap())
         );
         jPanel24Layout.setVerticalGroup(
@@ -198,27 +207,50 @@ public class pnl_TacGia extends javax.swing.JPanel {
                 .addGroup(jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtNoiSinh, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblUser6, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(24, 24, 24)
                 .addGroup(jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblUser7, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtGhiChu, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(80, 80, 80))
+                    .addGroup(jPanel24Layout.createSequentialGroup()
+                        .addGap(24, 24, 24)
+                        .addComponent(lblUser7, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel24Layout.createSequentialGroup()
+                        .addGap(32, 32, 32)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(44, 44, 44))
         );
 
         jPanel3.setBackground(new java.awt.Color(204, 204, 204));
         jPanel3.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jButton1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jButton1.setText("Sửa");
+        btnSua.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        btnSua.setText("Sửa");
+        btnSua.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSuaActionPerformed(evt);
+            }
+        });
 
-        jButton2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jButton2.setText("Xóa");
+        btnXoa.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        btnXoa.setText("Xóa");
+        btnXoa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnXoaActionPerformed(evt);
+            }
+        });
 
-        jButton3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jButton3.setText("Cập nhập");
+        btnLamMoi.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        btnLamMoi.setText("Làm mới");
+        btnLamMoi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLamMoiActionPerformed(evt);
+            }
+        });
 
-        jButton4.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jButton4.setText("Thêm");
+        btnThem.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        btnThem.setText("Thêm");
+        btnThem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnThemActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -226,13 +258,13 @@ public class pnl_TacGia extends javax.swing.JPanel {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap(68, Short.MAX_VALUE)
-                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnThem, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(76, 76, 76)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnSua, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnXoa, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(76, 76, 76)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnLamMoi, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(86, 86, 86))
         );
         jPanel3Layout.setVerticalGroup(
@@ -240,10 +272,10 @@ public class pnl_TacGia extends javax.swing.JPanel {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnSua, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnXoa, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnLamMoi, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnThem, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -281,7 +313,7 @@ public class pnl_TacGia extends javax.swing.JPanel {
     private void tblTacGiaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblTacGiaMouseClicked
         // TODO add your handling code here:
         
-           int viTriDong = tblTacGia.getSelectedRow();
+        int viTriDong = tblTacGia.getSelectedRow();
 
         String ID = tblTacGia.getValueAt(viTriDong, 1).toString();
         txtMaTacGia.setText(ID);
@@ -309,19 +341,80 @@ public class pnl_TacGia extends javax.swing.JPanel {
         
     }//GEN-LAST:event_tblTacGiaMouseClicked
 
+    private void btnThemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemActionPerformed
+        // TODO add your handling code here:
+     
+              BLL_TacGia.Them(
+                  txtTenTG.getText(),  
+                  txtButDanh.getText(),
+                  cbbGioiTinh.getSelectedIndex(),
+                  txtNgaySinh.getText(),
+                  txtNoiSinh.getText(),
+                  txtGhiChu.getText());
+         
+        BLL.BLL_TacGia.DuLieuDatabase_Table(tblTacGia, DAL_TacGia.GetAll());
+    }//GEN-LAST:event_btnThemActionPerformed
+
+    private void btnSuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSuaActionPerformed
+        // TODO add your handling code here:
+         BLL_TacGia.Sua(
+                  txtMaTacGia.getText(),
+                  txtTenTG.getText(),  
+                  txtButDanh.getText(),
+                  cbbGioiTinh.getSelectedIndex(),
+                  txtNgaySinh.getText(),
+                  txtNoiSinh.getText(),
+                  txtGhiChu.getText());
+         
+        BLL.BLL_TacGia.DuLieuDatabase_Table(tblTacGia, DAL_TacGia.GetAll());
+    }//GEN-LAST:event_btnSuaActionPerformed
+
+    private void btnXoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXoaActionPerformed
+        // TODO add your handling code here:
+        
+         int LuaChon = JOptionPane.showConfirmDialog(new JFrame(),"Thông Báo xác nhận",
+                 "Bạn có chắc chắn xóa không?" , JOptionPane.YES_NO_OPTION);
+       
+       if (LuaChon == JOptionPane.YES_OPTION){
+           
+        int CacDongDuocChon[] = tblTacGia.getSelectedRows();
+        ArrayList<String> mangMaLoai = new ArrayList<>();
+        
+        for( int i = 0; i< CacDongDuocChon.length; i++){
+            mangMaLoai.add(tblTacGia.getValueAt(CacDongDuocChon[i], 1).toString());
+        }
+        // gọi hàm xóa 
+        BLL_TacGia.Xoa(mangMaLoai);        
+        
+        BLL.BLL_TacGia.DuLieuDatabase_Table(tblTacGia,DAL_TacGia.GetAll());
+       }
+    }//GEN-LAST:event_btnXoaActionPerformed
+
+    private void btnLamMoiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLamMoiActionPerformed
+        // TODO add your handling code here:
+        txtMaTacGia.setText("");
+        txtTenTG.setText("");
+        txtButDanh.setText("");
+        txtNgaySinh.setText("");
+        txtNoiSinh.setText("");
+        txtGhiChu.setText("");
+       
+    }//GEN-LAST:event_btnLamMoiActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel MaNV4;
     private javax.swing.JLabel MaNV5;
     private javax.swing.JPanel PnlThongTinTacGia;
+    private javax.swing.JButton btnLamMoi;
+    private javax.swing.JButton btnSua;
+    private javax.swing.JButton btnThem;
+    private javax.swing.JButton btnXoa;
     private javax.swing.JComboBox<String> cbbGioiTinh;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JPanel jPanel24;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane12;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lblUser2;
     private javax.swing.JLabel lblUser3;
     private javax.swing.JLabel lblUser5;
@@ -329,7 +422,7 @@ public class pnl_TacGia extends javax.swing.JPanel {
     private javax.swing.JLabel lblUser7;
     public static javax.swing.JTable tblTacGia;
     private javax.swing.JTextField txtButDanh;
-    private javax.swing.JTextField txtGhiChu;
+    private javax.swing.JTextPane txtGhiChu;
     private javax.swing.JTextField txtMaTacGia;
     private javax.swing.JTextField txtNgaySinh;
     private javax.swing.JTextField txtNoiSinh;

@@ -132,13 +132,11 @@ public class BLL_NhaCungCap {
              }
          }   
          
-         
        if (Check(  TenNCC, DiaChi, SDT, Gmail, GhiChu)){
           
             DTO_NhaCungCap item = new DTO_NhaCungCap(TenNCC,DiaChi,SDT,Gmail,GhiChu);
             
             System.out.println("Sửa thành công");
-           ChuyenDoi_ThongBao.ThongBao_ThanhCong("Đã sửa thành công !","Thông Báo Thành công");
            
           return DAL_NhaCungCap.Update_NhaCungCap(item);  
         }
@@ -147,7 +145,7 @@ public class BLL_NhaCungCap {
       /*------------------------------------------------*/    
       
       /*------------------------------------------------*/  
-       public static int Xoa_PT (ArrayList<String> mangMaLoai){
+       public static int Xoa (ArrayList<String> mangMaLoai){
          int rs =-1;
           for( int i = 0; i <mangMaLoai.size(); i++){
            String maLoai = mangMaLoai.get(i);
@@ -171,4 +169,10 @@ public class BLL_NhaCungCap {
      
         return rs;    // Lựa chọn là No       
      }
+       
+       
+        public static DTO_NhaCungCap LayTatCaNCCTheoMaNCC(String Ma){
+        DTO_NhaCungCap kh = DAL_NhaCungCap.LayDuLieuNCC(Ma);
+        return kh;
+    }
 }

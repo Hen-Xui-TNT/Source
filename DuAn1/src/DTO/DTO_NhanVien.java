@@ -17,7 +17,7 @@ public class DTO_NhanVien {
     String TenDangNhap;
     String MatKhau;
     int MaQuyen;
-    Double Luong;
+    double Luong;
     String NgaySinh;
     String NgayLam;
     int GioiTinh;
@@ -66,11 +66,11 @@ public class DTO_NhanVien {
         this.MaQuyen = MaQuyen;
     }
 
-    public Double getLuong() {
+    public double getLuong() {
         return Luong;
     }
 
-    public void setLuong(Double Luong) {
+    public void setLuong(double Luong) {
         this.Luong = Luong;
     }
 
@@ -130,7 +130,7 @@ public class DTO_NhanVien {
         this.GhiChu = GhiChu;
     }
 
-    public DTO_NhanVien(int MaNV, String TenNV, String TenDangNhap, String MatKhau, int MaQuyen, Double Luong, String NgaySinh, String NgayLam, int GioiTinh, String CMND, String DiaChi, String SoDienThoai, String GhiChu) {
+    public DTO_NhanVien(int MaNV, String TenNV, String TenDangNhap, String MatKhau, int MaQuyen, double Luong, String NgaySinh, String NgayLam, int GioiTinh, String CMND, String DiaChi, String SoDienThoai, String GhiChu) {
         this.MaNV = MaNV;
         this.TenNV = TenNV;
         this.TenDangNhap = TenDangNhap;
@@ -146,7 +146,7 @@ public class DTO_NhanVien {
         this.GhiChu = GhiChu;
     }
 
-    public DTO_NhanVien(String TenNV, String TenDangNhap, String MatKhau, int MaQuyen, Double Luong, String NgaySinh, String NgayLam, int GioiTinh, String CMND, String DiaChi, String SoDienThoai, String GhiChu) {
+    public DTO_NhanVien(String TenNV, String TenDangNhap, String MatKhau, int MaQuyen, double Luong, String NgaySinh, String NgayLam, int GioiTinh, String CMND, String DiaChi, String SoDienThoai, String GhiChu) {
         this.TenNV = TenNV;
         this.TenDangNhap = TenDangNhap;
         this.MatKhau = MatKhau;

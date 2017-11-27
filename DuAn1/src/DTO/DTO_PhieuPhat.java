@@ -16,14 +16,14 @@ public class DTO_PhieuPhat {
     String SoPhieuPhat;
     int MaDocGia;
     int MaNhanVien;
-    Date NgayPhat;
+    String NgayPhat;
     double TongTien;
     String GhiChu;
 
     public DTO_PhieuPhat() {
     }
 
-    public DTO_PhieuPhat(int MaPhieuPhat, String SoPhieuPhat, int MaDocGia, int MaNhanVien, Date NgayPhat, double TongTien, String GhiChu) {
+    public DTO_PhieuPhat(int MaPhieuPhat, String SoPhieuPhat, int MaDocGia, int MaNhanVien, String NgayPhat, double TongTien, String GhiChu) {
         this.MaPhieuPhat = MaPhieuPhat;
         this.SoPhieuPhat = SoPhieuPhat;
         this.MaDocGia = MaDocGia;
@@ -33,7 +33,7 @@ public class DTO_PhieuPhat {
         this.GhiChu = GhiChu;
     }
 
-    public DTO_PhieuPhat(String SoPhieuPhat, int MaDocGia, int MaNhanVien, Date NgayPhat, double TongTien, String GhiChu) {
+    public DTO_PhieuPhat(String SoPhieuPhat, int MaDocGia, int MaNhanVien, String NgayPhat, double TongTien, String GhiChu) {
         this.SoPhieuPhat = SoPhieuPhat;
         this.MaDocGia = MaDocGia;
         this.MaNhanVien = MaNhanVien;
@@ -74,11 +74,11 @@ public class DTO_PhieuPhat {
         this.MaNhanVien = MaNhanVien;
     }
 
-    public Date getNgayPhat() {
+    public String getNgayPhat() {
         return NgayPhat;
     }
 
-    public void setNgayPhat(Date NgayPhat) {
+    public void setNgayPhat(String NgayPhat) {
         this.NgayPhat = NgayPhat;
     }
 

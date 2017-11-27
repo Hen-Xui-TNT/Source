@@ -17,15 +17,15 @@ public class DTO_PhieuThue {
     String SoPhieuThue;
      int MaDocGia;
      int MaNhanVien;
-    Date NgayThue; 
-    Date NgayTra;
+    String NgayThue; 
+    String NgayTra;
     double TongTien;
     String GhiChu;
 
     public DTO_PhieuThue() {
     }
 
-    public DTO_PhieuThue(int MaPhieuThue, String SoPhieuThue, int MaDocGia, int MaNhanVien, Date NgayThue, Date NgayTra, double TongTien, String GhiChu) {
+    public DTO_PhieuThue(int MaPhieuThue, String SoPhieuThue, int MaDocGia, int MaNhanVien, String NgayThue, String NgayTra, double TongTien, String GhiChu) {
         this.MaPhieuThue = MaPhieuThue;
         this.SoPhieuThue = SoPhieuThue;
         this.MaDocGia = MaDocGia;
@@ -36,7 +36,7 @@ public class DTO_PhieuThue {
         this.GhiChu = GhiChu;
     }
 
-    public DTO_PhieuThue(String SoPhieuThue, int MaDocGia, int MaNhanVien, Date NgayThue, Date NgayTra, double TongTien, String GhiChu) {
+    public DTO_PhieuThue(String SoPhieuThue, int MaDocGia, int MaNhanVien, String NgayThue, String NgayTra, double TongTien, String GhiChu) {
         this.SoPhieuThue = SoPhieuThue;
         this.MaDocGia = MaDocGia;
         this.MaNhanVien = MaNhanVien;
@@ -78,19 +78,19 @@ public class DTO_PhieuThue {
         this.MaNhanVien = MaNhanVien;
     }
 
-    public Date getNgayThue() {
+    public String getNgayThue() {
         return NgayThue;
     }
 
-    public void setNgayThue(Date NgayThue) {
+    public void setNgayThue(String NgayThue) {
         this.NgayThue = NgayThue;
     }
 
-    public Date getNgayTra() {
+    public String getNgayTra() {
         return NgayTra;
     }
 
-    public void setNgayTra(Date NgayTra) {
+    public void setNgayTra(String NgayTra) {
         this.NgayTra = NgayTra;
     }
 

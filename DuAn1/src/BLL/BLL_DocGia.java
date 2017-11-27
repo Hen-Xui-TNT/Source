@@ -180,10 +180,11 @@ public class BLL_DocGia {
            }else{
                 try{
                      System.out.println("Xóa thành công");
+                      
                       DAL_DocGia.Delete_DocGia(maLoai);
                 }
                 catch(Exception e){
-                      ChuyenDoi_ThongBao.ThongBao_ThanhCong("Thông Báo Lỗi", "Xóa không thành công");
+                      ChuyenDoi_ThongBao.ThongBao_Loi("Thông Báo Lỗi", "Xóa không thành công");
                  
                 }
             }
@@ -191,4 +192,9 @@ public class BLL_DocGia {
      
         return rs;    // Lựa chọn là No       
      }
+    
+     public static DTO_DocGia LayTatCaKDocGiaTheoMaDG(String MaDG){
+        DTO_DocGia kh = DAL_DocGia.LayDuLieuDocGiaTheoMaDG(MaDG);
+        return kh;
+    }
 }

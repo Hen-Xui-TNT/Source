@@ -44,4 +44,10 @@ public class DAL_ChiTietPhieuThue {
                 + "or MaChiTietPhieuThue like '%" + seach + "%' ";
         return DuAn1.conn.ExcuteQuerySelect(seach1);
     }
+    public static ResultSet getAllChiTietPhieuThue(String MaSP){
+          
+        String query = "Select * from Sach where MaSach = '"+ MaSP+"'";
+        
+         return GUI.DuAn1.conn.ExcuteQuerySelect(query);
+        }
 }

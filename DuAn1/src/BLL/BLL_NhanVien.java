@@ -60,17 +60,29 @@ public class BLL_NhanVien{
 //             }
 //    }
 //          
-//   if(NgaySinh.trim().equals("")){
-//            ChuyenDoi_ThongBao.ThongBao_Loi("Ngày sinh không được để trống","Thông Báo Lỗi");                  
-//        }else{
-//              try{
-//                   DateFormatString.getDate(NgaySinh);
-//              }
-//             catch(Exception e){
-//                     ChuyenDoi_ThongBao.ThongBao_Loi("Thông Báo Lỗi", "Ngày thuê phải là kiểu date");
-//              return false;
-//             }
-//          }
+   if(NgaySinh.trim().equals("")){
+            ChuyenDoi_ThongBao.ThongBao_Loi("Ngày sinh không được để trống","Thông Báo Lỗi");                  
+        }else{
+              try{
+                   DateFormatString.getDate(NgaySinh);
+              }
+             catch(Exception e){
+                     ChuyenDoi_ThongBao.ThongBao_Loi("Thông Báo Lỗi", "Ngày sinh phải là kiểu date");
+              return false;
+             }
+          }
+   
+    if(NgayLam.trim().equals("")){
+            ChuyenDoi_ThongBao.ThongBao_Loi("Ngày sinh không được để trống","Thông Báo Lỗi");                  
+        }else{
+              try{
+                   DateFormatString.getDate(NgayLam);
+              }
+             catch(Exception e){
+                     ChuyenDoi_ThongBao.ThongBao_Loi("Thông Báo Lỗi", "Ngày sinh phải là kiểu date");
+              return false;
+             }
+          }
 //          
 //    if(SDT.trim().length() > 11){
 //           ChuyenDoi_ThongBao.ThongBao_Loi("Thông Báo Lỗi", "Số điện thoại không quá 11 ký tự");
@@ -111,7 +123,7 @@ public class BLL_NhanVien{
                 item[3] = rs.getString("TenDangNhap");
                 item[4] = rs.getString("MatKhau"); 
                 item[5] = rs.getString("MaQuyen");             
-                item[6] = rs.getString("Luong");   
+                item[6] = ChuyenDoi_ThongBao.TienVietNam(rs.getDouble("Luong"));   
                 item[7] = rs.getString("NgaySinh");             
                 item[8] = rs.getString("NgayLam");   
                 item[9] = rs.getString("GioiTinh");

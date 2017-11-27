@@ -17,7 +17,7 @@ public class DTO_ChiTietPhieuPhat {
     int MaChiTietPhieuPhat;
     int MaPhieuPhat;
     int MaSach;
-    String LoiPhat;
+    double LoiPhat;
     double TienPhat;
     int SoLuong;
     double ThanhTien;
@@ -26,7 +26,7 @@ public class DTO_ChiTietPhieuPhat {
     public DTO_ChiTietPhieuPhat() {
     }
 
-    public DTO_ChiTietPhieuPhat(int MaChiTietPhieuPhat, int MaPhieuPhat, int MaSach, String LoiPhat, double TienPhat, int SoLuong, double ThanhTien, String GhiChu) {
+    public DTO_ChiTietPhieuPhat(int MaChiTietPhieuPhat, int MaPhieuPhat, int MaSach, double LoiPhat, double TienPhat, int SoLuong, double ThanhTien, String GhiChu) {
         this.MaChiTietPhieuPhat = MaChiTietPhieuPhat;
         this.MaPhieuPhat = MaPhieuPhat;
         this.MaSach = MaSach;
@@ -37,7 +37,7 @@ public class DTO_ChiTietPhieuPhat {
         this.GhiChu = GhiChu;
     }
 
-    public DTO_ChiTietPhieuPhat(int MaPhieuPhat, int MaSach, String LoiPhat, double TienPhat, int SoLuong, double ThanhTien, String GhiChu) {
+    public DTO_ChiTietPhieuPhat(int MaPhieuPhat, int MaSach, double LoiPhat, double TienPhat, int SoLuong, double ThanhTien, String GhiChu) {
         this.MaPhieuPhat = MaPhieuPhat;
         this.MaSach = MaSach;
         this.LoiPhat = LoiPhat;
@@ -71,11 +71,11 @@ public class DTO_ChiTietPhieuPhat {
         this.MaSach = MaSach;
     }
 
-    public String getLoiPhat() {
+    public double getLoiPhat() {
         return LoiPhat;
     }
 
-    public void setLoiPhat(String LoiPhat) {
+    public void setLoiPhat(double LoiPhat) {
         this.LoiPhat = LoiPhat;
     }
 
