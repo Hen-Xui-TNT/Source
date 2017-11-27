@@ -630,72 +630,68 @@ public class pnl_nhapkho extends javax.swing.JPanel {
 
     private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
         // TODO add your handling code here:
-        int row = tblPhieuNhap.getSelectedRow();   
-        // show hộp thoại xác nhận
-        int luachon =  JOptionPane.showConfirmDialog(new JFrame(), DuAn1.frm_Nhap, "Nhập thông tin cần sửa",
-                                                             JOptionPane.YES_NO_OPTION);
-                               
-        String maSp = tblPhieuNhap.getValueAt(row, 2).toString();
         
-        //lấy giá hiện tại trong cthd
-        double Gia = Double.parseDouble(DuAn1.frm_Nhap.txtGiaNhap.getText().toString());
+        
+        // Xóa dòng đag chọn và tạo lại dòng mới
+        int row = tblPhieuNhap.getSelectedRow();
+        DefaultTableModel table = (DefaultTableModel)tblPhieuNhap.getModel();
          
-                 
+         int SL = Integer.parseInt(table.getValueAt(row, 4).toString());
+         String maSp = table.getValueAt(row,2).toString();
+                
         DefaultTableModel tbModelSP = (DefaultTableModel)tbl_spnhap.getModel();
-         
-         
-        // Kiểm tra xem người dùng bấm yes hay no
-        if(luachon == JOptionPane.YES_OPTION){
-            //Lấy số lượng mua
-            
-            
-           for(int i = 0; i < tbModelSP.getRowCount(); i++){
+                
+        for(int i = 0; i < tbModelSP.getRowCount(); i++){
             String maSpBangSP = tbModelSP.getValueAt(i, 0).toString();
             if(maSpBangSP.equals(maSp)){
-       
-             
-            // lấy SL trong chi tiết( càn đổi)
-            System.out.println("sl sanco  "+  Integer.parseInt(tbl_spnhap.getValueAt(row, 2).toString()));
-            int SL = Integer.parseInt(tblPhieuNhap.getValueAt(row, 4).toString());
-            int sl = 0;
-            int soLuongMua = Integer.parseInt(DuAn1.frm_Nhap.spnSoLuongThue.getValue().toString());
-                System.out.println("sl_mua "+soLuongMua);
-            if(SL<soLuongMua){ // mua nhiều hơn
-                 sl =Integer.parseInt(tbl_spnhap.getValueAt(row, 2).toString())// lấy sl sách tro sách
-                + soLuongMua;
-                     System.out.println("sl   "+  sl);
-                     System.out.println("sl mua  "+  soLuongMua);
-                    
-            }else if (SL>soLuongMua){ // mua ít hơn
-//                 sl =Integer.parseInt(tbl_spnhap.getValueAt(row, 2).toString())// lấy sl sách tro sách
-//                +(SL - soLuongMua);//lấy sl trong frm_nhap
-//                  //Set lại giá trị số lượng trong Table Sản phẩm
-//                    System.out.println("sl   "+  sl);
-//                     System.out.println("sl mua  "+  soLuongMua);
-//                      System.out.println("sl sanco  "+  Integer.parseInt(tbl_spnhap.getValueAt(row, 2).toString()));
-                
-            }else{
-                
+                int soLuongBangSP = Integer.parseInt(tbModelSP.getValueAt(i, 2).toString());            
+                tbModelSP.setValueAt((soLuongBangSP - SL ), i, 2);
             }
-            tbModelSP.setValueAt(sl, i, 2);tbModelSP.setValueAt(sl, i, 2);
-              double Thanhtien = soLuongMua*Gia;  
-            // set lại giá trị thành tiền trong bảng chi tiết
-            tblPhieuNhap.setValueAt(BLL.ChuyenDoi_ThongBao.TienVietNam(Gia), row, 3);
-            tblPhieuNhap.setValueAt(soLuongMua, row, 4);
-            tblPhieuNhap.setValueAt(BLL.ChuyenDoi_ThongBao.TienVietNam(Thanhtien), row, 5);
-            tblPhieuNhap.setValueAt(DuAn1.frm_Nhap.txtGhiChu_CTPP.getText(), row, 6);
+            
+        }                
+        tblPhieuNhap.removeRowSelectionInterval(row, row);
+        BLL_PhieuNhap.RemoveRowInTable(tblPhieuNhap, row);
 
-            // tính cột tổng tiền
-            txtTongTien.setText(BLL_PhieuThue.TinhTongTien(tblPhieuNhap, 5) + "");
-            }
-
+        ////
         
+        int row1 = tbl_spnhap.getSelectedRow();
+        String MaSP = tbl_spnhap.getValueAt(row1, 0).toString();
+         
+        
+        // show hộp thoại xác nhận
+          int luachon =  JOptionPane.showConfirmDialog(new JFrame(), DuAn1.frm_Nhap, "Nhập thông tin ",
+                                                             JOptionPane.YES_NO_OPTION);
+       
+        // Kiểm tra xem người dùng bấm yes hay no
+            if(luachon == JOptionPane.YES_OPTION){
+           
+                
+                //Lấy số lượng cũ của sản phẩm
+                int soLuongCu = Integer.parseInt(tbl_spnhap.getValueAt(row1, 2).toString());
+                
+                //Lấy số lượng nhap
+                int soLuongMua = Integer.parseInt( DuAn1.frm_Nhap.spnSoLuongThue.getValue().toString());
+              
+                int sl = soLuongCu + soLuongMua;
+                
+                if(sl < 0 ){
+                    System.out.println("Số lượng bằng 0 ?");
+                    return;
+                }
+                //Set lại giá trị số lượng trong Table Sản phẩm
+                tbl_spnhap.setValueAt(sl, row1, 2);               
+                
+                 //     Đổ dữ liệu vào bảng Chi Tiết hóa đơn
+                 DefaultTableModel table1 = (DefaultTableModel)tblPhieuNhap.getModel();
+                 BLL_PhieuNhap.DuLieuDatabase_CTHD(table1, MaSP,DuAn1.frm_Nhap.txtGiaNhap.getText(),soLuongMua, DuAn1.frm_Nhap.txtGhiChu_CTPP.getText());
 
-        else{
-
-        }
-          }
-           }
+                 // tính cột tổng tiền
+                txtTongTien.setText(BLL_PhieuNhap.TinhTongTien(tblPhieuNhap, 5) + ""); 
+   
+            }
+        
+        
+        
     }//GEN-LAST:event_btnUpdateActionPerformed
 
     private void btnThanhToanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThanhToanActionPerformed
