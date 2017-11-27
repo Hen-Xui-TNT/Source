@@ -632,6 +632,8 @@ public class frm_main extends javax.swing.JFrame {
         btn_sachhong.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_sachhongActionPerformed(evt);
+                    }
+        });
         btnSachHong.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         btnSachHong.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Filesystem-file-broken32x32.png"))); // NOI18N
         btnSachHong.setText("Sách hỏng");
