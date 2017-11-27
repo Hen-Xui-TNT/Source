@@ -54,11 +54,7 @@ public class ChuyenDoi_ThongBao {
         //trả về giá trị sau khi chuyển đổi
         return ChuyenDoi;
     }
-<<<<<<< HEAD
     public static String TienDu(String tien, String Tongtien) {// tính tiền dư
-=======
-      public static String TienDu(String tien, String Tongtien) {
->>>>>>> 8fa8cecb98a0ac21f7aa75dffe0bbdc4215f970a
         double tiendu = 0;
         try {
             double tiennhan = Double.parseDouble(tien);
@@ -70,7 +66,6 @@ public class ChuyenDoi_ThongBao {
         String trave = ChuyenDoi_ThongBao.TienVietNam(tiendu);
         return trave;
     }
-<<<<<<< HEAD
     public static String TinhTongTien(JTable tableCTHD,int cotthanhtien) {// tính tổng tiền
         double tongtien = 0;
         for (int i = 0; i < tableCTHD.getRowCount(); i++) {
@@ -112,11 +107,5 @@ public class ChuyenDoi_ThongBao {
         //String xuatngay = datefm.format(date);
         return dinhDang;
     }
-
     
-    
-   
-    
-=======
->>>>>>> 8fa8cecb98a0ac21f7aa75dffe0bbdc4215f970a
 }

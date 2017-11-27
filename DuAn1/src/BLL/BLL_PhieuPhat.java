@@ -216,7 +216,7 @@ import static GUI.pnl_CT_PhieuPhat.cbbLoiPhat;
         tableModel.setRowCount(0);  //Set lại số dòng của bảng về 0
         try {
             //Lấy dữ liệu LoaiSanPham bằng hàm tìm kiếm bên DAL
-            ResultSet rs = DAL_Sach.Seach_Sach_Phieu(seach);
+            ResultSet rs = DAL_Sach.Seach_Sach(seach);
             while (rs.next()) {                
                 item[0] = rs.getString("MaSach");
                 item[1] = rs.getString("TenSach");
