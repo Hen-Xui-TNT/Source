@@ -647,7 +647,8 @@ public class pnl_nhapkho extends javax.swing.JPanel {
         // Kiểm tra xem người dùng bấm yes hay no
         if(luachon == JOptionPane.YES_OPTION){
             //Lấy số lượng mua
-                        
+            
+            
            for(int i = 0; i < tbModelSP.getRowCount(); i++){
             String maSpBangSP = tbModelSP.getValueAt(i, 0).toString();
             if(maSpBangSP.equals(maSp)){

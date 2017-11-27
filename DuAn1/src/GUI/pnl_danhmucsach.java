@@ -6,11 +6,7 @@
 package GUI;
 
 import BLL.BLL_Combobox;
-import BLL.BLL_sach;
-import BLL.ChuyenDoi_ThongBao;
 import GUI.frm_thongtinsach.*;
-import java.util.ArrayList;
-import java.util.Arrays;
 /**
  *
  * @author Huy Nhan
@@ -36,7 +32,7 @@ public class pnl_danhmucsach extends javax.swing.JPanel {
         jPanel1 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tbl_sach = new javax.swing.JTable();
-        txt_timkiem = new javax.swing.JTextField();
+        jTextField1 = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
@@ -80,15 +76,7 @@ public class pnl_danhmucsach extends javax.swing.JPanel {
             new String [] {
                 "STT", "Mã", "Tên Sách", "Số Lượng", "Tình Trạng", "Giá Sách", "Giá Nhập", "Nhà Xuất bản", "Mô Tả"
             }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
+        ));
         tbl_sach.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tbl_sachMouseClicked(evt);
@@ -106,12 +94,6 @@ public class pnl_danhmucsach extends javax.swing.JPanel {
             tbl_sach.getColumnModel().getColumn(7).setResizable(false);
             tbl_sach.getColumnModel().getColumn(8).setResizable(false);
         }
-
-        txt_timkiem.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                txt_timkiemKeyReleased(evt);
-            }
-        });
 
         jLabel2.setText("Nhập dữ liệu cần tìm kiếm (Tên tác giả, thể loại, tên sách, nhà xuất bản)");
 
@@ -131,14 +113,14 @@ public class pnl_danhmucsach extends javax.swing.JPanel {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addContainerGap(409, Short.MAX_VALUE))
-                    .addComponent(txt_timkiem)))
+                    .addComponent(jTextField1)))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txt_timkiem, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -159,11 +141,6 @@ public class pnl_danhmucsach extends javax.swing.JPanel {
 
         btn_xoa.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         btn_xoa.setText("Xóa");
-        btn_xoa.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_xoaActionPerformed(evt);
-            }
-        });
 
         btn_capnhap.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         btn_capnhap.setText("Cập nhập");
@@ -274,6 +251,11 @@ public class pnl_danhmucsach extends javax.swing.JPanel {
                 .addContainerGap(11, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(1, 1, 1)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(txt_masach, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(txt_tensach, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -298,24 +280,18 @@ public class pnl_danhmucsach extends javax.swing.JPanel {
                         .addGap(18, 18, 18)
                         .addComponent(txt_tinhtrangsach, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(1, 1, 1)
+                        .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(cbb_cttacgia, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(cbb_cttheloai, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(1, 1, 1)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(txt_masach, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addComponent(cbb_cttheloai, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -427,7 +403,7 @@ public class pnl_danhmucsach extends javax.swing.JPanel {
         DuAn1.frm_TTsach.txt_tensach.setText(tbl_sach.getValueAt(viTriDong, 2).toString());
         BLL.BLL_ChiTietTacGia.DLTable(GUI.frm_thongtinsach.tbl_tacgia, DAL.DAL_ChiTietTacGia.DoDLCombobox(tbl_sach.getValueAt(viTriDong, 1).toString()));
         BLL.BLL_ChiTietTheLoai.DLTable(GUI.frm_thongtinsach.tbl_theloai, DAL.DAL_ChiTietTheLoai.DoDLCombobox(tbl_sach.getValueAt(viTriDong, 1).toString()));
-        DuAn1.frm_TTsach.txt_soluong.setText(tbl_sach.getValueAt(viTriDong, 3).toString());
+       DuAn1.frm_TTsach.txt_soluong.setText(tbl_sach.getValueAt(viTriDong, 3).toString());
         DuAn1.frm_TTsach.txt_tinhtrangsach.setText(tbl_sach.getValueAt(viTriDong, 4).toString());
         DuAn1.frm_TTsach.txt_gianhap.setText(tbl_sach.getValueAt(viTriDong, 5).toString());
         DuAn1.frm_TTsach.txt_giasach.setText(tbl_sach.getValueAt(viTriDong, 6).toString());
@@ -450,20 +426,6 @@ public class pnl_danhmucsach extends javax.swing.JPanel {
         txt_mota.setText("");
         BLL.BLL_sach.DLTable(tbl_sach, DAL.DAL_Sach.GetAll());
     }//GEN-LAST:event_btn_capnhapActionPerformed
-
-    private void btn_xoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_xoaActionPerformed
-        //xóa thông tin trong chi tiết tác giả
-        BLL.BLL_ChiTietTacGia.xoa(txt_masach.getText());
-        // xóa thông tin trong chi tiêt thể loại
-        BLL.BLL_ChiTietTheLoai.xoa(txt_masach.getText());
-        //xóa sách
-        DAL.DAL_Sach.Xoa_Sach(txt_masach.getText());
-        BLL_sach.DLTable(tbl_sach, DAL.DAL_Sach.GetAll());
-    }//GEN-LAST:event_btn_xoaActionPerformed
-
-    private void txt_timkiemKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_timkiemKeyReleased
-        BLL_sach.DLTable(tbl_sach, DAL.DAL_Sach.Seach_Sach(txt_timkiem.getText()));
-    }//GEN-LAST:event_txt_timkiemKeyReleased
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_capnhap;
@@ -489,6 +451,7 @@ public class pnl_danhmucsach extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane1;
     public static javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JTextField jTextField1;
     public static javax.swing.JTable tbl_sach;
     private javax.swing.JTextField txt_gianhap;
     private javax.swing.JTextField txt_giasach;
@@ -497,7 +460,6 @@ public class pnl_danhmucsach extends javax.swing.JPanel {
     private javax.swing.JTextField txt_nhaxuatban;
     private javax.swing.JTextField txt_soluong;
     private javax.swing.JTextField txt_tensach;
-    private javax.swing.JTextField txt_timkiem;
     private javax.swing.JTextField txt_tinhtrangsach;
     // End of variables declaration//GEN-END:variables
 }

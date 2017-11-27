@@ -5,9 +5,6 @@
  */
 package GUI;
 
-import BLL.BLL_TheLoai;
-import BLL.BLL_sach;
-import DAL.DAL_TheLoai;
 import java.awt.PopupMenu;
 import java.awt.event.KeyEvent;
 import javax.swing.JMenuItem;
@@ -18,7 +15,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author Huy Nhan
  */
-public class frm_thongtinsach extends javax.swing.JFrame  {
+public class frm_thongtinsach extends javax.swing.JFrame {
 
     /**
      * Creates new form frm_themsach
@@ -38,7 +35,6 @@ public class frm_thongtinsach extends javax.swing.JFrame  {
 
         Pmn_tacgia = new javax.swing.JPopupMenu();
         Pmn_theloai = new javax.swing.JPopupMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
         jPanel1 = new javax.swing.JPanel();
         txt_nhaxuatban = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
@@ -56,6 +52,7 @@ public class frm_thongtinsach extends javax.swing.JFrame  {
         txt_giasach = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
         txt_timkiemtacgia = new javax.swing.JTextField();
+        txt_timkiemtheloai = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
         tbl_tacgia = new javax.swing.JTable();
         btn_addtacgia = new javax.swing.JButton();
@@ -69,14 +66,8 @@ public class frm_thongtinsach extends javax.swing.JFrame  {
         btn_reset = new javax.swing.JButton();
         txt_tinhtrangsach = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
-        txt_timkiemtheloai = new javax.swing.JTextField();
 
         Pmn_tacgia.setAutoscrolls(true);
-
-        Pmn_theloai.setAutoscrolls(true);
-
-        jMenuItem1.setText("jMenuItem1");
-        Pmn_theloai.add(jMenuItem1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setTitle("Thông tin sách");
@@ -186,6 +177,14 @@ public class frm_thongtinsach extends javax.swing.JFrame  {
             }
         });
 
+        txt_timkiemtheloai.setInheritsPopupMenu(true);
+        txt_timkiemtheloai.setPreferredSize(new java.awt.Dimension(180, 25));
+        txt_timkiemtheloai.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txt_timkiemtheloaiKeyReleased(evt);
+            }
+        });
+
         jScrollPane2.setInheritsPopupMenu(true);
 
         tbl_tacgia.setModel(new javax.swing.table.DefaultTableModel(
@@ -285,14 +284,6 @@ public class frm_thongtinsach extends javax.swing.JFrame  {
         jLabel13.setOpaque(true);
         jLabel13.setPreferredSize(new java.awt.Dimension(100, 25));
 
-        txt_timkiemtheloai.setAutoscrolls(false);
-        txt_timkiemtheloai.setPreferredSize(new java.awt.Dimension(180, 25));
-        txt_timkiemtheloai.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                txt_timkiemtheloaiKeyReleased(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -391,10 +382,10 @@ public class frm_thongtinsach extends javax.swing.JFrame  {
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(txt_tinhtrangsach, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(txt_timkiemtheloai, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(btn_addtheloai))))
+                                .addComponent(txt_timkiemtheloai, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btn_addtheloai)))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -435,10 +426,16 @@ public class frm_thongtinsach extends javax.swing.JFrame  {
     private void txt_timkiemtacgiaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_timkiemtacgiaKeyReleased
         //Pmn_tacgia.show(txt_timkiemtacgia, 0, 25);
         String key = txt_timkiemtacgia.getText();
-        BLL.Popupmenu.DLPopupMenuTacGia(Pmn_tacgia, DAL.DAL_TacGia.timkiemPmn(key),
-                "TenTacGia","MaTacGia",txt_timkiemtacgia,tbl_tacgia);
+        BLL.BLL_TacGia.DLPopupMenu(Pmn_tacgia, DAL.DAL_TacGia.timkiemPmn(key));
         
     }//GEN-LAST:event_txt_timkiemtacgiaKeyReleased
+
+    private void txt_timkiemtheloaiKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_timkiemtheloaiKeyReleased
+        String key = txt_timkiemtheloai.getText();
+ //       BLL.BLL_TheLoai.DLPopupMenu(Pmn_theloai, DAL.DAL_TheLoai.timkiemPmn(key));
+        BLL.BLL_TheLoai.DLPopupMenu(Pmn_theloai, DAL.DAL_TheLoai.timkiemPmn(key));
+        
+    }//GEN-LAST:event_txt_timkiemtheloaiKeyReleased
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
         txt_gianhap.setText("");
@@ -453,7 +450,7 @@ public class frm_thongtinsach extends javax.swing.JFrame  {
         txt_timkiemtheloai.setText("");
         tbl_tacgia.setRowMargin(0);
         tbl_theloai.setRowMargin(0);
-        frm_main.CNSach = 0;
+    //    frm_main.CNSach = 0;
         this.setVisible(false);
     }//GEN-LAST:event_formWindowClosing
 
@@ -537,12 +534,6 @@ public class frm_thongtinsach extends javax.swing.JFrame  {
 //        }
     }//GEN-LAST:event_jButton3ActionPerformed
 
-    private void txt_timkiemtheloaiKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_timkiemtheloaiKeyReleased
-        String key = txt_timkiemtheloai.getText();
-        BLL.Popupmenu.DLPopupMenuTheLoai(Pmn_theloai, DAL.DAL_TheLoai.timkiemPmn(key),
-                "TenTheLoai","MaTheLoai",txt_timkiemtheloai,tbl_theloai);
-    }//GEN-LAST:event_txt_timkiemtheloaiKeyReleased
-
 
     /**
      * @param args the command line arguments
@@ -597,7 +588,6 @@ public class frm_thongtinsach extends javax.swing.JFrame  {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
