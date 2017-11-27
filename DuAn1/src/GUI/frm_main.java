@@ -1082,7 +1082,7 @@ public class frm_main extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_PhieuThueActionPerformed
 
     private void btn_danhsachdocgiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_danhsachdocgiaActionPerformed
-        
+    }    
     private void btn_DocGiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_DocGiaActionPerformed
         pnl_DocGia pnl = new pnl_DocGia();
         BLL_main.themtab("Độc giả", tbn_main, pnl);        
