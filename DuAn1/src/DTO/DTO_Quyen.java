@@ -12,21 +12,22 @@ package DTO;
 public class DTO_Quyen {
     
     int MaQuyen;
-    String TenQuyen, GhiChu;
+    String TenQuyen, GhiChu,Ma;
 
     public DTO_Quyen() {
     }
 
-    public DTO_Quyen(String TenQuyen, String GhiChu) {
+    public DTO_Quyen(String TenQuyen, String GhiChu, String Ma) {
         this.TenQuyen = TenQuyen;
         this.GhiChu = GhiChu;
+        this.Ma = Ma;
     }
-    
-    
-    public DTO_Quyen(int MaQuyen, String TenQuyen, String GhiChu) {
+
+    public DTO_Quyen(int MaQuyen, String TenQuyen, String GhiChu, String Ma) {
         this.MaQuyen = MaQuyen;
         this.TenQuyen = TenQuyen;
         this.GhiChu = GhiChu;
+        this.Ma = Ma;
     }
 
     public int getMaQuyen() {
@@ -52,7 +53,14 @@ public class DTO_Quyen {
     public void setGhiChu(String GhiChu) {
         this.GhiChu = GhiChu;
     }
-    
+
+    public String getMa() {
+        return Ma;
+    }
+
+    public void setMa(String Ma) {
+        this.Ma = Ma;
+    }
     
 }
 

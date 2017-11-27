@@ -41,6 +41,5 @@ public class DAL_ChiTietTacGia {
                 + "where ChiTietTacGia.MaTacGia = TacGia.MaTacGia and ChiTietTacGia.MaSach = "+ MaSach;
         return DuAn1.conn.ExcuteQuerySelect(query);
     }
-   
      
 }

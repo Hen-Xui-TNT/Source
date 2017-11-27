@@ -473,56 +473,54 @@ public class frm_thongtinsach extends javax.swing.JFrame  {
     }//GEN-LAST:event_btn_resetActionPerformed
 
     private void btn_saveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_saveActionPerformed
-//        int ipsach;
-//        switch (frm_main.CNSach) {
-//            case 1:
-//                // Sửa dữ liệu sách
-//                System.out.println("Sửa");
-//                BLL.BLL_sach.sua(txt_masach.getText(), txt_tensach.getText()
-//                        , txt_soluong.getText(), txt_tinhtrangsach.getText()
-//                        , txt_giasach.getText(), txt_gianhap.getText()
-//                        , txt_nhaxuatban.getText(), txt_mota.getText());
-//                BLL.BLL_sach.DLTable(tbl_sach, DAL.DAL_Sach.GetAll());
-//                //Xóa thông tin của chi tiết tác giả của sách
-//                DAL.DAL_ChiTietTacGia.Delete_ChiTietTacGia(txt_masach.getText());
-//                //sửa lại chi tiết tác giả của sách
-//                for (int i = 0; i < tbl_tacgia.getRowCount(); i++) {
-//                    
-//                    BLL.BLL_ChiTietTacGia.them(Integer.parseInt(txt_masach.getText()),tbl_tacgia.getValueAt(i, 1).toString());
-//                }
-//                //Xóa thông tin thể loại của sách
-//                DAL.DAL_ChiTietTheLoai.Delete_ChiTietTheLoai(txt_masach.getText());
-//                //sửa lại chi tiết thể loại của sách
-//                for (int i = 0; i < tbl_theloai.getRowCount(); i++) {
-//                    BLL.BLL_ChiTietTheLoai.them(Integer.parseInt(txt_masach.getText()), tbl_theloai.getValueAt(i, 1).toString());
-//                }
-//                break;
-//            case 2:
-//                // Thêm Dữ liệu sách
-//                BLL.BLL_sach.them(txt_tensach.getText()
-//                        , txt_soluong.getText(), txt_tinhtrangsach.getText()
-//                        , txt_giasach.getText(), txt_gianhap.getText()
-//                        , txt_nhaxuatban.getText(), txt_mota.getText());
-//                //lấy mã sách mới thêm
-//                ipsach = BLL.BLL_sach.LayIPSach();
-//                //sửa lại chi tiết tác giả của sách
-//                
-//                for (int i = 0; i < tbl_tacgia.getRowCount(); i++) {
-//                    System.out.println(ipsach);
-//                    System.out.println(tbl_tacgia.getValueAt(i, 1).toString());
-//                    BLL.BLL_ChiTietTacGia.them(ipsach,tbl_tacgia.getValueAt(i, 1).toString());
-//                }
-//                //sửa lại chi tiết thể loại của sách
-//                for (int i = 0; i < tbl_theloai.getRowCount(); i++) {
-//                    BLL.BLL_ChiTietTheLoai.them(ipsach, tbl_theloai.getValueAt(i, 1).toString());
-//                }
-//                this.setVisible(false);
-//                System.out.println("Thêm");
-//                break;
-//            default:
-//                System.out.println("lỗi");
-//                break;
-//        }
+        int ipsach;
+        switch (frm_main.CNSach) {
+            case 1:
+                // Sửa dữ liệu sách
+                System.out.println("Sửa");
+                BLL.BLL_sach.sua(txt_masach.getText(), txt_tensach.getText()
+                        , txt_soluong.getText(), txt_tinhtrangsach.getText()
+                        , txt_giasach.getText(), txt_gianhap.getText()
+                        , txt_nhaxuatban.getText(), txt_mota.getText());
+                BLL.BLL_sach.DLTable(tbl_sach, DAL.DAL_Sach.GetAll());
+                //Xóa thông tin của chi tiết tác giả của sách
+                DAL.DAL_ChiTietTacGia.Delete_ChiTietTacGia(txt_masach.getText());
+                //sửa lại chi tiết tác giả của sách
+                for (int i = 0; i < tbl_tacgia.getRowCount(); i++) {
+                    
+                    BLL.BLL_ChiTietTacGia.them(Integer.parseInt(txt_masach.getText()),tbl_tacgia.getValueAt(i, 1).toString());
+                }
+                //Xóa thông tin thể loại của sách
+                DAL.DAL_ChiTietTheLoai.Delete_ChiTietTheLoai(txt_masach.getText());
+                this.setVisible(false);
+                //sửa lại chi tiết thể loại của sách
+                for (int i = 0; i < tbl_theloai.getRowCount(); i++) {
+                    BLL.BLL_ChiTietTheLoai.them(Integer.parseInt(txt_masach.getText()), tbl_theloai.getValueAt(i, 1).toString());
+                }
+                break;
+            case 2:
+                // Thêm Dữ liệu sách
+                BLL.BLL_sach.them(txt_tensach.getText()
+                        , txt_soluong.getText(), txt_tinhtrangsach.getText()
+                        , txt_giasach.getText(), txt_gianhap.getText()
+                        , txt_nhaxuatban.getText(), txt_mota.getText());
+                //lấy mã sách mới thêm
+                ipsach = BLL.BLL_sach.LayIPSach();
+                //sửa lại chi tiết tác giả của sách
+                
+                for (int i = 0; i < tbl_tacgia.getRowCount(); i++) {
+                    BLL.BLL_ChiTietTacGia.them(ipsach,tbl_tacgia.getValueAt(i, 1).toString());
+                }
+                //sửa lại chi tiết thể loại của sách
+                for (int i = 0; i < tbl_theloai.getRowCount(); i++) {
+                    BLL.BLL_ChiTietTheLoai.them(ipsach, tbl_theloai.getValueAt(i, 1).toString());
+                }
+                this.setVisible(false);
+                break;
+            default:
+                System.out.println("lỗi");
+                break;
+        }
     }//GEN-LAST:event_btn_saveActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed

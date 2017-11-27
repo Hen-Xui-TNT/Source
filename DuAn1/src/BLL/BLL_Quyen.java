@@ -7,6 +7,7 @@ package BLL;
 import BLL.ChuyenDoi_ThongBao;
 import DTO.DTO_Quyen;
 import DAL.DAL_Quyen;
+import GUI.pnl_Quyen;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.DateFormat;
@@ -46,15 +47,15 @@ public class BLL_Quyen {
             Logger.getLogger(BLL_Quyen.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    public static void them(String Ten,String MoTa) {
+    public static void them(String Ten,String MoTa,String Ma) {
         boolean kiemtra = check(Ten, MoTa);
         if (kiemtra == true) {
-            DTO_Quyen Q = new DTO_Quyen(Ten, MoTa);
+            DTO_Quyen Q = new DTO_Quyen(Ten, MoTa, Ma);
             System.out.println("thanh cong");
             DAL_Quyen.Them_Quyen(Q);
         }
     }
-    public static void sua(String ID,String Ten,String MoTa) {
+    public static void sua(String ID,String Ten,String MoTa,String Ma) {
         boolean kiemtra = check(Ten, MoTa);
         if (ID.equals("")) {
             ChuyenDoi_ThongBao.ThongBao_Loi("Chưa Nhập Mã Quyền !!!", "Lỗi Dữ Liệu");
@@ -62,7 +63,7 @@ public class BLL_Quyen {
             try {
                 Integer.parseInt(ID);
                 if (kiemtra == true) {
-                    DTO_Quyen Q = new DTO_Quyen(Integer.parseInt(ID), Ten, MoTa);
+                    DTO_Quyen Q = new DTO_Quyen(Integer.parseInt(ID), Ten, MoTa, Ma);
                     System.out.println("thanh cong");
                     DAL_Quyen.Sua_Quyen(Q);
                 }
@@ -83,5 +84,42 @@ public class BLL_Quyen {
                 ChuyenDoi_ThongBao.ThongBao_Loi("ID Phải Là Số !!!" + e.getMessage(), "Lỗi Chuyển Đổi Dữ Liệu");
             }
         }
+    }
+    public static void DoDL(ResultSet rs) {
+        try {
+            while(rs.next()){
+                String Checkbox = rs.getString("Ma");
+                if (Checkbox.substring(8,9).equals("0")) {
+                    pnl_Quyen.ckb_khuyenmai.setSelected(true);
+                }
+                if (Checkbox.substring(1, 2).equals("0")) {
+                    pnl_Quyen.ckb_nhacungcap.setSelected(true);
+                }
+                if (Checkbox.substring(2, 3).equals("0")) {
+                    pnl_Quyen.ckb_nhanvien.setSelected(true);
+                }
+                if (Checkbox.substring(3,4).equals("0")) {
+                    pnl_Quyen.ckb_nhapkho.setSelected(true);
+                }
+                if (Checkbox.substring(4, 5).equals("0")) {
+                    pnl_Quyen.ckb_quyen.setSelected(true);
+                }
+                if (Checkbox.substring(5, 6).equals("0")) {
+                    pnl_Quyen.ckb_sach.setSelected(true);
+                }
+                if (Checkbox.substring(6, 7).equals("0")) {
+                    pnl_Quyen.ckb_tacgia.setSelected(true);
+                }
+                if (Checkbox.substring(7, 8).equals("0")) {
+                    pnl_Quyen.ckb_thanhly.setSelected(true);
+                }
+                if (Checkbox.substring(0, 1).equals("0")) {
+                    pnl_Quyen.ckb_theloai.setSelected(true);
+                }
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(BLL_Quyen.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
     }
 }

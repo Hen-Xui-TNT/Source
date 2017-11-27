@@ -49,6 +49,10 @@ public class DAL_Sach {
                 + " or GiaNhap like '%" + seach + "%'  or GiaSach like '%" + seach + "%' or NhaXuatBan like N'%" + seach + "%'  or MoTa like N'%" + seach + "%' ";
         return DuAn1.conn.ExcuteQuerySelect(seach1);
     }
+    public static ResultSet lay_Sach(String seach) {
+        String seach1 = "select * from Sach where   MaSach =  " + seach;
+        return DuAn1.conn.ExcuteQuerySelect(seach1);
+    }
     public static ResultSet Get_IP() {
         String query = "SELECT Top 1 MaSach FROM Sach ORDER BY MaSach DESC"; 
         return DuAn1.conn.ExcuteQuerySelect(query);

@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package GUI;
-import GUI.*;
+import GUI.frm_main.*;
 import DAL.DAL_DBConnection;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -18,10 +18,11 @@ public static DAL.DAL_DBConnection conn = new DAL_DBConnection();
      * @param args the command line arguments
      */
      public static frm_thongtinsach frm_TTsach = new frm_thongtinsach();
+     public static frm_main frm = new frm_main();
+     public static frm_login frmlogin = new frm_login();
     public static void main(String[] args) {
         // TODO code application logic here
-        frm_main frm = new frm_main();
-        frm.setVisible(true);
+        frmlogin.setVisible(true);
     
     }
 }

@@ -69,8 +69,8 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jTextField1" max="32767" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jTextField1" min="-2" pref="594" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -137,7 +137,7 @@
                       <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="lblMaNhanVien1" alignment="0" min="-2" pref="150" max="-2" attributes="0"/>
-                              <Component id="lblMaDocGia" alignment="0" min="-2" pref="150" max="-2" attributes="0"/>
+                              <Component id="lblMaDocGia" alignment="1" min="-2" pref="150" max="-2" attributes="0"/>
                               <Component id="lblNgayTra" alignment="0" min="-2" pref="150" max="-2" attributes="0"/>
                               <Component id="lblNgayThue" alignment="0" min="-2" pref="150" max="-2" attributes="0"/>
                               <Component id="lblGhiChu" alignment="0" min="-2" pref="150" max="-2" attributes="0"/>
@@ -188,11 +188,11 @@
                       <Component id="txtSoPhieuThue2" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="lblMaDocGia" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                      <Component id="txtMaPhieuThue" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="txtMaPhieuThue" min="-2" pref="25" max="-2" attributes="0"/>
+                      <Component id="lblMaDocGia" alignment="1" min="-2" pref="25" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="lblSoPhieuThue1" min="-2" pref="25" max="-2" attributes="0"/>
                       <Component id="txtGhiChu" alignment="0" min="-2" pref="25" max="-2" attributes="0"/>
