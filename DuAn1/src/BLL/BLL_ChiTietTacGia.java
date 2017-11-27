@@ -52,4 +52,7 @@ public class BLL_ChiTietTacGia {
             DTO.DTO_ChiTietTacGia item = new DTO_ChiTietTacGia(masach, Integer.parseInt(matacgia), "");
             DAL.DAL_ChiTietTacGia.Them_ChiTietTacGia(item);
     }
+    public static void xoa(String MaSach) {
+        DAL.DAL_ChiTietTacGia.Delete_ChiTietTacGia(MaSach);
+    }
 }

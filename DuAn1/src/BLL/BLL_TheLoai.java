@@ -5,7 +5,6 @@
  */
 package BLL;
 
-import static BLL.BLL_TacGia.them;
 import DAL.DAL_TacGia;
 import DAL.DAL_TheLoai;
 import GUI.frm_thongtinsach;
@@ -22,63 +21,19 @@ import javax.swing.JPopupMenu;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
-/**
- *
-<<<<<<< HEAD
- * @author HuyNhan
- */
 public class BLL_TheLoai {
-    public static void DLPopupMenu(JPopupMenu Ten,ResultSet rs){
-        Ten.removeAll();// set lại số dòng của bảng về 0
-        try {
-            while(rs.next()){
-                JMenuItem MN = new JMenuItem(rs.getString("TenTheLoai"));
-                Ten.add(MN);
-                MN.addActionListener(new java.awt.event.ActionListener() {
-                    @Override
-                    public void actionPerformed(java.awt.event.ActionEvent evt) {
-                        MNactionPerformed(evt);
-                    }
-                    private void MNactionPerformed(ActionEvent evt) {
-                        themDL(evt.getActionCommand());
-                    }
-                });
-                
-            }
-        } catch (SQLException ex) {
-            System.out.println(ex.getMessage());
-        }
-        Ten.show(frm_thongtinsach.txt_timkiemtheloai, 0, 25);
-    }
-    public static void themDL(String key) {
-        DefaultTableModel table = (DefaultTableModel)frm_thongtinsach.tbl_theloai.getModel();
-       ResultSet rs = DAL_TheLoai.timkiemPmn(key);
-        Object[] item = new Object[20];
-        try {
-            while(rs.next()){
-                item[0] = table.getRowCount() + 1;
-                item[1] = rs.getString("MaTheLoai");
-                item[2] = rs.getString("TenTheLoai");
-                table.addRow(item);
-            }
-        } catch (SQLException ex) {
-            Logger.getLogger(BLL_Quyen.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
-    
     
     public static boolean check(String TenLoai,String MoTa) {
-    if (TenLoai.trim().equals("")) {
-        ChuyenDoi_ThongBao.ThongBao_Loi("Tên thể loại không được để trống", "Thông Báo Lỗi");
-    }
+        if (TenLoai.trim().equals("")) {
+            ChuyenDoi_ThongBao.ThongBao_Loi("Tên thể loại không được để trống", "Thông Báo Lỗi");
+        }
 
-    if (TenLoai.trim().length() > 50) {
-        ChuyenDoi_ThongBao.ThongBao_Loi(" Tên thể loại không quá 50 ký tự", "Thông Báo Lỗi");
-        return false;
-    }
+        if (TenLoai.trim().length() > 50) {
+            ChuyenDoi_ThongBao.ThongBao_Loi(" Tên thể loại không quá 50 ký tự", "Thông Báo Lỗi");
+            return false;
+        }
     return true;
     }
-    
     public static void DLTable(JTable Ten_table,ResultSet rs) {
         DefaultTableModel table = (DefaultTableModel)Ten_table.getModel();
         Object[] item = new Object[4];
@@ -121,7 +76,8 @@ public class BLL_TheLoai {
             }
         }
     }
-    }
+    
+}
         
         
     
