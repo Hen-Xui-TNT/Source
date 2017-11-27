@@ -21,9 +21,10 @@ public class DAL_DocGia {
     }
      
     public static ResultSet GetAllCombobox() {
-        String query = "select TenLoaiDocGia, MaLoaiDocGia from LoaiDocGia";
+        String query = "select TenDocGia, MaDocGia from DocGia";
         return DuAn1.conn.ExcuteQuerySelect(query);
     }
+    
  public static int Them_DocGia(DTO_DocGia item){
      String query ="set dateformat dmy insert into DocGia values( N'" +item.getTenDocGia()+"',"
              +item.getMaLoaiDocGia()+","+item.getGioiTinh()+",'"+item.getNgaySinh()+"','"
@@ -48,9 +49,37 @@ public class DAL_DocGia {
               "where MaDocGia = "+ item.getMaDocGia();
         return DuAn1.conn.ExcuteNonQuery(query);
     }
+<<<<<<< HEAD
     public static ResultSet Get_DocGia(String MaDocGia){
         String query = "Select * from DocGia where MaDocGia = " + MaDocGia;
         return DuAn1.conn.ExcuteQuerySelect(query);
     }
      
+=======
+   
+     public static DTO_DocGia LayDuLieuDocGiaTheoMaDG(String MaDG){
+        ResultSet rs;
+        String SQLSelect = "select * from DocGia where MaDocGia = " + MaDG;
+        rs = DuAn1.conn.ExcuteQuerySelect(SQLSelect);
+        DTO_DocGia kh = new DTO_DocGia();
+        try {
+            while(rs.next()){
+                kh.setMaDocGia(rs.getInt("MaDocGia"));
+                kh.setTenDocGia(rs.getString("TenDocGia"));                
+                kh.setDiaChi(rs.getString("DiaChi"));              
+                kh.setSoDienThoai(rs.getString("SDT"));
+                
+                
+            }
+        } catch (Exception e) {
+            System.out.println(e.toString());
+        }
+        return kh;
+    }
+    
+    public static ResultSet Get_DocGia(String MaDocGia){
+        String query = "Select * from DocGia where MaDocGia = " + MaDocGia;
+        return DuAn1.conn.ExcuteQuerySelect(query);
+    } 
+>>>>>>> 8fa8cecb98a0ac21f7aa75dffe0bbdc4215f970a
 }

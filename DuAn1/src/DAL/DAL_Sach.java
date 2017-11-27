@@ -49,8 +49,16 @@ public class DAL_Sach {
                 + " or GiaNhap like '%" + seach + "%'  or GiaSach like '%" + seach + "%' or NhaXuatBan like N'%" + seach + "%'  or MoTa like N'%" + seach + "%' ";
         return DuAn1.conn.ExcuteQuerySelect(seach1);
     }
+<<<<<<< HEAD
     public static ResultSet lay_Sach(String seach) {
         String seach1 = "select * from Sach where   MaSach =  " + seach;
+=======
+    
+    
+    public static ResultSet Seach_Sach_Phieu(String seach) {
+        String seach1 = "select * from Sach where   MaSach like  '%" + seach + "%'"
+                + " or TenSach like N'%" + seach + "%' or SoLuongSach like '%" + seach + "%'or GiaSach like '%" + seach + "%' ";
+>>>>>>> 8fa8cecb98a0ac21f7aa75dffe0bbdc4215f970a
         return DuAn1.conn.ExcuteQuerySelect(seach1);
     }
     public static ResultSet Get_IP() {
