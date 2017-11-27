@@ -45,4 +45,11 @@ public class DAL_ChiTietPhieuNhap {
                 + " or GiaNhap like '%" + seach + "%' or ThanhTien like '%" + seach + "%'  or MaChiTietPhieuNhap like '%" + seach + "%' ";
         return DuAn1.conn.ExcuteQuerySelect(seach1);
     }
+     
+     public static ResultSet getAllChiTietPhieuNhap(String MaSP){
+          
+        String query = "Select * from Sach where MaSach = '"+ MaSP+"'";
+        
+         return GUI.DuAn1.conn.ExcuteQuerySelect(query);
+        }
 }

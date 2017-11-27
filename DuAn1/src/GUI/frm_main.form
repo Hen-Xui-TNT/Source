@@ -318,11 +318,11 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="btn_chomuon" min="-2" pref="90" max="-2" attributes="0"/>
+                          <Component id="btn_PhieuThue" min="-2" pref="90" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="btn_trasachgiahan" min="-2" pref="137" max="-2" attributes="0"/>
+                          <Component id="btn_Giahan_Trasach" min="-2" pref="137" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="btn_chomuon1" min="-2" pref="90" max="-2" attributes="0"/>
+                          <Component id="btn_PhieuPhat" min="-2" pref="90" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
                       <Component id="lbl_muontratieude" alignment="0" max="32767" attributes="0"/>
@@ -332,9 +332,9 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="btn_trasachgiahan" max="32767" attributes="0"/>
-                              <Component id="btn_chomuon" max="32767" attributes="0"/>
-                              <Component id="btn_chomuon1" alignment="0" max="32767" attributes="0"/>
+                              <Component id="btn_Giahan_Trasach" max="32767" attributes="0"/>
+                              <Component id="btn_PhieuThue" max="32767" attributes="0"/>
+                              <Component id="btn_PhieuPhat" alignment="0" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="lbl_muontratieude" min="-2" pref="15" max="-2" attributes="0"/>
@@ -357,7 +357,7 @@
                     </Property>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JButton" name="btn_chomuon">
+                <Component class="javax.swing.JButton" name="btn_PhieuThue">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Tahoma" size="10" style="0"/>
@@ -374,10 +374,10 @@
                     <Property name="verticalTextPosition" type="int" value="3"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_chomuonActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_PhieuThueActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JButton" name="btn_trasachgiahan">
+                <Component class="javax.swing.JButton" name="btn_Giahan_Trasach">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Tahoma" size="10" style="0"/>
@@ -394,10 +394,10 @@
                     <Property name="verticalTextPosition" type="int" value="3"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_trasachgiahanActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_Giahan_TrasachActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JButton" name="btn_chomuon1">
+                <Component class="javax.swing.JButton" name="btn_PhieuPhat">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Tahoma" size="10" style="0"/>
@@ -414,7 +414,7 @@
                     <Property name="verticalTextPosition" type="int" value="3"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_chomuon1ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_PhieuPhatActionPerformed"/>
                   </Events>
                 </Component>
               </SubComponents>
@@ -649,7 +649,7 @@
                       </Group>
                       <Group type="102" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="btn_danhsachdocgia" min="-2" pref="88" max="-2" attributes="0"/>
+                          <Component id="btn_DocGia" min="-2" pref="88" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="btn_nhapexdocgia" min="-2" pref="140" max="-2" attributes="0"/>
@@ -663,7 +663,7 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="btn_danhsachdocgia" max="32767" attributes="0"/>
+                              <Component id="btn_DocGia" max="32767" attributes="0"/>
                               <Group type="102" attributes="0">
                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                   <Component id="btn_LoaiDocGia" min="-2" pref="30" max="-2" attributes="0"/>
@@ -692,7 +692,7 @@
                     </Property>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JButton" name="btn_danhsachdocgia">
+                <Component class="javax.swing.JButton" name="btn_DocGia">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Tahoma" size="10" style="0"/>
@@ -709,7 +709,7 @@
                     <Property name="verticalTextPosition" type="int" value="3"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_danhsachdocgiaActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_DocGiaActionPerformed"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="btn_nhapexdocgia">
@@ -764,7 +764,7 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="btn_danhsachnhanvien" min="-2" pref="88" max="-2" attributes="0"/>
+                          <Component id="btn_NhanVien" min="-2" pref="88" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="btn_phanquyen" min="-2" pref="140" max="-2" attributes="0"/>
@@ -786,7 +786,7 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="btn_phanquyen" min="-2" pref="30" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="btn_danhsachnhanvien" max="32767" attributes="0"/>
+                              <Component id="btn_NhanVien" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="lbl_nhanvientieude" min="-2" pref="15" max="-2" attributes="0"/>
@@ -809,7 +809,7 @@
                     </Property>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JButton" name="btn_danhsachnhanvien">
+                <Component class="javax.swing.JButton" name="btn_NhanVien">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Tahoma" size="10" style="0"/>
@@ -826,7 +826,7 @@
                     <Property name="verticalTextPosition" type="int" value="3"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_danhsachnhanvienActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_NhanVienActionPerformed"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="btn_phanquyen">
@@ -884,11 +884,19 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
+<<<<<<< HEAD
                           <Component id="btn_danhmuc" min="-2" pref="88" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="btn_sachhong" alignment="0" min="-2" pref="140" max="-2" attributes="0"/>
                               <Component id="btn_themsach" alignment="0" min="-2" pref="140" max="-2" attributes="0"/>
+=======
+                          <Component id="btnSach" min="-2" pref="88" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="btnSachHong" alignment="0" min="-2" pref="140" max="-2" attributes="0"/>
+                              <Component id="jButton20" alignment="0" min="-2" pref="140" max="-2" attributes="0"/>
+>>>>>>> 8fa8cecb98a0ac21f7aa75dffe0bbdc4215f970a
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
@@ -904,9 +912,15 @@
                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                   <Component id="btn_themsach" min="-2" pref="30" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
+<<<<<<< HEAD
                                   <Component id="btn_sachhong" min="-2" pref="30" max="-2" attributes="0"/>
                               </Group>
                               <Component id="btn_danhmuc" alignment="1" max="32767" attributes="0"/>
+=======
+                                  <Component id="btnSachHong" min="-2" pref="30" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="btnSach" alignment="1" max="32767" attributes="0"/>
+>>>>>>> 8fa8cecb98a0ac21f7aa75dffe0bbdc4215f970a
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jLabel9" min="-2" pref="15" max="-2" attributes="0"/>
@@ -929,7 +943,11 @@
                     </Property>
                   </Properties>
                 </Component>
+<<<<<<< HEAD
                 <Component class="javax.swing.JButton" name="btn_danhmuc">
+=======
+                <Component class="javax.swing.JButton" name="btnSach">
+>>>>>>> 8fa8cecb98a0ac21f7aa75dffe0bbdc4215f970a
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Tahoma" size="10" style="0"/>
@@ -946,7 +964,11 @@
                     <Property name="verticalTextPosition" type="int" value="3"/>
                   </Properties>
                   <Events>
+<<<<<<< HEAD
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_danhmucActionPerformed"/>
+=======
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSachActionPerformed"/>
+>>>>>>> 8fa8cecb98a0ac21f7aa75dffe0bbdc4215f970a
                   </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="btn_themsach">
@@ -967,7 +989,11 @@
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_themsachActionPerformed"/>
                   </Events>
                 </Component>
+<<<<<<< HEAD
                 <Component class="javax.swing.JButton" name="btn_sachhong">
+=======
+                <Component class="javax.swing.JButton" name="btnSachHong">
+>>>>>>> 8fa8cecb98a0ac21f7aa75dffe0bbdc4215f970a
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Tahoma" size="10" style="0"/>
@@ -982,7 +1008,11 @@
                     <Property name="horizontalAlignment" type="int" value="2"/>
                   </Properties>
                   <Events>
+<<<<<<< HEAD
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_sachhongActionPerformed"/>
+=======
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSachHongActionPerformed"/>
+>>>>>>> 8fa8cecb98a0ac21f7aa75dffe0bbdc4215f970a
                   </Events>
                 </Component>
               </SubComponents>
@@ -1004,9 +1034,15 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
+<<<<<<< HEAD
                           <Component id="btn_thanhly" min="-2" pref="88" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="btn_nhapkho" min="-2" pref="88" max="-2" attributes="0"/>
+=======
+                          <Component id="btnThanhLy" min="-2" pref="88" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="btnPhieuNhap" min="-2" pref="88" max="-2" attributes="0"/>
+>>>>>>> 8fa8cecb98a0ac21f7aa75dffe0bbdc4215f970a
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
@@ -1020,8 +1056,13 @@
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
+<<<<<<< HEAD
                               <Component id="btn_thanhly" alignment="1" max="32767" attributes="0"/>
                               <Component id="btn_nhapkho" alignment="1" max="32767" attributes="0"/>
+=======
+                              <Component id="btnThanhLy" alignment="1" max="32767" attributes="0"/>
+                              <Component id="btnPhieuNhap" alignment="1" max="32767" attributes="0"/>
+>>>>>>> 8fa8cecb98a0ac21f7aa75dffe0bbdc4215f970a
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jLabel10" min="-2" pref="15" max="-2" attributes="0"/>
@@ -1044,7 +1085,11 @@
                     </Property>
                   </Properties>
                 </Component>
+<<<<<<< HEAD
                 <Component class="javax.swing.JButton" name="btn_thanhly">
+=======
+                <Component class="javax.swing.JButton" name="btnThanhLy">
+>>>>>>> 8fa8cecb98a0ac21f7aa75dffe0bbdc4215f970a
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Tahoma" size="10" style="0"/>
@@ -1061,10 +1106,17 @@
                     <Property name="verticalTextPosition" type="int" value="3"/>
                   </Properties>
                   <Events>
+<<<<<<< HEAD
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_thanhlyActionPerformed"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="btn_nhapkho">
+=======
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnThanhLyActionPerformed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JButton" name="btnPhieuNhap">
+>>>>>>> 8fa8cecb98a0ac21f7aa75dffe0bbdc4215f970a
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Tahoma" size="10" style="0"/>
@@ -1081,7 +1133,11 @@
                     <Property name="verticalTextPosition" type="int" value="3"/>
                   </Properties>
                   <Events>
+<<<<<<< HEAD
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_nhapkhoActionPerformed"/>
+=======
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnPhieuNhapActionPerformed"/>
+>>>>>>> 8fa8cecb98a0ac21f7aa75dffe0bbdc4215f970a
                   </Events>
                 </Component>
               </SubComponents>
@@ -1105,9 +1161,15 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="btnTacGia" min="-2" pref="88" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
+<<<<<<< HEAD
                           <Component id="btn_theloai" min="-2" pref="88" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="btn_nhacungcap" min="-2" pref="88" max="-2" attributes="0"/>
+=======
+                          <Component id="btnTheLoai" min="-2" pref="88" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="btnNCC" min="-2" pref="88" max="-2" attributes="0"/>
+>>>>>>> 8fa8cecb98a0ac21f7aa75dffe0bbdc4215f970a
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
                       <Component id="jLabel11" alignment="0" max="32767" attributes="0"/>
@@ -1118,11 +1180,19 @@
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
+<<<<<<< HEAD
                               <Component id="btn_theloai" alignment="1" max="32767" attributes="0"/>
                               <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="btnTacGia" min="-2" max="-2" attributes="0"/>
                                       <Component id="btn_nhacungcap" min="-2" max="-2" attributes="0"/>
+=======
+                              <Component id="btnTheLoai" alignment="1" max="32767" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="btnTacGia" min="-2" max="-2" attributes="0"/>
+                                      <Component id="btnNCC" min="-2" max="-2" attributes="0"/>
+>>>>>>> 8fa8cecb98a0ac21f7aa75dffe0bbdc4215f970a
                                   </Group>
                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                               </Group>
@@ -1168,7 +1238,11 @@
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnTacGiaActionPerformed"/>
                   </Events>
                 </Component>
+<<<<<<< HEAD
                 <Component class="javax.swing.JButton" name="btn_theloai">
+=======
+                <Component class="javax.swing.JButton" name="btnTheLoai">
+>>>>>>> 8fa8cecb98a0ac21f7aa75dffe0bbdc4215f970a
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Tahoma" size="10" style="0"/>
@@ -1185,10 +1259,17 @@
                     <Property name="verticalTextPosition" type="int" value="3"/>
                   </Properties>
                   <Events>
+<<<<<<< HEAD
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_theloaiActionPerformed"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="btn_nhacungcap">
+=======
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnTheLoaiActionPerformed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JButton" name="btnNCC">
+>>>>>>> 8fa8cecb98a0ac21f7aa75dffe0bbdc4215f970a
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Tahoma" size="10" style="0"/>
@@ -1205,7 +1286,11 @@
                     <Property name="verticalTextPosition" type="int" value="3"/>
                   </Properties>
                   <Events>
+<<<<<<< HEAD
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_nhacungcapActionPerformed"/>
+=======
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnNCCActionPerformed"/>
+>>>>>>> 8fa8cecb98a0ac21f7aa75dffe0bbdc4215f970a
                   </Events>
                 </Component>
               </SubComponents>

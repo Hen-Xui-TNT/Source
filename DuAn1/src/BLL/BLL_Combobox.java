@@ -54,6 +54,14 @@ public class BLL_Combobox {
         return result;
     }
     
+    public static String getSelectedItemID_Yuu(JComboBox cbb) {
+        String result;
+        Object[] obj = cbb.getSelectedObjects();
+          MyCombobox item = (MyCombobox) obj[0];
+        result = item.Value.toString();
+        return result;
+    }
+    
      public static void FillDataToCombobox(JComboBox cbb,ResultSet rs){
         try {
             DefaultComboBoxModel cbbModel = new DefaultComboBoxModel();

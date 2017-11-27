@@ -53,7 +53,5 @@ public class BLL_ChiTietTheLoai {
             DTO_ChiTietTheLoai item = new DTO_ChiTietTheLoai(masach, Integer.parseInt(matheloai), " ");
             DAL.DAL_ChiTietTheLoai.Them_ChiTietTheLoai(item);
     }
-    public static void xoa(String masach) {
-        DAL.DAL_ChiTietTheLoai.Delete_ChiTietTheLoai(masach);
-    }
+
 }

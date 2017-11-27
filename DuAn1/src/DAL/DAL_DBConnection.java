@@ -22,11 +22,11 @@ import javax.xml.ws.Service;
  */
 public class DAL_DBConnection {
     //Tạo chuỗi kết nối
-    String connectionString =  "jdbc:sqlserver://DESKTOP-325I2P0\\HUYNHAN;"
-            + "databaseName=TNTDuAn1; user=sa; password=123456;";
-    
-//     String connectionString = "jdbc:sqlserver://DESKTOP-YUUKI\\YUUKI;" 
+//    String connectionString =  "jdbc:sqlserver://DESKTOP-325I2P0\\HUYNHAN;"
 //            + "databaseName=TNTDuAn1; user=sa; password=123456;";
+    
+     String connectionString = "jdbc:sqlserver://DESKTOP-YUUKI\\YUUKI;" 
+            + "databaseName=TNTDuAn1; user=sa; password=123456;";
         
  //    String connectionString =  "jdbc:sqlserver://V5PV4SWQRRKBKF8\\SQL;"
 //            + "databaseName=TNTDuAn1; user=sa; password=123456;";   

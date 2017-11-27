@@ -6,7 +6,13 @@
 package GUI;
 
 import BLL.BLL_NhaCungCap;
+
 import DAL.DAL_NhaCungCap;
+
+import static GUI.pnl_TacGia.tblTacGia;
+import java.util.ArrayList;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -31,10 +37,10 @@ public class pnl_nhacungcap extends javax.swing.JPanel {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btnThem = new javax.swing.JButton();
+        btnSua = new javax.swing.JButton();
+        btnXoa = new javax.swing.JButton();
+        btnLamMoi = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblNCC = new javax.swing.JTable();
         jPanel2 = new javax.swing.JPanel();
@@ -44,7 +50,7 @@ public class pnl_nhacungcap extends javax.swing.JPanel {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        txtNCC = new javax.swing.JTextField();
+        txtMaNCC = new javax.swing.JTextField();
         txtDiaChi = new javax.swing.JTextField();
         txtTenNCC = new javax.swing.JTextField();
         txtSoDienThoai = new javax.swing.JTextField();
@@ -52,25 +58,35 @@ public class pnl_nhacungcap extends javax.swing.JPanel {
         txtGhiChu = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
 
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton1.setText("Thêm");
-
-        jButton4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton4.setText("Sửa");
-
-        jButton3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton3.setText("Xóa");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        btnThem.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnThem.setText("Thêm");
+        btnThem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                btnThemActionPerformed(evt);
             }
         });
 
-        jButton2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton2.setText("Làm mới");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnSua.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnSua.setText("Sửa");
+        btnSua.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnSuaActionPerformed(evt);
+            }
+        });
+
+        btnXoa.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnXoa.setText("Xóa");
+        btnXoa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnXoaActionPerformed(evt);
+            }
+        });
+
+        btnLamMoi.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnLamMoi.setText("Làm mới");
+        btnLamMoi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLamMoiActionPerformed(evt);
             }
         });
 
@@ -80,13 +96,13 @@ public class pnl_nhacungcap extends javax.swing.JPanel {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(39, 39, 39)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnThem, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(45, 45, 45)
-                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnSua, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(52, 52, 52)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnXoa, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(49, 49, 49)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnLamMoi, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(73, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -94,10 +110,10 @@ public class pnl_nhacungcap extends javax.swing.JPanel {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnThem, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSua, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnXoa, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnLamMoi, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(13, Short.MAX_VALUE))
         );
 
@@ -169,7 +185,7 @@ public class pnl_nhacungcap extends javax.swing.JPanel {
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(txtNCC, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(txtMaNCC, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
@@ -187,7 +203,7 @@ public class pnl_nhacungcap extends javax.swing.JPanel {
                 .addGap(48, 48, 48)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtNCC, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtMaNCC, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -238,20 +254,42 @@ public class pnl_nhacungcap extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void btnXoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXoaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+         int LuaChon = JOptionPane.showConfirmDialog(new JFrame(),"Thông Báo xác nhận",
+                 "Bạn có chắc chắn xóa không?" , JOptionPane.YES_NO_OPTION);
+       
+       if (LuaChon == JOptionPane.YES_OPTION){
+           
+        int CacDongDuocChon[] = tblNCC.getSelectedRows();
+        ArrayList<String> mangMaLoai = new ArrayList<>();
+        
+        for( int i = 0; i< CacDongDuocChon.length; i++){
+            mangMaLoai.add(tblNCC.getValueAt(CacDongDuocChon[i], 1).toString());
+        }
+        // gọi hàm xóa 
+        BLL_NhaCungCap.Xoa(mangMaLoai);        
+        
+        BLL.BLL_NhaCungCap.DuLieuDatabase_Table(tblNCC,DAL_NhaCungCap.GetAll());
+       }
+    }//GEN-LAST:event_btnXoaActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btnLamMoiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLamMoiActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+        txtMaNCC.setText("");
+        txtTenNCC.setText("");
+        txtDiaChi.setText("");
+        txtGmail.setText("");
+        txtSoDienThoai.setText("");
+        txtGhiChu.setText("");
+    }//GEN-LAST:event_btnLamMoiActionPerformed
 
     private void tblNCCMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblNCCMouseClicked
         // TODO add your handling code here:
          int viTriDong = tblNCC.getSelectedRow();
 
         String ID = tblNCC.getValueAt(viTriDong, 1).toString();
-        txtNCC.setText(ID);
+        txtMaNCC.setText(ID);
 
         String TenNCC = tblNCC.getValueAt(viTriDong, 2).toString();
         txtTenNCC.setText(TenNCC);
@@ -269,12 +307,38 @@ public class pnl_nhacungcap extends javax.swing.JPanel {
         txtGhiChu.setText(GhiChu);
     }//GEN-LAST:event_tblNCCMouseClicked
 
+    private void btnThemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemActionPerformed
+        // TODO add your handling code here:
+         BLL_NhaCungCap.Them(
+                  txtTenNCC.getText(),  
+                  txtDiaChi.getText(),
+                  txtSoDienThoai.getText(),
+                  txtGmail.getText(),                 
+                  txtGhiChu.getText());
+         
+        BLL.BLL_NhaCungCap.DuLieuDatabase_Table(tblNCC, DAL_NhaCungCap.GetAll());
+    }//GEN-LAST:event_btnThemActionPerformed
+
+    private void btnSuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSuaActionPerformed
+        // TODO add your handling code here:
+        
+         BLL_NhaCungCap.Sua(
+                 txtMaNCC.getText(),
+                 txtTenNCC.getText(),  
+                  txtDiaChi.getText(),
+                  txtSoDienThoai.getText(),
+                  txtGmail.getText(),                 
+                  txtGhiChu.getText());
+         
+         BLL.BLL_NhaCungCap.DuLieuDatabase_Table(tblNCC, DAL_NhaCungCap.GetAll());
+    }//GEN-LAST:event_btnSuaActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JButton btnLamMoi;
+    private javax.swing.JButton btnSua;
+    private javax.swing.JButton btnThem;
+    private javax.swing.JButton btnXoa;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -289,7 +353,7 @@ public class pnl_nhacungcap extends javax.swing.JPanel {
     private javax.swing.JTextField txtDiaChi;
     private javax.swing.JTextField txtGhiChu;
     private javax.swing.JTextField txtGmail;
-    private javax.swing.JTextField txtNCC;
+    private javax.swing.JTextField txtMaNCC;
     private javax.swing.JTextField txtSoDienThoai;
     private javax.swing.JTextField txtTenNCC;
     // End of variables declaration//GEN-END:variables

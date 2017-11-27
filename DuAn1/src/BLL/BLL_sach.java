@@ -6,17 +6,11 @@
 package BLL;
 
 import DAL.DAL_Sach;
-import DAL.DAL_TheLoai;
 import DTO.DTO_Sach;
-import GUI.frm_thongtinsach;
-import java.awt.event.ActionEvent;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JMenuItem;
-import javax.swing.JPopupMenu;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
@@ -146,5 +140,4 @@ public class BLL_sach {
         }
         return  IP;
     }
-    
 }

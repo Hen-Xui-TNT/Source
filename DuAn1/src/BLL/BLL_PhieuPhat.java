@@ -9,6 +9,9 @@ import DTO.DTO_ChiTietPhieuPhat;
 import DAL.DAL_ChiTietPhieuPhat;
 import DTO.DTO_PhieuPhat;
 import DAL.DAL_PhieuPhat;
+import DAL.DAL_Sach;
+import BLL.*;
+
 import java.awt.Color;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -18,9 +21,11 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
+import static GUI.pnl_CT_PhieuPhat.cbbLoiPhat;
 /**
  *
  * @author Yuuki
@@ -133,7 +138,7 @@ import javax.swing.table.DefaultTableModel;
              String TienPhat,String SoLuong,String ThanhTien,String GhiChu) {
       if (Check( MaPhieuPhat, MaSach, LoiPhat,TienPhat, SoLuong, ThanhTien, GhiChu)){
           
-            DTO_ChiTietPhieuPhat item = new DTO_ChiTietPhieuPhat(Integer.parseInt(MaPhieuPhat), Integer.parseInt(MaSach),LoiPhat,
+            DTO_ChiTietPhieuPhat item = new DTO_ChiTietPhieuPhat(Integer.parseInt(MaPhieuPhat), Integer.parseInt(MaSach),Integer.parseInt(LoiPhat),
                     Double.parseDouble(TienPhat), Integer.parseInt(SoLuong),Double.parseDouble(ThanhTien), GhiChu );
             
             System.out.println("Thêm thành công");
@@ -165,7 +170,7 @@ import javax.swing.table.DefaultTableModel;
          
       if (Check( MaPhieuPhat, MaSach, LoiPhat,TienPhat, SoLuong, ThanhTien, GhiChu)){
           
-            DTO_ChiTietPhieuPhat item = new DTO_ChiTietPhieuPhat(Integer.parseInt(MaCTPP),Integer.parseInt(MaPhieuPhat), Integer.parseInt(MaSach),LoiPhat,
+            DTO_ChiTietPhieuPhat item = new DTO_ChiTietPhieuPhat(Integer.parseInt(MaCTPP),Integer.parseInt(MaPhieuPhat), Integer.parseInt(MaSach),Integer.parseInt(LoiPhat),
                     Double.parseDouble(TienPhat), Integer.parseInt(SoLuong),Double.parseDouble(ThanhTien), GhiChu );
             
             System.out.println("Sửa thành công");
@@ -202,4 +207,136 @@ import javax.swing.table.DefaultTableModel;
      }
     
     
+    // Phiếu phạt
+    
+    
+    // Lấy dữ liệu đổ vào bảng thông tin sách phiếu phạt
+     public static void ThongTinSach(DefaultTableModel tableModel, String seach) {
+        Object[] item = new Object[4]; //Tạo 1 mảng Object có 4 phần tử
+        tableModel.setRowCount(0);  //Set lại số dòng của bảng về 0
+        try {
+            //Lấy dữ liệu LoaiSanPham bằng hàm tìm kiếm bên DAL
+            ResultSet rs = DAL_Sach.Seach_Sach_Phieu(seach);
+            while (rs.next()) {                
+                item[0] = rs.getString("MaSach");
+                item[1] = rs.getString("TenSach");
+                item[2] = rs.getString("SoLuongSach");
+                item[3] = ChuyenDoi_ThongBao.TienVietNam(rs.getDouble("GiaSach")); 
+                
+                tableModel.addRow(item);
+            }
+        } catch (SQLException ex) {
+            System.out.println("Lỗi truy vấn: " + ex.getMessage());
+        }
+    }
+     
+      public static void FillDataToCBB_DocGia(JComboBox cbb) {
+        //Lấy danh sách Tên và Mã khách hàng từ tầng DALKhachHang 
+        ResultSet rs = DAL.DAL_DocGia.GetAllCombobox();
+        BLL_Combobox.FillDataToCombobox( cbb,rs);
+        
+      }
+      
+      
+      public static void FillDataToCBB_NhanVien(JComboBox cbb){
+        //Lấy danh sách Tên và Mã khách hàng từ tầng DALKhachHang 
+        ResultSet rs = DAL.DAL_NhanVien.GetAllCombobox_TenNV();
+        BLL_Combobox.FillDataToCombobox(cbb, rs);
+    }
+      
+         public static void RemoveRowInTable(JTable tblTam, int viTriDong) {
+        DefaultTableModel tableModel = (DefaultTableModel) tblTam.getModel();
+
+        tableModel.removeRow(viTriDong);
+    }
+      
+      
+      public static int CheckTonTai(DefaultTableModel tableCTHD,String maSP) {
+        for (int i = 0; i < tableCTHD.getRowCount(); i++) {
+            String maSP_CTDH = tableCTHD.getValueAt(i, 2).toString();
+            if (maSP_CTDH.equals(maSP)) {
+                return 1;
+            }
+        }
+        return -1;
+    }
+      public static String TinhTongTien(JTable tblCTHD, int chiSoCotThanhTien) {
+        double tongTien = 0;
+
+        for (int i = 0; i < tblCTHD.getRowCount(); i++) {
+                        
+            tongTien += Double.parseDouble( ChuyenDoi_ThongBao.TienTeVeString(
+                    tblCTHD.getValueAt(i, chiSoCotThanhTien).toString()));
+            
+        }
+        String  a = ChuyenDoi_ThongBao.TienVietNam(tongTien);
+        return a;
+    }
+      
+      public static String TaoSoHoaDon() {
+        Date CurrentDate = new Date();
+
+        String dateCode = new SimpleDateFormat("ddMMyyhhmmss").format(CurrentDate);
+        String SoHoaDon = "PP"+ dateCode;
+        return SoHoaDon;
+    }
+
+    public static String TaoNgayLapHoaDon() {
+//        Date date = new Date();
+//        DateFormat df = DateFormat.getDateInstance();
+//        String s = df.format(date);
+//        return s;
+//        
+         Date date = new Date();
+        //DateFormat datefm = DateFormat.getDateInstance();
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        String dinhDang = sdf.format(date);
+        //String xuatngay = datefm.format(date);
+        return dinhDang;
+    }
+    
+     public static int LayMaHDTuSoHD(String SoHD) {
+        int mahoadon = 0;
+        ResultSet rs = DAL_PhieuPhat.LayMaPhieuPhatTuSoPhieuPhat(SoHD);
+        try {
+            while (rs.next()) {
+                mahoadon = rs.getInt("MaPhieuPhat");
+            }
+        } catch (Exception e) {
+            System.out.println(e.toString());
+        }
+        return mahoadon;
+    }
+      
+      public static void  DuLieuDatabase_CTHD( DefaultTableModel table,String MaSach,double LoiPhat,int SoLuong, String GhiChu){
+
+            ResultSet rs = DAL_ChiTietPhieuPhat.getAllChiTietPhieuPhat(MaSach);
+            
+            Object[] item = new Object[7]; // tạo mảng 
+            
+            try {
+            while(rs.next()){
+                    
+                                
+                     item[0] = rs.getString("TenSach");
+                     item[1] = rs.getString("MaSach");                                         
+                     item[2] = cbbLoiPhat.getSelectedItem(); // Lỗi phạt
+                     double  gia = Double.parseDouble(rs.getString("GiaSach")),
+                             GiaPhat = LoiPhat *gia;                
+                     item[3] = ChuyenDoi_ThongBao.TienVietNam(GiaPhat);   
+                     item[4] = SoLuong;  
+                     double  ThanhTien = GiaPhat * SoLuong;
+                     item[5] = ChuyenDoi_ThongBao.TienVietNam(ThanhTien);  
+                     item[6] = GhiChu;
+                     
+                     table.addRow(item);
+
+                }
+                } catch (SQLException ex) {
+                    System.out.println("lỗi truy vấn: " + ex.getMessage());
+                }
+      }
+ 
+      
+       
 }

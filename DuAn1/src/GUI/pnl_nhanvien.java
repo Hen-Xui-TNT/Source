@@ -5,8 +5,11 @@
  */
 package GUI;
 
+import BLL.BLL_Combobox;
 import BLL.BLL_NhanVien;
+import BLL.ChuyenDoi_ThongBao;
 import DAL.DAL_NhanVien;
+import DAL.MyCombobox;
 
 /**
  *
@@ -65,7 +68,6 @@ public class pnl_nhanvien extends javax.swing.JPanel {
         txtSDT = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         cbbGioiTinh = new javax.swing.JComboBox<>();
-        jPanel2 = new javax.swing.JPanel();
 
         setBackground(new java.awt.Color(204, 204, 204));
 
@@ -201,6 +203,11 @@ public class pnl_nhanvien extends javax.swing.JPanel {
 
         jButton5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton5.setText("Sửa");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         jButton6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton6.setText("Reset");
@@ -451,19 +458,6 @@ public class pnl_nhanvien extends javax.swing.JPanel {
                     .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Tìm Kiếm"));
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 44, Short.MAX_VALUE)
-        );
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -472,17 +466,14 @@ public class pnl_nhanvien extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -519,6 +510,23 @@ public class pnl_nhanvien extends javax.swing.JPanel {
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         // TODO add your handling code here:
+         String maloai = (String)(BLL_Combobox.getSelectedItemID_Yuu(cbbQuyen));
+         BLL_NhanVien.Them(
+                 txtTenNV.getText(),
+                 txtTenDangNhap.getText(),
+                 txtMatKhau.getText(),
+                 maloai,
+                 txtLuong.getText(),
+                 txtNgaySinh.getText(),
+                 txtNgayLam.getText(),
+                 cbbGioiTinh.getSelectedIndex(),
+                 txtCMND.getText(),
+                 txtSDT.getText(),
+                 txtDiaChi.getText(),
+                 txtGhiChu.getText());
+         
+        BLL.BLL_NhanVien.DuLieuDatabase_Table(tblnhanvien,DAL.DAL_NhanVien.GetAll());
+
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void tblnhanvienMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblnhanvienMouseClicked
@@ -540,7 +548,7 @@ public class pnl_nhanvien extends javax.swing.JPanel {
         String MaQuyen = tblnhanvien.getValueAt(viTriDong, 5).toString();
         BLL.BLL_Combobox.setSelectedCombobox(cbbQuyen, MaQuyen);
         
-        String Luong = tblnhanvien.getValueAt(viTriDong, 6).toString();
+        String Luong = ChuyenDoi_ThongBao.TienTeVeString(tblnhanvien.getValueAt(viTriDong, 6).toString());
         txtLuong.setText(Luong);
         
         String NgaySinh = tblnhanvien.getValueAt(viTriDong, 7).toString();
@@ -569,6 +577,28 @@ public class pnl_nhanvien extends javax.swing.JPanel {
         
     }//GEN-LAST:event_tblnhanvienMouseClicked
 
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+           String maloai = (String)(BLL_Combobox.getSelectedItemID_Yuu(cbbQuyen));
+         BLL_NhanVien.Sua(
+                 txtMaNV.getText(),
+                 txtTenNV.getText(),
+                 txtTenDangNhap.getText(),
+                 txtMatKhau.getText(),
+                 maloai,
+                 txtLuong.getText(),
+                 txtNgaySinh.getText(),
+                 txtNgayLam.getText(),
+                 cbbGioiTinh.getSelectedIndex(),
+                 txtCMND.getText(),
+                 txtSDT.getText(),
+                 txtDiaChi.getText(),
+                 txtGhiChu.getText());
+         
+        BLL.BLL_NhanVien.DuLieuDatabase_Table(tblnhanvien,DAL.DAL_NhanVien.GetAll());
+        
+    }//GEN-LAST:event_jButton5ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> cbbGioiTinh;
@@ -591,7 +621,6 @@ public class pnl_nhanvien extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;

@@ -28,7 +28,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.MouseListener;
 import javax.swing.JMenuItem;
 import javax.swing.JPopupMenu;
-import javax.swing.JTextField;
 /**
  *
  * @author Yuuki
@@ -142,9 +141,11 @@ public class BLL_TacGia {
          int rs =-1;
           for( int i = 0; i <mangMaLoai.size(); i++){
            String maLoai = mangMaLoai.get(i);
+                   
            if(0 == mangMaLoai.size()){               
              ChuyenDoi_ThongBao.ThongBao_Loi("Chưa có mã có mã độc giả","Thông Báo Lỗi");
               return rs;
+              
            }else{
                 try{
                      System.out.println("Xóa thành công");
@@ -152,10 +153,50 @@ public class BLL_TacGia {
                 }
                 catch(Exception e){
                       ChuyenDoi_ThongBao.ThongBao_ThanhCong("Thông Báo Lỗi", "Xóa không thành công");
+                 
                 }
             }
         }
+     
         return rs;    // Lựa chọn là No       
      }
+    
+    public static void DLPopupMenu(JPopupMenu Ten,ResultSet rs){
+        Ten.removeAll();// set lại số dòng của bảng về 0
+        try {
+            while(rs.next()){
+                JMenuItem MN = new JMenuItem(rs.getString("TenTacGia"));
+                Ten.add(MN);
+                MN.addActionListener(new java.awt.event.ActionListener() {
+                    @Override
+                    public void actionPerformed(java.awt.event.ActionEvent evt) {
+                        MNactionPerformed(evt);
+                    }
+
+                    private void MNactionPerformed(ActionEvent evt) {
+                        them(evt.getActionCommand());
+                    }
+                });
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+        Ten.show(txt_timkiemtacgia, 0, 25);
+    }
+    public static void them(String key) {
+        DefaultTableModel table = (DefaultTableModel)frm_thongtinsach.tbl_tacgia.getModel();
+       ResultSet rs = DAL_TacGia.timkiemPmn(key);
+        Object[] item = new Object[20];
+        try {
+            while(rs.next()){
+                item[0] = table.getRowCount() + 1;
+                item[1] = rs.getString("MaTacGia");
+                item[2] = rs.getString("TenTacGia");
+                table.addRow(item);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(BLL_Quyen.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 
 }

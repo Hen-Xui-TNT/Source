@@ -36,7 +36,7 @@ public class DAL_TacGia {
                "ButDanh    = N'"+item.getButDanh()+"',"+
                "GioiTinh   = "+item.getGioiTinh()+ ","+ 
                "NgaySinh   = '"+item.getNgaySinh()+"',"+
-               "NoiSinh    = N"+item.getNoiSinh()+"',"+
+               "NoiSinh    = N'"+item.getNoiSinh()+"',"+
                "GhiChu     = N'"+item.getGhiChu()+"'"+
               "where MaTacGia = "+ item.getMaTacGia();
         return DuAn1.conn.ExcuteNonQuery(query);

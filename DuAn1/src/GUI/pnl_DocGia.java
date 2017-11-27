@@ -5,7 +5,12 @@
  */
 package GUI;
 import BLL.BLL_DocGia;
+import BLL.*;
 import DAL.DAL_DocGia;
+import java.util.ArrayList;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author Yuuki
@@ -49,12 +54,13 @@ public class pnl_DocGia extends javax.swing.JPanel {
         lblUser8 = new javax.swing.JLabel();
         txtTrangThai = new javax.swing.JTextField();
         lblUser7 = new javax.swing.JLabel();
-        txtMoTa = new javax.swing.JTextField();
         jPanel19 = new javax.swing.JPanel();
-        jButton9 = new javax.swing.JButton();
-        jButton10 = new javax.swing.JButton();
-        jButton11 = new javax.swing.JButton();
-        jButton12 = new javax.swing.JButton();
+        btnThem = new javax.swing.JButton();
+        btnXoa = new javax.swing.JButton();
+        btnSua = new javax.swing.JButton();
+        btnLamMoi = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txtMoTa = new javax.swing.JTextPane();
 
         setBackground(new java.awt.Color(204, 204, 204));
 
@@ -160,26 +166,44 @@ public class pnl_DocGia extends javax.swing.JPanel {
         lblUser7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblUser7.setText("Mô Tả");
 
-        txtMoTa.setPreferredSize(new java.awt.Dimension(6, 32));
-
         jPanel19.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED), "Chức Năng", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Times New Roman", 1, 18))); // NOI18N
         jPanel19.setPreferredSize(new java.awt.Dimension(180, 350));
 
-        jButton9.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jButton9.setText("Thêm");
-        jButton9.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnThem.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        btnThem.setText("Thêm");
+        btnThem.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnThem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnThemActionPerformed(evt);
+            }
+        });
 
-        jButton10.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jButton10.setText("Xóa");
-        jButton10.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnXoa.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        btnXoa.setText("Xóa");
+        btnXoa.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnXoa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnXoaActionPerformed(evt);
+            }
+        });
 
-        jButton11.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jButton11.setText("Sửa");
-        jButton11.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnSua.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        btnSua.setText("Sửa");
+        btnSua.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnSua.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSuaActionPerformed(evt);
+            }
+        });
 
-        jButton12.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jButton12.setText("Reset");
-        jButton12.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnLamMoi.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        btnLamMoi.setText("Reset");
+        btnLamMoi.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnLamMoi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLamMoiActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel19Layout = new javax.swing.GroupLayout(jPanel19);
         jPanel19.setLayout(jPanel19Layout);
@@ -188,12 +212,12 @@ public class pnl_DocGia extends javax.swing.JPanel {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel19Layout.createSequentialGroup()
                 .addContainerGap(22, Short.MAX_VALUE)
                 .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnThem, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnXoa, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton12, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnSua, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnLamMoi, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(20, 20, 20))
         );
         jPanel19Layout.setVerticalGroup(
@@ -202,15 +226,17 @@ public class pnl_DocGia extends javax.swing.JPanel {
                 .addGap(48, 48, 48)
                 .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel19Layout.createSequentialGroup()
-                        .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnSua, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton12, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(btnLamMoi, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel19Layout.createSequentialGroup()
-                        .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnThem, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btnXoa, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(50, Short.MAX_VALUE))
         );
+
+        jScrollPane1.setViewportView(txtMoTa);
 
         javax.swing.GroupLayout jPanel24Layout = new javax.swing.GroupLayout(jPanel24);
         jPanel24.setLayout(jPanel24Layout);
@@ -218,8 +244,9 @@ public class pnl_DocGia extends javax.swing.JPanel {
             jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel24Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel24Layout.createSequentialGroup()
+                .addGroup(jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel24Layout.createSequentialGroup()
                         .addGroup(jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel24Layout.createSequentialGroup()
                                 .addComponent(MaNV4, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -237,13 +264,12 @@ public class pnl_DocGia extends javax.swing.JPanel {
                         .addGroup(jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel24Layout.createSequentialGroup()
                                 .addComponent(lblUser7, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(txtMoTa, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(268, 268, 268))
                             .addGroup(jPanel24Layout.createSequentialGroup()
                                 .addComponent(lblUser6, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(txtSDT, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(jPanel24Layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel24Layout.createSequentialGroup()
                         .addComponent(lblUser2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(txtTenDG, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -251,7 +277,7 @@ public class pnl_DocGia extends javax.swing.JPanel {
                         .addComponent(lblUser4, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(txtDiaChi, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel24Layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel24Layout.createSequentialGroup()
                         .addComponent(lblUser5, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(cbbLoaiDG, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -259,7 +285,7 @@ public class pnl_DocGia extends javax.swing.JPanel {
                         .addComponent(lblUser8, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(txtTrangThai, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
                 .addComponent(jPanel19, javax.swing.GroupLayout.PREFERRED_SIZE, 324, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -311,12 +337,11 @@ public class pnl_DocGia extends javax.swing.JPanel {
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(lblUser3, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtNgaySinh, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(0, 18, Short.MAX_VALUE))
+                                    .addComponent(txtNgaySinh, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jPanel24Layout.createSequentialGroup()
-                                .addGap(11, 11, 11)
-                                .addComponent(txtMoTa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addContainerGap())))))
+                                .addGap(18, 18, 18)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addGap(0, 18, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -379,24 +404,93 @@ public class pnl_DocGia extends javax.swing.JPanel {
         String TrangThai = tblDocGia.getValueAt(viTriDong, 8).toString();       
         txtTrangThai.setText(TrangThai);
         
-        String MoTa = tblDocGia.getValueAt(viTriDong, 8).toString();
+        String MoTa = tblDocGia.getValueAt(viTriDong, 9).toString();
         txtMoTa.setText(MoTa);
 
     }//GEN-LAST:event_tblDocGiaMouseClicked
+
+    private void btnThemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemActionPerformed
+        // TODO add your handling code here:
+        
+        String maloai = (String)(BLL_Combobox.getSelectedItemID_Yuu(cbbLoaiDG));
+              BLL_DocGia.Them(
+                  txtTenDG.getText(),  
+                  maloai,
+                  cbbGioiTinh.getSelectedIndex(),
+                  txtNgaySinh.getText(),
+                  txtSDT.getText(),
+                  txtDiaChi.getText(),
+                  txtTrangThai.getText(),                 
+                  txtMoTa.getText());
+         
+        BLL.BLL_DocGia.DuLieuDatabase_Table(tblDocGia, DAL_DocGia.GetAll());
+    }//GEN-LAST:event_btnThemActionPerformed
+
+    private void btnSuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSuaActionPerformed
+        // TODO add your handling code here:
+        
+        String maloai = (String)(BLL_Combobox.getSelectedItemID_Yuu(cbbLoaiDG));
+              BLL_DocGia.Sua(
+                  txtMaDG.getText(),
+                  txtTenDG.getText(),  
+                  maloai,
+                  cbbGioiTinh.getSelectedIndex(),
+                  txtNgaySinh.getText(),
+                  txtSDT.getText(),
+                  txtDiaChi.getText(),
+                  txtTrangThai.getText(),                 
+                  txtMoTa.getText());
+         
+        BLL.BLL_DocGia.DuLieuDatabase_Table(tblDocGia, DAL_DocGia.GetAll());
+    }//GEN-LAST:event_btnSuaActionPerformed
+
+    private void btnXoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXoaActionPerformed
+        // TODO add your handling code here:
+        
+        int LuaChon = JOptionPane.showConfirmDialog(new JFrame(),"Thông Báo xác nhận",
+                 "Bạn có chắc chắn xóa không?" , JOptionPane.YES_NO_OPTION);
+       
+       if (LuaChon == JOptionPane.YES_OPTION){
+           
+        int CacDongDuocChon[] = tblDocGia.getSelectedRows();
+        ArrayList<String> mangMaLoai = new ArrayList<>();
+        
+        for( int i = 0; i< CacDongDuocChon.length; i++){
+            mangMaLoai.add(tblDocGia.getValueAt(CacDongDuocChon[i], 1).toString());
+        }
+        // gọi hàm xóa 
+        BLL_DocGia.Xoa(mangMaLoai);        
+        
+        BLL.BLL_DocGia.DuLieuDatabase_Table(tblDocGia,DAL_DocGia.GetAll());
+       }
+    }//GEN-LAST:event_btnXoaActionPerformed
+
+    private void btnLamMoiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLamMoiActionPerformed
+        // TODO add your handling code here:
+        txtMaDG.setText("");
+        txtTenDG.setText("");
+        txtSDT.setText("");
+        txtNgaySinh.setText("");
+        txtDiaChi.setText("");
+        txtTrangThai.setText("");
+        txtMoTa.setText("");
+      
+    }//GEN-LAST:event_btnLamMoiActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel MaNV4;
     private javax.swing.JLabel MaNV5;
     private javax.swing.JPanel PnlDocGia;
+    private javax.swing.JButton btnLamMoi;
+    private javax.swing.JButton btnSua;
+    private javax.swing.JButton btnThem;
+    private javax.swing.JButton btnXoa;
     private javax.swing.JComboBox<String> cbbGioiTinh;
     public static javax.swing.JComboBox<String> cbbLoaiDG;
-    private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton11;
-    private javax.swing.JButton jButton12;
-    private javax.swing.JButton jButton9;
     private javax.swing.JPanel jPanel19;
     private javax.swing.JPanel jPanel24;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane12;
     private javax.swing.JLabel lblUser2;
     private javax.swing.JLabel lblUser3;
@@ -408,7 +502,7 @@ public class pnl_DocGia extends javax.swing.JPanel {
     public static javax.swing.JTable tblDocGia;
     private javax.swing.JTextField txtDiaChi;
     private javax.swing.JTextField txtMaDG;
-    private javax.swing.JTextField txtMoTa;
+    private javax.swing.JTextPane txtMoTa;
     private javax.swing.JTextField txtNgaySinh;
     private javax.swing.JTextField txtSDT;
     private javax.swing.JTextField txtTenDG;
