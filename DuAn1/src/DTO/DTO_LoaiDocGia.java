@@ -23,6 +23,12 @@ public class DTO_LoaiDocGia {
         this.MoTa = MoTa;
     }
 
+    public DTO_LoaiDocGia(int UuDai, String TenLoai, String MoTa) {
+        this.UuDai = UuDai;
+        this.TenLoai = TenLoai;
+        this.MoTa = MoTa;
+    }
+    
     public DTO_LoaiDocGia(String Ten, int parseInt) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }

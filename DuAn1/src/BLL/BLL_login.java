@@ -43,8 +43,8 @@ public class BLL_login {
                 frm_login.ipquyen = rs.getString("MaQuyen");
                 frm_login.ipuser = rs.getString("MaNhanVien");
                 frm_main.lbl_ttmaytru.setText(frm_login.server);
-                frm_main.lbl_ttquyen.setText(frm_login.Quyen);
-                frm_main.lbl_ttuser.setText(frm_login.user);
+                frm_main.lbl_ttquyenhan.setText(frm_login.Quyen);
+                frm_main.lbl_ttnguoisudung.setText(frm_login.user);
                 PhanQuyen(DAL.DAL_Quyen.Seach_Quyen(rs.getString("MaQuyen")));
                 return true;
             }
