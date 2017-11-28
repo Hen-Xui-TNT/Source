@@ -68,10 +68,6 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-<<<<<<< HEAD
-                  <Component id="jTextField1" min="-2" pref="594" max="-2" attributes="0"/>
-                  <EmptySpace max="32767" attributes="0"/>
-=======
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jScrollPane12" max="32767" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
@@ -82,7 +78,6 @@
                       </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
->>>>>>> 8fa8cecb98a0ac21f7aa75dffe0bbdc4215f970a
               </Group>
           </Group>
         </DimensionLayout>
@@ -234,18 +229,8 @@
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-<<<<<<< HEAD
-                              <Component id="lblMaNhanVien1" alignment="0" min="-2" pref="150" max="-2" attributes="0"/>
-                              <Component id="lblMaDocGia" alignment="1" min="-2" pref="150" max="-2" attributes="0"/>
-                              <Component id="lblNgayTra" alignment="0" min="-2" pref="150" max="-2" attributes="0"/>
-                              <Component id="lblNgayThue" alignment="0" min="-2" pref="150" max="-2" attributes="0"/>
-                              <Component id="lblGhiChu" alignment="0" min="-2" pref="150" max="-2" attributes="0"/>
-                              <Component id="lblSoPhieuThue1" alignment="0" min="-2" pref="150" max="-2" attributes="0"/>
-                              <Component id="lblSoPhieuThue2" alignment="0" min="-2" pref="150" max="-2" attributes="0"/>
-=======
                               <Component id="txtMaPHieuThue" alignment="0" pref="179" max="32767" attributes="0"/>
                               <Component id="txtSoPhieuThue" alignment="0" max="32767" attributes="0"/>
->>>>>>> 8fa8cecb98a0ac21f7aa75dffe0bbdc4215f970a
                           </Group>
                       </Group>
                       <Group type="102" attributes="0">
@@ -292,17 +277,6 @@
                       <Component id="lblUser5" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
                       <Component id="cbbDocGia_GH" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
                   </Group>
-<<<<<<< HEAD
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="txtMaPhieuThue" min="-2" pref="25" max="-2" attributes="0"/>
-                      <Component id="lblMaDocGia" alignment="1" min="-2" pref="25" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="lblSoPhieuThue1" min="-2" pref="25" max="-2" attributes="0"/>
-                      <Component id="txtGhiChu" alignment="0" min="-2" pref="25" max="-2" attributes="0"/>
-=======
                   <EmptySpace type="separate" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Component id="MaNV5" alignment="0" max="32767" attributes="0"/>
@@ -312,7 +286,6 @@
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Component id="lblUser3" alignment="0" max="32767" attributes="0"/>
                       <Component id="txtNgayThue" alignment="0" min="-2" max="-2" attributes="0"/>
->>>>>>> 8fa8cecb98a0ac21f7aa75dffe0bbdc4215f970a
                   </Group>
                   <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
