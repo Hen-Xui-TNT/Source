@@ -5,13 +5,7 @@
  */
 package DAL;
 import GUI.frm_login;
-import com.sun.jmx.defaults.ServiceName;
-import com.sun.xml.internal.ws.model.RuntimeModeler;
-import java.security.Provider;
 import java.sql.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.xml.ws.Service;
 /**
  *
  * @author tamntmpk00821
