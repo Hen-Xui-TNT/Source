@@ -107,4 +107,8 @@ public class DAL_KhuyenMai {
                 +"','"+item.getNgayKetThuc()+"',"+item.getVoucher()+","+item.getGiaSach()+",N'"+item.getKhuyenMai()+"')";
         return DuAn1.conn.ExcuteNonQuery(query);
     }
+   public static ResultSet SeachVoucher(String seach) {
+        String seach1 = "select * from KhuyenMai where  Voucher like N'%"+seach+"%'  ";
+        return DuAn1.conn.ExcuteQuerySelect(seach1);
+    } 
 }

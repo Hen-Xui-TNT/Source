@@ -40,8 +40,9 @@ public class pnl_khuyenmai extends javax.swing.JPanel {
     private void initComponents() {
 
         jPanel3 = new javax.swing.JPanel();
-        jButton2 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        btn_xoa = new javax.swing.JButton();
+        btn_them = new javax.swing.JButton();
+        btn_sua = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tbl_km = new javax.swing.JTable();
@@ -55,19 +56,27 @@ public class pnl_khuyenmai extends javax.swing.JPanel {
         jPanel3.setBackground(new java.awt.Color(204, 204, 204));
         jPanel3.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jButton2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jButton2.setText("Xóa");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btn_xoa.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        btn_xoa.setText("Xóa");
+        btn_xoa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btn_xoaActionPerformed(evt);
             }
         });
 
-        jButton4.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jButton4.setText("Thêm");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        btn_them.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        btn_them.setText("Thêm");
+        btn_them.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                btn_themActionPerformed(evt);
+            }
+        });
+
+        btn_sua.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        btn_sua.setText("Sửa");
+        btn_sua.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_suaActionPerformed(evt);
             }
         });
 
@@ -77,9 +86,11 @@ public class pnl_khuyenmai extends javax.swing.JPanel {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(71, 71, 71)
-                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(109, 109, 109)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btn_them, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(53, 53, 53)
+                .addComponent(btn_sua, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(68, 68, 68)
+                .addComponent(btn_xoa, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
@@ -87,8 +98,9 @@ public class pnl_khuyenmai extends javax.swing.JPanel {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btn_xoa, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_them, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_sua, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
@@ -272,7 +284,7 @@ public class pnl_khuyenmai extends javax.swing.JPanel {
         Them = 5;
     }//GEN-LAST:event_rbt_tungcuonActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void btn_themActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_themActionPerformed
         switch (Them) {
             case 1:
                 GUI.khuyenmai.pnl_KoMaSach pnl1 = new pnl_KoMaSach();
@@ -403,9 +415,9 @@ public class pnl_khuyenmai extends javax.swing.JPanel {
                 ChuyenDoi_ThongBao.ThongBao_Loi("Bạn chưa chọn chức năng để thêm khuyến mãi", "Lỗi thêm Khuyến Mãi");
                 break;
         }
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_btn_themActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btn_xoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_xoaActionPerformed
         //kiểm tra người dùng click mấy lần
         
         int row = tbl_km.getSelectedRow();
@@ -435,12 +447,148 @@ public class pnl_khuyenmai extends javax.swing.JPanel {
                 ChuyenDoi_ThongBao.ThongBao_Loi("Bạn chưa chọn chức năng để Xóa khuyến mãi", "Lỗi thêm Khuyến Mãi");
                 break;
         }
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btn_xoaActionPerformed
+
+    private void btn_suaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_suaActionPerformed
+        int row = tbl_km.getSelectedRow();
+        
+        switch (Them) {
+            case 1:
+                GUI.khuyenmai.pnl_KoMaSach pnl1 = new pnl_KoMaSach();
+                pnl1.show();
+                GUI.khuyenmai.pnl_KoMaSach.lbl_GiaSach.setText("Giảm Giá");
+                GUI.khuyenmai.pnl_KoMaSach.lbl_TT.setText("Số Tiền HD");
+            //---------------------------------------------------------------
+            //show hộp thoại xác nhận
+            int luachon1 = JOptionPane.showConfirmDialog(new JFrame(), pnl1, "Nhập Thông Tin", JOptionPane.YES_NO_OPTION);
+            
+            // kiểm tra xem người dùng bấm vào yes hay no
+            if (luachon1 == JOptionPane.YES_OPTION) {
+                String ngaybatdau, ngayketthuc,tenKM,gia;
+                ngaybatdau = GUI.khuyenmai.pnl_KoMaSach.txt_NgayBatDau.getText();
+                ngayketthuc = GUI.khuyenmai.pnl_KoMaSach.txt_NgayKetThuc.getText();
+                tenKM = GUI.khuyenmai.pnl_KoMaSach.txt_KM.getText();
+                gia = GUI.khuyenmai.pnl_KoMaSach.txt_giasach.getText();
+            try {
+                BLL_KhuyenMai.insertKMKMTienHD(ngaybatdau, ngayketthuc, gia, tenKM, GUI.khuyenmai.pnl_KoMaSach.txt_TT.getText());
+            } catch (ParseException ex) {
+                Logger.getLogger(pnl_khuyenmai.class.getName()).log(Level.SEVERE, null, ex);
+            }
+                
+                }
+                break;
+            case 2:
+                    GUI.khuyenmai.pnl_KoMaSach pnl2 = new pnl_KoMaSach();
+                pnl2.show();
+                GUI.khuyenmai.pnl_KoMaSach.lbl_GiaSach.setText("Giảm Giá");
+                GUI.khuyenmai.pnl_KoMaSach.lbl_TT.setText("Số Lượng Sách");
+            //---------------------------------------------------------------
+            //show hộp thoại xác nhận
+            int luachon2 = JOptionPane.showConfirmDialog(new JFrame(), pnl2, "Nhập Thông Tin", JOptionPane.YES_NO_OPTION);
+            
+            // kiểm tra xem người dùng bấm vào yes hay no
+            if (luachon2 == JOptionPane.YES_OPTION) {
+                String ngaybatdau, ngayketthuc,tenKM,gia;
+                ngaybatdau = GUI.khuyenmai.pnl_KoMaSach.txt_NgayBatDau.getText();
+                ngayketthuc = GUI.khuyenmai.pnl_KoMaSach.txt_NgayKetThuc.getText();
+                tenKM = GUI.khuyenmai.pnl_KoMaSach.txt_KM.getText();
+                gia = GUI.khuyenmai.pnl_KoMaSach.txt_giasach.getText();
+            try {
+                BLL_KhuyenMai.insertKMKMSLSach(ngaybatdau, ngayketthuc, gia, tenKM, GUI.khuyenmai.pnl_KoMaSach.txt_TT.getText());
+            } catch (ParseException ex) {
+                Logger.getLogger(pnl_khuyenmai.class.getName()).log(Level.SEVERE, null, ex);
+            }
+                
+                }
+                break;
+            case 3:
+                GUI.khuyenmai.pnl_MaSach pnl = new pnl_MaSach();
+                pnl.show();
+                GUI.khuyenmai.pnl_MaSach.lbl_GiaSach.setText("Đồng Giá");
+                BLL_KhuyenMai.ThongTinSach((DefaultTableModel) GUI.khuyenmai.pnl_MaSach.tblSach.getModel()//
+                    , DAL_Sach.GetAll());
+            //---------------------------------------------------------------
+            //show hộp thoại xác nhận
+            int luachon = JOptionPane.showConfirmDialog(new JFrame(), pnl, "Nhập Thông Tin", JOptionPane.YES_NO_OPTION);
+            
+            // kiểm tra xem người dùng bấm vào yes hay no
+            if (luachon == JOptionPane.YES_OPTION) {
+                String ngaybatdau, ngayketthuc,tenKM,gia;
+                ngaybatdau = GUI.khuyenmai.pnl_MaSach.txt_NgayBatDau.getText();
+                ngayketthuc = GUI.khuyenmai.pnl_MaSach.txt_NgayKetThuc.getText();
+                tenKM = GUI.khuyenmai.pnl_MaSach.txt_KM.getText();
+                gia = GUI.khuyenmai.pnl_MaSach.txt_giasach.getText();
+                for (int i = 0; i < GUI.khuyenmai.pnl_MaSach.tbl_sachkm.getRowCount(); i++) {
+                    try {
+                        BLL_KhuyenMai.insertKMDongGia(ngaybatdau, ngayketthuc, gia, tenKM, Integer.parseInt(GUI.khuyenmai.pnl_MaSach.tbl_sachkm.getValueAt(i, 0).toString()));
+                    } catch (ParseException ex) {
+                        Logger.getLogger(pnl_khuyenmai.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }
+                }
+                
+                break;
+            case 4:
+                    GUI.khuyenmai.pnl_KoMaSach pnl4 = new pnl_KoMaSach();
+                pnl4.show();
+                GUI.khuyenmai.pnl_KoMaSach.lbl_GiaSach.setText("Giảm Giá");
+                GUI.khuyenmai.pnl_KoMaSach.lbl_TT.setText("Coupon, Voucher");
+            //---------------------------------------------------------------
+            //show hộp thoại xác nhận
+            int luachon4 = JOptionPane.showConfirmDialog(new JFrame(), pnl4, "Nhập Thông Tin", JOptionPane.YES_NO_OPTION);
+            
+            // kiểm tra xem người dùng bấm vào yes hay no
+            if (luachon4 == JOptionPane.YES_OPTION) {
+                String ngaybatdau, ngayketthuc,tenKM,gia;
+                ngaybatdau = GUI.khuyenmai.pnl_KoMaSach.txt_NgayBatDau.getText();
+                ngayketthuc = GUI.khuyenmai.pnl_KoMaSach.txt_NgayKetThuc.getText();
+                tenKM = GUI.khuyenmai.pnl_KoMaSach.txt_KM.getText();
+                gia = GUI.khuyenmai.pnl_KoMaSach.txt_giasach.getText();
+            try {
+                BLL_KhuyenMai.insertKMVoucher(ngaybatdau, ngayketthuc, gia, tenKM, GUI.khuyenmai.pnl_KoMaSach.txt_TT.getText());
+            } catch (ParseException ex) {
+                Logger.getLogger(pnl_khuyenmai.class.getName()).log(Level.SEVERE, null, ex);
+            }
+                
+                }
+                break;
+            case 5:
+                GUI.khuyenmai.pnl_MaSach pnlCuon = new pnl_MaSach();
+                pnlCuon.show();
+                GUI.khuyenmai.pnl_MaSach.lbl_GiaSach.setText("Giảm Giá %");
+                BLL_KhuyenMai.ThongTinSach((DefaultTableModel) GUI.khuyenmai.pnl_MaSach.tblSach.getModel()//
+                    , DAL_Sach.GetAll());
+            //---------------------------------------------------------------
+            //show hộp thoại xác nhận
+            int luachon5 = JOptionPane.showConfirmDialog(new JFrame(), pnlCuon, "Nhập Thông Tin", JOptionPane.YES_NO_OPTION);
+            
+            // kiểm tra xem người dùng bấm vào yes hay no
+            if (luachon5 == JOptionPane.YES_OPTION) {
+                String ngaybatdau, ngayketthuc,tenKM,gia;
+                ngaybatdau = GUI.khuyenmai.pnl_MaSach.txt_NgayBatDau.getText();
+                ngayketthuc = GUI.khuyenmai.pnl_MaSach.txt_NgayKetThuc.getText();
+                tenKM = GUI.khuyenmai.pnl_MaSach.txt_KM.getText();
+                gia = GUI.khuyenmai.pnl_MaSach.txt_giasach.getText();
+                for (int i = 0; i < GUI.khuyenmai.pnl_MaSach.tbl_sachkm.getRowCount(); i++) {
+                    try {
+                        BLL_KhuyenMai.insertKMCuon(ngaybatdau, ngayketthuc, gia, tenKM, Integer.parseInt(GUI.khuyenmai.pnl_MaSach.tbl_sachkm.getValueAt(i, 0).toString()));
+                    } catch (ParseException ex) {
+                        Logger.getLogger(pnl_khuyenmai.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }
+                }
+                break;
+            default:
+                ChuyenDoi_ThongBao.ThongBao_Loi("Bạn chưa chọn chức năng để thêm khuyến mãi", "Lỗi thêm Khuyến Mãi");
+                break;
+        }
+    }//GEN-LAST:event_btn_suaActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JButton btn_sua;
+    private javax.swing.JButton btn_them;
+    private javax.swing.JButton btn_xoa;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

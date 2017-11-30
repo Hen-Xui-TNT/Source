@@ -15,14 +15,14 @@ public class DTO_PhieuThanhLy {
     int MaPhieuThanhLy;
     String SoPhieu;
     int MaNhanVien;
-    Date NgayThanhLy;
+    String NgayThanhLy;
     Double TongTien;
     String GhiChu;
 
     public DTO_PhieuThanhLy() {
     }
 
-    public DTO_PhieuThanhLy(int MaPhieuThanhLy, String SoPhieu, int MaNhanVien, Date NgayThanhLy, Double TongTien, String GhiChu) {
+    public DTO_PhieuThanhLy(int MaPhieuThanhLy, String SoPhieu, int MaNhanVien, String NgayThanhLy, Double TongTien, String GhiChu) {
         this.MaPhieuThanhLy = MaPhieuThanhLy;
         this.SoPhieu = SoPhieu;
         this.MaNhanVien = MaNhanVien;
@@ -31,7 +31,7 @@ public class DTO_PhieuThanhLy {
         this.GhiChu = GhiChu;
     }
 
-    public DTO_PhieuThanhLy(String SoPhieu, int MaNhanVien, Date NgayThanhLy, Double TongTien, String GhiChu) {
+    public DTO_PhieuThanhLy(String SoPhieu, int MaNhanVien, String NgayThanhLy, Double TongTien, String GhiChu) {
         this.SoPhieu = SoPhieu;
         this.MaNhanVien = MaNhanVien;
         this.NgayThanhLy = NgayThanhLy;
@@ -63,11 +63,11 @@ public class DTO_PhieuThanhLy {
         this.MaNhanVien = MaNhanVien;
     }
 
-    public Date getNgayThanhLy() {
+    public String getNgayThanhLy() {
         return NgayThanhLy;
     }
 
-    public void setNgayThanhLy(Date NgayThanhLy) {
+    public void setNgayThanhLy(String NgayThanhLy) {
         this.NgayThanhLy = NgayThanhLy;
     }
 

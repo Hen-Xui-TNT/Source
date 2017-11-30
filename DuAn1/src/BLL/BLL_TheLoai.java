@@ -13,6 +13,7 @@ import static GUI.frm_thongtinsach.txt_timkiemtacgia;
 import java.awt.event.ActionEvent;
 import DAL.DAL_TheLoai;
 import DTO.DTO_TheLoai;
+import static GUI.frm_thongtinsach.txt_timkiemtheloai;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
@@ -30,6 +31,7 @@ import javax.swing.table.DefaultTableModel;
 public class BLL_TheLoai {
     public static void DLPopupMenu(JPopupMenu Ten,ResultSet rs){
         Ten.removeAll();// set lại số dòng của bảng về 0
+        Ten.setVisible(false);
         try {
             while(rs.next()){
                 JMenuItem MN = new JMenuItem(rs.getString("TenTheLoai"));
@@ -49,6 +51,7 @@ public class BLL_TheLoai {
             System.out.println(ex.getMessage());
         }
         Ten.show(frm_thongtinsach.txt_timkiemtheloai, 0, 25);
+        txt_timkiemtheloai.requestFocus();
     }
     public static void themDL(String key) {
         DefaultTableModel table = (DefaultTableModel)frm_thongtinsach.tbl_theloai.getModel();

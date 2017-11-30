@@ -24,6 +24,18 @@ public class DTO_KhuyenMai {
     public DTO_KhuyenMai() {
     }
 
+    public DTO_KhuyenMai(double SoTienHoaDon, Double GiaSach, String KhuyenMai) {
+        this.SoTienHoaDon = SoTienHoaDon;
+        this.GiaSach = GiaSach;
+        this.KhuyenMai = KhuyenMai;
+    }
+
+    public DTO_KhuyenMai(int SoLuong, Double GiaSach, String KhuyenMai) {
+        this.SoLuong = SoLuong;
+        this.GiaSach = GiaSach;
+        this.KhuyenMai = KhuyenMai;
+    }
+
     public DTO_KhuyenMai(int MaKhuyenMai, String NgayBatDau, String NgayKetThuc, double SoTienHoaDon, int SoLuong, int MaSach, Double GiaSach, String KhuyenMai, String voucher) {
         this.MaKhuyenMai = MaKhuyenMai;
         this.NgayBatDau = NgayBatDau;
@@ -146,6 +158,7 @@ public class DTO_KhuyenMai {
     public void setKhuyenMai(String KhuyenMai) {
         this.KhuyenMai = KhuyenMai;
     }
+
 
     
 }

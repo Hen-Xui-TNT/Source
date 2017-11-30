@@ -41,7 +41,6 @@ public class frm_doimatkhau extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setTitle("Đổi mât khẩu");
-        setAlwaysOnTop(true);
         setBackground(new java.awt.Color(0, 153, 255));
         setResizable(false);
         addWindowListener(new java.awt.event.WindowAdapter() {

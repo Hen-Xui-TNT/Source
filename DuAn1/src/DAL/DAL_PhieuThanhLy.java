@@ -21,7 +21,7 @@ public class DAL_PhieuThanhLy {
     }
 
     public static int Them_PhieuThanhLy(DTO_PhieuThanhLy item) {
-        String query = "set dateformat dmy insert into PhieuThanhLy values(" + item.getSoPhieu() + "," + item.getMaNhanVien() + ""
+        String query = "set dateformat dmy insert into PhieuThanhLy values('" + item.getSoPhieu() + "'," + item.getMaNhanVien() + ""
                 + ",'" + item.getNgayThanhLy() + "'," + item.getTongTien() + ",N'" + item.getGhiChu() + "')";
         return DuAn1.conn.ExcuteNonQuery(query);
     }

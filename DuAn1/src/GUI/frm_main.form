@@ -37,11 +37,7 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Component id="tbn_menu" max="32767" attributes="0"/>
           <Component id="tbn_main" alignment="0" max="32767" attributes="0"/>
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="pnl_thongtin" max="32767" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-          </Group>
+          <Component id="pnl_thongtin" alignment="1" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -49,10 +45,9 @@
           <Group type="102" alignment="0" attributes="0">
               <Component id="tbn_menu" min="-2" pref="130" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
-              <Component id="tbn_main" pref="542" max="32767" attributes="0"/>
+              <Component id="tbn_main" min="-2" pref="553" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="pnl_thongtin" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -1244,7 +1239,7 @@
     <Container class="javax.swing.JPanel" name="pnl_thongtin">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="99" red="33" type="rgb"/>
+          <Color blue="ff" green="cc" red="66" type="rgb"/>
         </Property>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
@@ -1259,9 +1254,9 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="lbl_maytru" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="lbl_ttmaytru" min="-2" pref="303" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                   <Component id="lbl_nguoisudung" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="lbl_ttnguoisudung" min="-2" pref="108" max="-2" attributes="0"/>
@@ -1285,10 +1280,10 @@
                       <Component id="lbl_ttquyenhan" alignment="3" min="-2" pref="13" max="-2" attributes="0"/>
                   </Group>
               </Group>
+              <Component id="lbl_ttmaytru" alignment="0" min="-2" pref="13" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lbl_maytru" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="lbl_nguoisudung" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="lbl_ttmaytru" alignment="3" min="-2" pref="13" max="-2" attributes="0"/>
                   <Component id="lbl_ttnguoisudung" alignment="3" min="-2" pref="13" max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -1359,6 +1354,9 @@
           <Color blue="ff" green="cc" red="0" type="rgb"/>
         </Property>
       </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+      </AuxValues>
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
     </Container>

@@ -425,15 +425,26 @@ public class frm_thongtinsach extends javax.swing.JFrame {
    
     private void txt_timkiemtacgiaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_timkiemtacgiaKeyReleased
         //Pmn_tacgia.show(txt_timkiemtacgia, 0, 25);
-        String key = txt_timkiemtacgia.getText();
-        BLL.BLL_TacGia.DLPopupMenu(Pmn_tacgia, DAL.DAL_TacGia.timkiemPmn(key));
+        if (!txt_timkiemtacgia.getText().equals("")) {
+            String key = txt_timkiemtacgia.getText();
+            BLL.BLL_TacGia.DLPopupMenu(Pmn_tacgia, DAL.DAL_TacGia.timkiemPmn(key));
+            txt_timkiemtacgia.requestFocus();
+        }else{
+            Pmn_tacgia.setVisible(false);
+        }
         
     }//GEN-LAST:event_txt_timkiemtacgiaKeyReleased
 
     private void txt_timkiemtheloaiKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_timkiemtheloaiKeyReleased
-        String key = txt_timkiemtheloai.getText();
- //       BLL.BLL_TheLoai.DLPopupMenu(Pmn_theloai, DAL.DAL_TheLoai.timkiemPmn(key));
-        BLL.BLL_TheLoai.DLPopupMenu(Pmn_theloai, DAL.DAL_TheLoai.timkiemPmn(key));
+        if (!txt_timkiemtheloai.getText().equals("")) {
+            String key = txt_timkiemtheloai.getText();
+ //         BLL.BLL_TheLoai.DLPopupMenu(Pmn_theloai, DAL.DAL_TheLoai.timkiemPmn(key));
+        
+            BLL.BLL_TheLoai.DLPopupMenu(Pmn_theloai, DAL.DAL_TheLoai.timkiemPmn(key));
+            txt_timkiemtheloai.requestFocus();
+        }else{
+            Pmn_theloai.setVisible(false);
+        }
         
     }//GEN-LAST:event_txt_timkiemtheloaiKeyReleased
 

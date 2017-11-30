@@ -27,6 +27,7 @@ public class pnl_KMHoaDon extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        pmn_voucher = new javax.swing.JPopupMenu();
         rbn_SL = new javax.swing.JRadioButton();
         rbn_tien = new javax.swing.JRadioButton();
         rbn_Voucher = new javax.swing.JRadioButton();
@@ -67,7 +68,11 @@ public class pnl_KMHoaDon extends javax.swing.JPanel {
         txt_KMTien.setEditable(false);
         jScrollPane2.setViewportView(txt_KMTien);
 
-        txt_KmVoucher.setEditable(false);
+        txt_KmVoucher.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txt_KmVoucherKeyReleased(evt);
+            }
+        });
         jScrollPane3.setViewportView(txt_KmVoucher);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -75,7 +80,7 @@ public class pnl_KMHoaDon extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(57, Short.MAX_VALUE)
+                .addContainerGap(30, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -91,36 +96,57 @@ public class pnl_KMHoaDon extends javax.swing.JPanel {
                 .addContainerGap()
                 .addComponent(rbn_SL)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(rbn_tien)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(7, 7, 7)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(rbn_Voucher)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
-
+    public static int check;
     private void rbn_SLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbn_SLActionPerformed
-        
+        rbn_SL.setSelected(true);
+        rbn_Voucher.setSelected(false);
+        rbn_tien.setSelected(false);
+        check = 1;
     }//GEN-LAST:event_rbn_SLActionPerformed
 
     private void rbn_tienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbn_tienActionPerformed
-        
+        rbn_SL.setSelected(false);
+        rbn_Voucher.setSelected(false);
+        rbn_tien.setSelected(true);
+        check = 2;
     }//GEN-LAST:event_rbn_tienActionPerformed
 
     private void rbn_VoucherActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbn_VoucherActionPerformed
-        
+        rbn_SL.setSelected(false);
+        rbn_Voucher.setSelected(true);
+        rbn_tien.setSelected(false);
+        check = 3;
     }//GEN-LAST:event_rbn_VoucherActionPerformed
+
+    private void txt_KmVoucherKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_KmVoucherKeyReleased
+        if (!txt_KmVoucher.getText().equals("")) {
+            BLL.BLL_phieuthanhly.TimKiemVoucher(pmn_voucher, DAL.DAL_KhuyenMai.SeachVoucher(txt_KmVoucher.getText()));
+        }else{
+            pmn_voucher.setVisible(false);
+        }
+        
+        
+                
+    }//GEN-LAST:event_txt_KmVoucherKeyReleased
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JPopupMenu pmn_voucher;
     public static javax.swing.JRadioButton rbn_SL;
     public static javax.swing.JRadioButton rbn_Voucher;
     public static javax.swing.JRadioButton rbn_tien;

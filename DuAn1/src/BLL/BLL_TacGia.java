@@ -163,6 +163,7 @@ public class BLL_TacGia {
     
     public static void DLPopupMenu(JPopupMenu Ten,ResultSet rs){
         Ten.removeAll();// set lại số dòng của bảng về 0
+        Ten.setVisible(false);
         try {
             while(rs.next()){
                 JMenuItem MN = new JMenuItem(rs.getString("TenTacGia"));
@@ -182,6 +183,7 @@ public class BLL_TacGia {
             System.out.println(ex.getMessage());
         }
         Ten.show(txt_timkiemtacgia, 0, 25);
+        txt_timkiemtacgia.requestFocus();
     }
     public static void them(String key) {
         DefaultTableModel table = (DefaultTableModel)frm_thongtinsach.tbl_tacgia.getModel();

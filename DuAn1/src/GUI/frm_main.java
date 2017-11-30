@@ -853,7 +853,7 @@ public class frm_main extends javax.swing.JFrame {
 
         tbn_menu.addTab("Công Cụ", pnl_Congcu);
 
-        pnl_thongtin.setBackground(new java.awt.Color(51, 153, 255));
+        pnl_thongtin.setBackground(new java.awt.Color(102, 204, 255));
         pnl_thongtin.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         lbl_maytru.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
@@ -878,9 +878,9 @@ public class frm_main extends javax.swing.JFrame {
             .addGroup(pnl_thongtinLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(lbl_maytru)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lbl_ttmaytru, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(26, 26, 26)
                 .addComponent(lbl_nguoisudung)
                 .addGap(18, 18, 18)
                 .addComponent(lbl_ttnguoisudung, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -900,10 +900,10 @@ public class frm_main extends javax.swing.JFrame {
                 .addGroup(pnl_thongtinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbl_quyenhan)
                     .addComponent(lbl_ttquyenhan, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)))
+            .addComponent(lbl_ttmaytru, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGroup(pnl_thongtinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                 .addComponent(lbl_maytru)
                 .addComponent(lbl_nguoisudung)
-                .addComponent(lbl_ttmaytru, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addComponent(lbl_ttnguoisudung, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -915,20 +915,16 @@ public class frm_main extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(tbn_menu)
             .addComponent(tbn_main)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(pnl_thongtin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(pnl_thongtin, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(tbn_menu, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(2, 2, 2)
-                .addComponent(tbn_main, javax.swing.GroupLayout.DEFAULT_SIZE, 542, Short.MAX_VALUE)
+                .addComponent(tbn_main, javax.swing.GroupLayout.PREFERRED_SIZE, 553, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(pnl_thongtin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addComponent(pnl_thongtin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         setSize(new java.awt.Dimension(1386, 749));
@@ -1068,6 +1064,10 @@ public class frm_main extends javax.swing.JFrame {
     private void btnThanhLyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThanhLyActionPerformed
         pnl_PhieuThanhLy pnl = new pnl_PhieuThanhLy();
         BLL_main.themtab("Thanh lý", tbn_main, pnl);
+        BLL_phieuthanhly.ThongTinSach((DefaultTableModel)pnl_PhieuThanhLy.tblSach.getModel(), DAL_Sach.GetAll());
+        BLL_Combobox.LayDuLieuCombobox(DAL_NhanVien.GetAll(), pnl_PhieuThanhLy.cbbNhanVien, "TenNhanVien", "MaNhanVien");
+        pnl_PhieuThanhLy.txtSoPhieu.setText(ChuyenDoi_ThongBao.TaoSoHoaDon());
+        pnl_PhieuThanhLy.txt_ngaythanhly.setText(ChuyenDoi_ThongBao.TaoNgayLapHoaDon());
     }//GEN-LAST:event_btnThanhLyActionPerformed
 
     private void btnPhieuNhapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPhieuNhapActionPerformed
@@ -1109,9 +1109,6 @@ public class frm_main extends javax.swing.JFrame {
         
         DuAn1.frm_TTsach.setVisible(true);
         CNSach = 2; 
-
-        frm_thongtinsach frm = new frm_thongtinsach();
-        frm.setVisible(true);
     }//GEN-LAST:event_jButton20ActionPerformed
 
     private void btnThanhLy1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThanhLy1ActionPerformed
@@ -1211,7 +1208,7 @@ public class frm_main extends javax.swing.JFrame {
     private javax.swing.JPanel pnl_sach;
     private javax.swing.JPanel pnl_tacgiatheloai;
     private javax.swing.JPanel pnl_thongtin;
-    private javax.swing.JTabbedPane tbn_main;
+    public static javax.swing.JTabbedPane tbn_main;
     private javax.swing.JTabbedPane tbn_menu;
     // End of variables declaration//GEN-END:variables
 }

@@ -6,8 +6,13 @@
 package BLL;
 
 import DAL.DAL_Sach;
+import DAL.DAL_TacGia;
 import DTO.DTO_DocGia;
+import DTO.DTO_KhuyenMai;
+import GUI.frm_thongtinsach;
+import static GUI.frm_thongtinsach.txt_timkiemtacgia;
 import GUI.pnl_KMHoaDon;
+import java.awt.event.ActionEvent;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Date;
@@ -15,11 +20,32 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JMenuItem;
+import javax.swing.JPopupMenu;
 /**
  *
  * @author HuyNhan
  */
 public class BLL_phieuthanhly {
+    public static int MaHD(String SoHD){
+        ResultSet rs = DAL.DAL_PhieuThanhLy.LayMaPhieuThanhLyTuSoPhieuThanhLy(SoHD);
+        try {
+            while(rs.next()){
+                int madh = rs.getShort("MaPhieuThanhLy");
+                return madh; 
+                        
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(BLL_phieuthanhly.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return -1;
+    }
     public static void ThongTinSach(DefaultTableModel tableModel, ResultSet rs) 
         {
         Object[] item = new Object[4]; //Tạo 1 mảng Object có 4 phần tử
@@ -179,15 +205,19 @@ public class BLL_phieuthanhly {
             }
         }
     }
+    
     public static void checkKM(ResultSet rs,double TongTienHD,double TongSach){
         double Tien = 0,SL = 0;
+        int bodem = 0;
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
         String ngayhientai,ngaybatdau = null,ngayketthuc = null;
         Date date1 = null ,date2 = null, date3= null;
         ngayhientai = ChuyenDoi_ThongBao.TaoNgayLapHoaDon();
-        
+        ArrayList<DTO.DTO_KhuyenMai> arrTien = new ArrayList<>();
+        ArrayList<DTO.DTO_KhuyenMai> arrSL = new ArrayList<>();
         try {
             while(rs.next()){
+                
                 ngaybatdau = ChuyenDoi_ThongBao.formatDate(rs.getDate("NgayBatDau"));
                 
                 ngayketthuc = ChuyenDoi_ThongBao.formatDate(rs.getDate("NgayKetThuc"));
@@ -200,35 +230,121 @@ public class BLL_phieuthanhly {
             }
             if (date1.after(date3) || date1.before(date2)) {
             } else {
-            
-                    double tienData = rs.getDouble("SoTienHoaDon")
-                            ,SLData = rs.getDouble("SoLuong");
-                    Tien = tienData;
-                    SL = SLData;
-                    String TB1 = null,TB2 = null;
-                    if (TongTienHD >= tienData) {
-                        if (Tien <= tienData) {
-                            Tien = tienData;
-                            TB1 = rs.getString("KhuyenMai");
-                            System.out.println(TB1);
-                        }else{
-                            pnl_KMHoaDon.txt_KMTien.setText(TB1);
-                        }
-                    }
-                    if (TongSach >= SLData) {
-                        if (SL <= SLData) {
-                            SL = SLData;
-                            TB2 = rs.getString("KhuyenMai");
-                            System.out.println(TB2);
-                        }else{
-                            pnl_KMHoaDon.txt_KMSoLuong.setText(TB2);
-                        }
-                    }
+                if (rs.getString("SoTienHoaDon") != null) {
+                    DTO.DTO_KhuyenMai arr = new DTO_KhuyenMai(rs.getDouble("SoTienHoaDon"),rs.getDouble("GiaSach"), rs.getString("KhuyenMai"));
+                    arrTien.add(arr);
+                } 
+                if (rs.getString("SoLuong") != null) {
+                    DTO.DTO_KhuyenMai arr = new DTO_KhuyenMai(rs.getInt("SoLuong"),rs.getDouble("GiaSach"), rs.getString("KhuyenMai"));
+                    arrSL.add(arr);
                 }
+                }
+            bodem = 1 + bodem;
         }
             } catch (SQLException e) {
                 System.out.println("Lỗi Truy Vấn : " + e.getMessage());
             }
+
+        Collections.sort(arrSL, slhd);
+        for (int i = 0; i < arrSL.size(); i++) {
             
+            if (arrSL.get(i) != null) {
+                DTO_KhuyenMai dto = arrSL.get(i);
+                if (SL < dto.getSoLuong() & TongSach < dto.getSoLuong()) {
+                    SL = dto.getSoLuong();
+                } else {
+                    pnl_KMHoaDon.txt_KMSoLuong.setText(dto.getKhuyenMai());
+                    KMSLuong = dto.getGiaSach();
+                    Tenkmsl = dto.getKhuyenMai();
+                }
+            }
+        }
+        Collections.sort(arrTien, tienhd);
+        for (int i = 0; i < arrTien.size(); i++) {
+            if (arrTien.get(i) != null) {
+                System.out.println(i);
+                DTO_KhuyenMai dto = arrTien.get(i);
+                if (Tien < dto.getSoTienHoaDon() & TongTienHD < dto.getSoTienHoaDon()) {
+                    Tien = dto.getSoTienHoaDon();
+                } else {
+                    pnl_KMHoaDon.txt_KMTien.setText(dto.getKhuyenMai());
+                    KMSTien = dto.getGiaSach();
+                    Tenkmtien = dto.getKhuyenMai();                
+                            }
+            }
+        }
+        
+    }
+    public static double KMSLuong,KMSTien,KMVoucher;
+    public static String Tenkmsl,Tenkmtien,TenkmVoucher;
+    public static Comparator<DTO_KhuyenMai> tienhd = new Comparator<DTO_KhuyenMai>() {
+        @Override
+        public int compare(DTO_KhuyenMai s2, DTO_KhuyenMai s1) {
+            if(s1.getSoTienHoaDon()== s2.getSoTienHoaDon()) {
+                String s1Name = s1.getKhuyenMai().toLowerCase();
+                String s2Name = s2.getKhuyenMai().toLowerCase();
+                return s2Name.compareTo(s1Name);
+            }else{
+                return (int) (s2.getSoTienHoaDon()- s1.getSoTienHoaDon());
+            }
+        }
+    };
+    
+    public static Comparator<DTO_KhuyenMai> slhd = new Comparator<DTO_KhuyenMai>() {
+        @Override
+        public int compare(DTO_KhuyenMai s2, DTO_KhuyenMai s1) {
+            if(s1.getSoLuong()== s2.getSoLuong()) {
+                String s1Name = s1.getKhuyenMai().toLowerCase();
+                String s2Name = s2.getKhuyenMai().toLowerCase();
+                return s2Name.compareTo(s1Name);
+            }else{
+                return (int) (s2.getSoLuong()- s1.getSoLuong());
+            }
+        }
+    };
+    
+    public static void TimKiemVoucher(JPopupMenu Ten,ResultSet rs){
+
+        Ten.removeAll();// set lại số dòng của bảng về 0
+        Ten.setVisible(false);
+        try {
+            while(rs.next()){
+                JMenuItem MN = new JMenuItem(rs.getString("Voucher"));
+                Ten.add(MN);
+                MN.addActionListener(new java.awt.event.ActionListener() {
+                    @Override
+                    public void actionPerformed(java.awt.event.ActionEvent evt) {
+                        MNactionPerformed(evt);
+                    }
+
+                    private void MNactionPerformed(ActionEvent evt) {
+                        them(evt.getActionCommand());
+                    }
+                });
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+        Ten.show(pnl_KMHoaDon.txt_KmVoucher, 0, 55);
+        pnl_KMHoaDon.txt_KmVoucher.requestFocus();
+    }
+    public static void them(String key) {
+        ResultSet rs = DAL.DAL_KhuyenMai.SeachVoucher(key);
+        try {
+            while(rs.next()){
+                pnl_KMHoaDon.txt_KmVoucher.setText(rs.getString("Voucher"));
+                TenkmVoucher = rs.getString("KhuyenMai");
+                KMVoucher = rs.getShort("GiaSach");
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(BLL_phieuthanhly.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }
+    public static void themHD(DTO.DTO_PhieuThanhLy dto){
+        DAL.DAL_PhieuThanhLy.Them_PhieuThanhLy(dto);
+    }
+    public static void themCTHD(DTO.DTO_ChiTietPhieuThanhLy dto) {
+        DAL.DAL_ChiTietPhieuThanhLy.Them_ChiTietPhieuThanhLy(dto);
     }
 }
