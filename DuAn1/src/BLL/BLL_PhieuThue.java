@@ -20,9 +20,11 @@ import java.sql.SQLException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
@@ -37,7 +39,6 @@ public class BLL_PhieuThue {
         DefaultTableModel table = (DefaultTableModel)Ten_table.getModel();        
         Object[] item = new Object[9]; // tạo mảng
         table.setRowCount(0); // set lại số dòng của bảng về 0
-        
         try {
             while(rs.next()){
                 item[0] = table.getRowCount() + 1;
@@ -225,26 +226,28 @@ public class BLL_PhieuThue {
     }
         
         
-          public static void ThongTinPhieuThue(DefaultTableModel tableModel, String seach) 
+     public static void ThongTinPhieuThue(DefaultTableModel tableModel, String seach) 
         {
         Object[] item = new Object[9]; //Tạo 1 mảng Object có 9 phần tử
         tableModel.setRowCount(0);  //Set lại số dòng của bảng về 0
         try {
             //Lấy dữ liệu LoaiSanPham bằng hàm getAll() bên DAL
-            ResultSet rs = DAL_PhieuThue.Seach_PhieuThue(seach);
+            ResultSet rs = DAL_PhieuThue.get_PhieuThue();
             while (rs.next()) {
                 item[0] = tableModel.getRowCount() + 1;
                 item[1] = rs.getString("MaPhieuThue");
                 item[2] = rs.getString("SoPhieuThue");
-                item[3] = rs.getString("MaDocGia");
-                item[4] = rs.getString("MaNhanVien"); 
-                item[5] = rs.getString("NgayThue");             
-                item[6] = rs.getString("NgayTra");   
-                item[7] = ChuyenDoi_ThongBao.TienVietNam(rs.getDouble("TongTien"));             
+                item[3] = rs.getString("TenDocGia");
+                item[4] = rs.getString("TenNhanVien"); 
+                item[5] = update(rs.getDate("NgayThue"));             
+                item[6] = update(rs.getDate("NgayTra"));    
+                item[7] = ChuyenDoi_ThongBao.TienVietNam(rs.getDouble("TongTien"));
+           
                 item[8] = rs.getString("GhiChu");  
                
               
                 tableModel.addRow(item);
+             
             }
         } catch (SQLException ex) {
             System.out.println("Lỗi truy vấn: " + ex.getMessage());
@@ -309,12 +312,29 @@ public class BLL_PhieuThue {
         //String xuatngay = datefm.format(date);
         return dinhDang;
     }
-//    public static String NgayTraHoaDon() {
-//        Date date = new Date();
-//        DateFormat df = DateFormat.getDateInstance();
-//        String s = df.format(date);
-//        return s;
-//    }
+    public static String update(Date date) {
+        //DateFormat datefm = DateFormat.getDateInstance();
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        String dinhDang = sdf.format(date);
+        //String xuatngay = datefm.format(date);
+        return dinhDang;
+    }
+    
+    public static String  UpDownDate() {
+        Calendar c = Calendar.getInstance();
+      
+// Cuộn lên 5 ngày 
+     c.roll(Calendar.DAY_OF_YEAR, 5);
+        int year = c.get(Calendar.YEAR); 
+        // Trả về giá trị từ 0 - 11
+        int month = c.get(Calendar.MONTH);
+        int day = c.get(Calendar.DAY_OF_MONTH);
+            
+   
+     return (day + "/" + (month + 1) + "/" + year );
+    }
+    
+    
     
      public static int LayMaHDTuSoHD(String SoHD) {
         int mahoadon = 0;
@@ -390,4 +410,9 @@ public class BLL_PhieuThue {
         }
         return DG;
     }
+      
+      /*------------------------------------------------*/
+     
+       
+          
 }

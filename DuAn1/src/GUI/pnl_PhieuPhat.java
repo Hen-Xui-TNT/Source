@@ -566,9 +566,9 @@ public class pnl_PhieuPhat extends javax.swing.JPanel {
             
             int MaPhieuPhat = BLL_PhieuPhat.LayMaHDTuSoHD(SoPhieuPhat);
            
-            for (int i = 0; i < tblSachPhat.getRowCount(); i++) {
+         for (int i = 0; i < tblSachPhat.getRowCount(); i++) {
                 
-                int MaSach = Integer.parseInt(tblSachPhat.getValueAt(i, 1).toString());
+         int MaSach = Integer.parseInt(tblSachPhat.getValueAt(i, 1).toString());
                 
          String LoiP= tblSachPhat.getValueAt(i, 2).toString();
           int LoiPhat = 0;

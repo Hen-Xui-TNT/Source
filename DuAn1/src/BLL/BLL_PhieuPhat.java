@@ -26,6 +26,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import static GUI.pnl_CT_PhieuPhat.cbbLoiPhat;
+import java.util.Calendar;
 /**
  *
  * @author Yuuki
@@ -295,6 +296,21 @@ import static GUI.pnl_CT_PhieuPhat.cbbLoiPhat;
         return dinhDang;
     }
     
+     public static int LayMaDGtusoHG(String MaPhieuThue) {
+        int maDG = 0;
+        ResultSet rs = DAL_PhieuPhat.LayMaDG(MaPhieuThue);
+        try {
+            while (rs.next()) {
+                maDG = rs.getInt("MaDocGia");
+            }
+        } catch (Exception e) {
+            System.out.println(e.toString());
+        }
+        return maDG;
+    }
+      
+
+    
      public static int LayMaHDTuSoHD(String SoHD) {
         int mahoadon = 0;
         ResultSet rs = DAL_PhieuPhat.LayMaPhieuPhatTuSoPhieuPhat(SoHD);
@@ -310,13 +326,12 @@ import static GUI.pnl_CT_PhieuPhat.cbbLoiPhat;
       
       public static void  DuLieuDatabase_CTHD( DefaultTableModel table,String MaSach,double LoiPhat,int SoLuong, String GhiChu){
 
-            ResultSet rs = DAL_ChiTietPhieuPhat.getAllChiTietPhieuPhat(MaSach);
-            
             Object[] item = new Object[7]; // tạo mảng 
-            
+         //    table.setRowCount(0);  //Set lại số dòng của bảng về 0
+             ResultSet rs = DAL_ChiTietPhieuPhat.getAllChiTietPhieuPhat(MaSach); 
             try {
             while(rs.next()){
-                    
+                        
                                 
                      item[0] = rs.getString("TenSach");
                      item[1] = rs.getString("MaSach");                                         

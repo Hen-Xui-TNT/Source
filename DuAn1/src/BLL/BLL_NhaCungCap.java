@@ -142,9 +142,8 @@ public class BLL_NhaCungCap {
         }
       return -1;
     }         
-      /*------------------------------------------------*/    
-      
-      /*------------------------------------------------*/  
+      /*------------------------------------------------*/          
+   
        public static int Xoa (ArrayList<String> mangMaLoai){
          int rs =-1;
           for( int i = 0; i <mangMaLoai.size(); i++){

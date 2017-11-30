@@ -78,7 +78,7 @@ public class pnl_PhieuThue extends javax.swing.JPanel {
         txtGhiChu = new javax.swing.JTextField();
         lblGhiChu = new javax.swing.JLabel();
         lblNgayTra = new javax.swing.JLabel();
-        txtNgayTra = new javax.swing.JTextField();
+        txtNgayTra_PT = new javax.swing.JTextField();
         txtNgayMuon = new javax.swing.JTextField();
         lblNgayThue = new javax.swing.JLabel();
         jPanel8 = new javax.swing.JPanel();
@@ -378,7 +378,7 @@ public class pnl_PhieuThue extends javax.swing.JPanel {
                     .addComponent(lblNgayTra, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtNgayTra, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtNgayTra_PT, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtGhiChu, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtNgayMuon, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
@@ -393,7 +393,7 @@ public class pnl_PhieuThue extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblNgayTra, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtNgayTra, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtNgayTra_PT, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblGhiChu, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -656,13 +656,13 @@ public class pnl_PhieuThue extends javax.swing.JPanel {
         String SoPhieuThue, ngayThue,ngaytra,GhiChu;
 
         SoPhieuThue = txtSoPhieuThue.getText();
-        System.out.println(SoPhieuThue);
+       
         GhiChu =  txtGhiChu.getText();
         double TongTien = Double.parseDouble(BLL.ChuyenDoi_ThongBao.TienTeVeString(txtTongTien.getText()));
         try {
 
             ngayThue = txtNgayMuon.getText();
-            ngaytra = txtNgayTra.getText();
+            ngaytra = txtNgayTra_PT.getText();
             int maNV, maDG;
             maNV = Integer.parseInt(BLL_Combobox.getSelectedItemID_Yuu(cbbNhanVien));
             maDG = Integer.parseInt(BLL_Combobox.getSelectedItemID_Yuu(cbbDocGia_PT));
@@ -677,7 +677,7 @@ public class pnl_PhieuThue extends javax.swing.JPanel {
             //Thêm dữ liệu vào bảng chi tiết phiếu thuê
 
             int MaPhieuThue = BLL_PhieuThue.LayMaHDTuSoHD(SoPhieuThue);
-            System.out.println(MaPhieuThue);
+            
             for (int i = 0; i < tblSachMuon_PT.getRowCount(); i++) {
 
                 int MaSach = Integer.parseInt(tblSachMuon_PT.getValueAt(i, 2).toString());
@@ -841,7 +841,7 @@ public class pnl_PhieuThue extends javax.swing.JPanel {
     private javax.swing.JTextField txtGhiChu;
     public static javax.swing.JTextField txtMaPhieuThue;
     public static javax.swing.JTextField txtNgayMuon;
-    private javax.swing.JTextField txtNgayTra;
+    public static javax.swing.JTextField txtNgayTra_PT;
     public static javax.swing.JTextField txtSoPhieuThue;
     private javax.swing.JTextField txtTienKhachDua;
     private javax.swing.JTextField txtTienTraLai;

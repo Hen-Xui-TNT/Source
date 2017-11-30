@@ -9,19 +9,28 @@ import java.awt.Dimension;
 import java.awt.Graphics;
 import javax.swing.ImageIcon;
 import BLL.*;
+import static BLL.BLL_PhieuThue.UpDownDate;
 import DAL.*;
 import DTO.*;
 import DAL.DAL_Quyen;
 import static GUI.pnl_Quyen.tblQuyen;
+
 import static GUI.pnl_DocGia.tblDocGia;
 import static GUI.pnl_DocGia.cbbLoaiDG;
 import static GUI.pnl_LoaiDocGia.tblLoaiDocGia;
 import static GUI.pnl_TacGia.tblTacGia;
+<<<<<<< HEAD
+
+import static GUI.pnl_khuyenmai.tblKhuyenMai;
+
+=======
 import static GUI.pnl_khuyenmai.tbl_km;
+>>>>>>> 00902e5200f60a235abf909b7417978186d59e27
 import static GUI.pnl_PhieuPhat.tblSach;
 import static GUI.pnl_PhieuPhat.cbbNhanVien_PP;
 import static GUI.pnl_PhieuPhat.cbbDocGia_PP;
 import static GUI.pnl_PhieuPhat.txtNgayPhat_PP;
+import static GUI.pnl_PhieuPhat.tblSachPhat;
 
 import static GUI.pnl_nhapkho.tblPhieuNhap;
 import static GUI.pnl_nhapkho.tbl_spnhap;
@@ -30,23 +39,25 @@ import static GUI.pnl_nhapkho.cbb_NCC_PN;
 import static GUI.pnl_nhapkho.cbb_NhanVien_PN;
 import static GUI.pnl_nhapkho.txtSoPhieuNhap;
 import static GUI.pnl_nhapkho.txtNgayTao_PN;
+import static GUI.pnl_nhapkho.tblPhieuNhap;
 
 import static GUI.pnl_nhacungcap.tblNCC;
-import static GUI.pnl_PhieuPhat.tblSachPhat;
 import static GUI.pnl_nhapkho.tbl_spnhap;
-
 import static GUI.pnl_giahan_trasach.tblPhieuThue_GHTS;
 import static GUI.pnl_giahan_trasach.txtTimKiem_GH;
+<<<<<<< HEAD
+
+=======
 import static GUI.pnl_giahan_trasach.cbbNhanVien_GH;
 import static GUI.pnl_TheLoai.*;
+>>>>>>> 00902e5200f60a235abf909b7417978186d59e27
 import static GUI.pnl_danhmucsach.tbl_sach;
 import static GUI.pnl_nhanvien.tblnhanvien;
 import static GUI.pnl_nhanvien.cbbQuyen;
 import javax.swing.table.DefaultTableModel;
-import static GUI.pnl_nhapkho.tblPhieuNhap;
 import static GUI.pnl_PhieuPhat.txtSoPhieuPhat;
-import static GUI.pnl_giahan_trasach.cbbDocGia_GH;
 
+import static GUI.pnl_PhieuThue.txtNgayTra_PT;
 import static GUI.pnl_PhieuThue.tbnThongTinSach;
 import static GUI.pnl_PhieuThue.cbbNhanVien;
 import static GUI.pnl_PhieuThue.txtSoPhieuThue;
@@ -55,6 +66,7 @@ import static GUI.pnl_PhieuThue.cbbDocGia_PT;
 import static GUI.pnl_PhieuPhat.txtTimKiem_PP;
 import static GUI.pnl_PhieuThue.txtTimKiem_PTP;
 import static GUI.pnl_PhieuThue.tblSachMuon_PT;
+import java.util.Calendar;
 
 
 //import DAL.DAL_DocGia;
@@ -972,6 +984,8 @@ public class frm_main extends javax.swing.JFrame {
         BLL.BLL_TheLoai.DLTable(tblTheLoai, DAL_TheLoai.GetAll());
     }//GEN-LAST:event_btnTheLoaiActionPerformed
 
+
+    
     private void btn_PhieuThueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_PhieuThueActionPerformed
         pnl_PhieuThue pnl = new pnl_PhieuThue();
         BLL_main.themtab("Phiếu mượn", tbn_main, pnl);
@@ -988,6 +1002,9 @@ public class frm_main extends javax.swing.JFrame {
         txtSoPhieuThue.setText(BLL_PhieuThue.TaoSoHoaDon());
         // Ngày lập hóa đơn:
         pnl_PhieuThue.txtNgayMuon.setText(BLL_PhieuThue.TaoNgayLapHoaDon());
+        pnl_PhieuThue.txtNgayTra_PT.setText(BLL_PhieuThue.UpDownDate());
+ 
+       
     }//GEN-LAST:event_btn_PhieuThueActionPerformed
 
     private void btn_DocGiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_DocGiaActionPerformed
@@ -1035,8 +1052,6 @@ public class frm_main extends javax.swing.JFrame {
         DefaultTableModel table = (DefaultTableModel) tblPhieuThue_GHTS.getModel();
         BLL.BLL_PhieuThue.ThongTinPhieuThue(table, seach); 
         
-        BLL_PhieuNhap.FillDataToCBB_NhanVien(cbbNhanVien_GH);
-        BLL_DocGia.FillDataToCBB_DocGia(cbbDocGia_GH);
     }//GEN-LAST:event_btn_Giahan_TrasachActionPerformed
 
     private void btnNCCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNCCActionPerformed
