@@ -1,0 +1,1 @@
+select * from NhanVien,PhieuThanhLy,ChiTietPhieuThanhLy,Sach where NhanVien.MaNhanVien = PhieuThanhLy.MaNhanVien and PhieuThanhLy.MaPhieuThanhLy = ChiTietPhieuThanhLy.MaPhieuThanhLy and ChiTietPhieuThanhLy.MaSach = Sach.MaSach

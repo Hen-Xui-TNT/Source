@@ -63,4 +63,8 @@ public class DAL_Sach {
         String query = "SELECT Top 1 MaSach FROM Sach ORDER BY MaSach DESC"; 
         return DuAn1.conn.ExcuteQuerySelect(query);
     }
+    public static ResultSet Seach_Sach_thanhly(String seach) {
+        String seach1 = "select * from Sach where   MaSach =  '" + seach+ "'";
+        return DuAn1.conn.ExcuteQuerySelect(seach1);
+    }
 }

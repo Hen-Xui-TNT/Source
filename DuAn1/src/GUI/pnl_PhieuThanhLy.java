@@ -12,9 +12,19 @@ import DTO.DTO_ChiTietPhieuThanhLy;
 import DTO.DTO_DocGia;
 import DTO.DTO_PhieuThanhLy;
 import static GUI.Pnl_sl_ghichu.txt_khuyenmai;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.util.Hashtable;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperCompileManager;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.view.JasperViewer;
 
 /**
  *
@@ -536,13 +546,14 @@ public class pnl_PhieuThanhLy extends javax.swing.JPanel {
     private void btnLapHoaDonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLapHoaDonActionPerformed
         pnl_KMHoaDon pnl = new pnl_KMHoaDon();
         double sl = 0;
+        int MaHD = 0;
         //show hộp thoại xác nhận
         DefaultTableModel tb = (DefaultTableModel)tblSachPhat.getModel();
         if (tb.getRowCount() != 0) {
             DTO.DTO_PhieuThanhLy dto = new DTO_PhieuThanhLy(txtSoPhieu.getText(), Integer.parseInt(BLL_Combobox.getSelectedItemID(cbbNhanVien))
                     , txt_ngaythanhly.getText(), Double.parseDouble(ChuyenDoi_ThongBao.TienTeVeString(txtTongTien.getText())), txt_GhiChu.getText());
             BLL_phieuthanhly.themHD(dto);
-            int MaHD = BLL_phieuthanhly.MaHD(txtSoPhieu.getText());
+            MaHD = BLL_phieuthanhly.MaHD(txtSoPhieu.getText());
             for (int i = 0; i < tb.getRowCount(); i++) {
                 DTO.DTO_ChiTietPhieuThanhLy dtoCT = new DTO_ChiTietPhieuThanhLy(MaHD, Integer.parseInt(tb.getValueAt(i, 1).toString()),
                         Double.parseDouble(ChuyenDoi_ThongBao.TienTeVeString(tb.getValueAt(i, 3).toString()))
@@ -554,7 +565,29 @@ public class pnl_PhieuThanhLy extends javax.swing.JPanel {
         }else{
             ChuyenDoi_ThongBao.ThongBao_Loi("Chưa có sách bán hoặc thanh lý, yếu cầu thêm sp", "Lỗi Dữ liệu");
         }
+        Connection conn = null;
+        try {
+            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+            conn = DriverManager.getConnection("jdbc:sqlserver://DESKTOP-325I2P0\\HUYNHAN;"
+            + "databaseName=TNTDuAn1; user=sa; password=123456;");
+        } catch (ClassNotFoundException | SQLException e) {
+            JOptionPane.showMessageDialog(null, "Không thể kết nối với CSDL");
+        }
+        try {
+            //xuất dữ liệu ra file ngoài
             
+            String a = "src/ireport/xuat_report.jrxml";
+            JasperReport report = JasperCompileManager.compileReport(a);
+            System.out.println(report);
+            Hashtable hash = new Hashtable();
+            
+            hash.put("MaPhieuThanhLy" , MaHD);
+            System.out.println(hash);
+            JasperPrint print = JasperFillManager.fillReport(report, hash, conn);
+            JasperViewer.viewReport(print);
+        } catch (JRException ex) {
+            System.out.println("Lỗi : " + ex);
+        }   
             
             
         
