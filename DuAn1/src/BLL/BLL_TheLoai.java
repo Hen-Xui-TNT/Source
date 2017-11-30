@@ -121,19 +121,19 @@ public class BLL_TheLoai {
             }
         }
     }
-    }
-        
-        
     
-//    public static void xoa(String ID) {
-//        if (ID.equals("")) {
-//            ChuyenDoi_ThongBao.ThongBao_Loi("Chưa Nhập Mã thể loại !!!", "Lỗi Dữ Liệu");
-//        }else{
-//            try {
-//            DAL_TheLoai.Xoa_TheLoai(Integer.parseInt(ID));
-//            System.out.println("thanh cong");
-//        } catch (NumberFormatException e) {
-//                ChuyenDoi_ThongBao.ThongBao_Loi("ID Phải Là Số !!!" + e.getMessage(), "Lỗi Chuyển Đổi Dữ Liệu");
-//            }
-//        }
-//    }
+     
+    public static void xoa(String ID) {
+        if (ID.equals("")) {
+            ChuyenDoi_ThongBao.ThongBao_Loi("Chưa Nhập Mã thể loại !!!", "Lỗi Dữ Liệu");
+        }else{
+            try {
+            DAL_TheLoai.Xoa_TheLoai(ID);
+            System.out.println("thanh cong");
+        } catch (NumberFormatException e) {
+                ChuyenDoi_ThongBao.ThongBao_Loi("ID Phải Là Số !!!" + e.getMessage(), "Lỗi Chuyển Đổi Dữ Liệu");
+            }
+        }
+    }
+}
+ 

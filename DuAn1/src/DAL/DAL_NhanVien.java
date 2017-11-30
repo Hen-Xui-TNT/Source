@@ -64,4 +64,15 @@ public class DAL_NhanVien {
      
    return DuAn1.conn.ExcuteQuerySelect(seach1);
    }
+   public static int Doi_Pass(String user,String Pass){
+         String query = "set dateformat dmy update NhanVien set "+
+               "MatKhau   = '"+Pass+ "'"+
+              "where TenDangNhap = N'"+ user +"'";
+        return DuAn1.conn.ExcuteNonQuery(query);
+    }
+   
+   public static ResultSet GetUser(String user,String Pass) {
+        String query = "select * from NhanVien where TenDangNhap = N'"+user+"' and MatKhau = N'"+Pass+"'";
+        return DuAn1.conn.ExcuteQuerySelect(query);
+    }
 }

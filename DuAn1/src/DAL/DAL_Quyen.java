@@ -25,7 +25,7 @@ public class DAL_Quyen {
         return DuAn1.conn.ExcuteQuerySelect(query);
     }
       public static int Them_Quyen(DTO_Quyen item){
-    String query = "insert into Quyen values ( N'" +item.getTenQuyen() +"', N'" + item.getGhiChu()+ "')";
+    String query = "insert into Quyen values ( N'" +item.getTenQuyen() +"', N'" + item.getGhiChu()+ "',N'"+item.getMa()+"')";
     return DuAn1.conn.ExcuteNonQuery(query);
     }
     public static int Xoa_Quyen(int MaQuyen){
@@ -35,7 +35,7 @@ public class DAL_Quyen {
     
     public static int Sua_Quyen(DTO_Quyen item){
     String query = "update Quyen set TenQuyen = N'" +item.getTenQuyen() +"',"
-            + " GhiChu = N'"+item.getGhiChu()+"' where MaQuyen = "+ item.getMaQuyen();
+            + " GhiChu = N'"+item.getGhiChu()+"', Ma = N'"+item.getMa()+"' where MaQuyen = "+ item.getMaQuyen();
     return DuAn1.conn.ExcuteNonQuery(query);
     }
      public static ResultSet Seach_Quyen(String seach) {

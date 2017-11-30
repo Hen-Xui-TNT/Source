@@ -5,7 +5,6 @@
  */
 package DTO;
 
-import java.util.Date;
 
 /**
  *
@@ -14,28 +13,18 @@ import java.util.Date;
 public class DTO_KhuyenMai {
 
     int MaKhuyenMai;
-    Date NgayBatDau;
-    Date NgayKetThuc;
+    String NgayBatDau;
+    String NgayKetThuc;
     double SoTienHoaDon;
     int SoLuong;
     int MaSach;
     Double GiaSach;
-    int KhuyenMai;
-
+    String KhuyenMai,voucher;
+    
     public DTO_KhuyenMai() {
     }
 
-    public DTO_KhuyenMai(Date NgayBatDau, Date NgayKetThuc, double SoTienHoaDon, int SoLuong, int MaSach, Double GiaSach, int KhuyenMai) {
-        this.NgayBatDau = NgayBatDau;
-        this.NgayKetThuc = NgayKetThuc;
-        this.SoTienHoaDon = SoTienHoaDon;
-        this.SoLuong = SoLuong;
-        this.MaSach = MaSach;
-        this.GiaSach = GiaSach;
-        this.KhuyenMai = KhuyenMai;
-    }
-
-    public DTO_KhuyenMai(int MaKhuyenMai, Date NgayBatDau, Date NgayKetThuc, double SoTienHoaDon, int SoLuong, int MaSach, Double GiaSach, int KhuyenMai) {
+    public DTO_KhuyenMai(int MaKhuyenMai, String NgayBatDau, String NgayKetThuc, double SoTienHoaDon, int SoLuong, int MaSach, Double GiaSach, String KhuyenMai, String voucher) {
         this.MaKhuyenMai = MaKhuyenMai;
         this.NgayBatDau = NgayBatDau;
         this.NgayKetThuc = NgayKetThuc;
@@ -44,8 +33,56 @@ public class DTO_KhuyenMai {
         this.MaSach = MaSach;
         this.GiaSach = GiaSach;
         this.KhuyenMai = KhuyenMai;
+        this.voucher = voucher;
     }
 
+    public DTO_KhuyenMai(String NgayBatDau, String NgayKetThuc, double SoTienHoaDon, int SoLuong, int MaSach, Double GiaSach, String KhuyenMai, String voucher) {
+        this.NgayBatDau = NgayBatDau;
+        this.NgayKetThuc = NgayKetThuc;
+        this.SoTienHoaDon = SoTienHoaDon;
+        this.SoLuong = SoLuong;
+        this.MaSach = MaSach;
+        this.GiaSach = GiaSach;
+        this.KhuyenMai = KhuyenMai;
+        this.voucher = voucher;
+    }
+
+    
+
+    public DTO_KhuyenMai(String NgayBatDau, String NgayKetThuc, int MaSach, Double GiaSach, String KhuyenMai) {
+        this.NgayBatDau = NgayBatDau;
+        this.NgayKetThuc = NgayKetThuc;
+        this.MaSach = MaSach;
+        this.GiaSach = GiaSach;
+        this.KhuyenMai = KhuyenMai;
+    }
+
+    public DTO_KhuyenMai(String NgayBatDau, String NgayKetThuc, double SoTienHoaDon, Double GiaSach, String KhuyenMai) {
+        this.NgayBatDau = NgayBatDau;
+        this.NgayKetThuc = NgayKetThuc;
+        this.SoTienHoaDon = SoTienHoaDon;
+        this.GiaSach = GiaSach;
+        this.KhuyenMai = KhuyenMai;
+    }
+
+    public DTO_KhuyenMai(String NgayBatDau, String NgayKetThuc, Double GiaSach, String KhuyenMai, String voucher) {
+        this.NgayBatDau = NgayBatDau;
+        this.NgayKetThuc = NgayKetThuc;
+        this.GiaSach = GiaSach;
+        this.KhuyenMai = KhuyenMai;
+        this.voucher = voucher;
+    }
+
+    
+    
+    public String getVoucher() {
+        return voucher;
+    }
+
+    public void setVoucher(String voucher) {
+        this.voucher = voucher;
+    }
+    
     public int getMaKhuyenMai() {
         return MaKhuyenMai;
     }
@@ -54,19 +91,19 @@ public class DTO_KhuyenMai {
         this.MaKhuyenMai = MaKhuyenMai;
     }
 
-    public Date getNgayBatDau() {
+    public String getNgayBatDau() {
         return NgayBatDau;
     }
 
-    public void setNgayBatDau(Date NgayBatDau) {
+    public void setNgayBatDau(String NgayBatDau) {
         this.NgayBatDau = NgayBatDau;
     }
 
-    public Date getNgayKetThuc() {
+    public String getNgayKetThuc() {
         return NgayKetThuc;
     }
 
-    public void setNgayKetThuc(Date NgayKetThuc) {
+    public void setNgayKetThuc(String NgayKetThuc) {
         this.NgayKetThuc = NgayKetThuc;
     }
 
@@ -102,11 +139,11 @@ public class DTO_KhuyenMai {
         this.GiaSach = GiaSach;
     }
 
-    public int getKhuyenMai() {
+    public String getKhuyenMai() {
         return KhuyenMai;
     }
 
-    public void setKhuyenMai(int KhuyenMai) {
+    public void setKhuyenMai(String KhuyenMai) {
         this.KhuyenMai = KhuyenMai;
     }
 

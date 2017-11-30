@@ -49,6 +49,11 @@ public class DAL_DocGia {
               "where MaDocGia = "+ item.getMaDocGia();
         return DuAn1.conn.ExcuteNonQuery(query);
     }
+    public static ResultSet Get_DocGia(String MaDocGia){
+        String query = "Select * from DocGia where MaDocGia = " + MaDocGia;
+        return DuAn1.conn.ExcuteQuerySelect(query);
+    }
+     
    
      public static DTO_DocGia LayDuLieuDocGiaTheoMaDG(String MaDG){
         ResultSet rs;
@@ -69,9 +74,5 @@ public class DAL_DocGia {
         }
         return kh;
     }
-    
-    public static ResultSet Get_DocGia(String MaDocGia){
-        String query = "Select * from DocGia where MaDocGia = " + MaDocGia;
-        return DuAn1.conn.ExcuteQuerySelect(query);
-    } 
+     
 }

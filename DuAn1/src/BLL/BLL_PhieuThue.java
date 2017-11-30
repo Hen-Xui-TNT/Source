@@ -210,7 +210,7 @@ public class BLL_PhieuThue {
         tableModel.setRowCount(0);  //Set lại số dòng của bảng về 0
         try {
             //Lấy dữ liệu LoaiSanPham bằng hàm getAll() bên DAL
-            ResultSet rs = DAL_Sach.Seach_Sach_Phieu(seach);
+            ResultSet rs = DAL_Sach.Seach_Sach(seach);
             while (rs.next()) {
                 
                 item[0] = rs.getString("MaSach");
