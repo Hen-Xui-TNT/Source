@@ -36,6 +36,14 @@ public class DTO_PhieuThue {
         this.GhiChu = GhiChu;
     }
 
+    public DTO_PhieuThue(int MaNhanVien, String NgayTra, double TongTien, String GhiChu,int MaPhieuThue) {
+        this.MaNhanVien = MaNhanVien;
+        this.NgayTra = NgayTra;
+        this.TongTien = TongTien;
+        this.GhiChu = GhiChu;
+        this.MaPhieuThue = MaPhieuThue;
+    }
+
     public DTO_PhieuThue(String SoPhieuThue, int MaDocGia, int MaNhanVien, String NgayThue, String NgayTra, double TongTien, String GhiChu) {
         this.SoPhieuThue = SoPhieuThue;
         this.MaDocGia = MaDocGia;

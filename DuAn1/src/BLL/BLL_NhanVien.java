@@ -26,14 +26,12 @@ import BLL.*;
  *
  * @author Yuuki
  */
-public class BLL_NhanVien{
-    
+public class BLL_NhanVien{    
     public static void FillDataToCBB_NhanVien(JComboBox cbb){
         //Lấy danh sách Tên và Mã Quyền từ tầng DAL_Quyen
         ResultSet rs = DAL.DAL_NhanVien.GetAllCombobox();
         BLL.BLL_Combobox.FillDataToCombobox(cbb, rs);
     }
-    
    public static boolean Check(String TenNhanVien,String TenDN,String MatKhau,
              String MaQuyen,String Luong,String NgaySinh,String NgayLam,int GioiTinh,
              String CMND,String SDT,String DiaChi,String GhiChu){
@@ -113,8 +111,7 @@ public class BLL_NhanVien{
         
         DefaultTableModel table = (DefaultTableModel)Ten_table.getModel();        
         Object[] item = new Object[14]; // tạo mảng
-        table.setRowCount(0); // set lại số dòng của bảng về 0
-        
+        table.setRowCount(0); // set lại số dòng của bảng về 0        
         try {
             while(rs.next()){
                 item[0] = table.getRowCount() + 1;
@@ -160,7 +157,7 @@ public class BLL_NhanVien{
     }         
       /*------------------------------------------------*/  
    
-  public static int Sua(String MaNhanVien,String TenNhanVien,String TenDN,String MatKhau,
+    public static int Sua(String MaNhanVien,String TenNhanVien,String TenDN,String MatKhau,
              String MaQuyen,String Luong,String NgaySinh,String NgayLam,int GioiTinh,
              String CMND,String SDT,String DiaChi,String GhiChu) {
          

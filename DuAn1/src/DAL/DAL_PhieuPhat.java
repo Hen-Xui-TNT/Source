@@ -47,4 +47,11 @@ public class DAL_PhieuPhat {
         rs =   DuAn1.conn.ExcuteQuerySelect(SQL);
         return rs;
     }
+     
+     public static ResultSet LayMaDG(String MaPT){
+        ResultSet rs;
+        String SQL = "select MaDocGia from  PhieuThue where MaPhieuThue = '"+MaPT+"'";
+        rs =   DuAn1.conn.ExcuteQuerySelect(SQL);
+        return rs;
+    }
 }

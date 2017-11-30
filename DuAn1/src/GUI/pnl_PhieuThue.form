@@ -608,7 +608,7 @@
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="txtNgayTra" alignment="1" min="-2" pref="150" max="-2" attributes="0"/>
+                          <Component id="txtNgayTra_PT" alignment="1" min="-2" pref="150" max="-2" attributes="0"/>
                           <Component id="txtGhiChu" alignment="1" min="-2" pref="150" max="-2" attributes="0"/>
                           <Component id="txtNgayMuon" alignment="1" min="-2" pref="150" max="-2" attributes="0"/>
                       </Group>
@@ -627,7 +627,7 @@
                       <EmptySpace min="-2" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="lblNgayTra" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                          <Component id="txtNgayTra" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                          <Component id="txtNgayTra_PT" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -658,7 +658,10 @@
                 <Property name="text" type="java.lang.String" value="Ng&#xe0;y tr&#x1ea3;"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="txtNgayTra">
+            <Component class="javax.swing.JTextField" name="txtNgayTra_PT">
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+              </AuxValues>
             </Component>
             <Component class="javax.swing.JTextField" name="txtNgayMuon">
               <AuxValues>

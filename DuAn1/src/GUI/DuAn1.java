@@ -17,6 +17,7 @@ public static DAL.DAL_DBConnection conn = new DAL_DBConnection();
 public static pnl_CT_PhieuPhat frm_Phat = new pnl_CT_PhieuPhat();
 public static pnl_CT_PhieuNhap frm_Nhap = new pnl_CT_PhieuNhap();
 public static pnl_CT_PhieuThue frm_Thue = new pnl_CT_PhieuThue();
+public static pnl_CT_TraSach frm_TraSach = new pnl_CT_TraSach();
     /**
      * @param args the command line arguments
      */

@@ -19,18 +19,17 @@ public class DAL_Sach {
         String query = "Select * from Sach";
         return DuAn1.conn.ExcuteQuerySelect(query);
     }
-
     public static int Them_Sach(DTO_Sach item) {
-        String query = "insert into Sach values(N'" + item.getTenSach() + "'," + item.getSoLuong() + ",N'" + item.getTinhTrangSach()
-                + "'," + item.getGiaSach() + "," + item.getGiaNhap() + ",N'" + item.getNhaXuatBan() + "',N'" + item.getMoTa() + "')";
+        String query = "insert into Sach values(N'" + item.getTenSach() + "'," 
+                + item.getSoLuong() + ",N'" + item.getTinhTrangSach()
+                + "'," + item.getGiaSach() + "," + item.getGiaNhap() + ",N'" 
+                + item.getNhaXuatBan() + "',N'" + item.getMoTa() + "')";
         return DuAn1.conn.ExcuteNonQuery(query);
     }
-
     public static int Xoa_Sach(String MaSach) {
         String query = "Delete Sach where MaSach = " + MaSach;
         return DuAn1.conn.ExcuteNonQuery(query);
     }
-
     public static int Sua_Sach(DTO_Sach item) {
         String query = "set dateformat dmy update Sach set "
                 + "Tensach= N'" + item.getTenSach() + "',"
@@ -44,16 +43,20 @@ public class DAL_Sach {
         return DuAn1.conn.ExcuteNonQuery(query);
     }
     public static ResultSet Seach_Sach(String seach) {
-        String seach1 = "select * from Sach where   MaSach like  '%" + seach + "%'"
-                + " or TenSach like N'%" + seach + "%' or SoLuongSach like '%" + seach + "%' or TinhTrangSach like N'%" + seach + "%' "
-                + " or GiaNhap like '%" + seach + "%'  or GiaSach like '%" + seach + "%' or NhaXuatBan like N'%" + seach + "%'  or MoTa like N'%" + seach + "%' ";
+        String seach1 = "select * from Sach where   MaSach like  '%" + seach 
+                + "%' or TenSach like N'%" + seach + "%' or SoLuongSach like '%" 
+                + seach + "%' or TinhTrangSach like N'%" + seach + "%' "
+                + " or GiaNhap like '%" + seach + "%'  or GiaSach like '%" 
+                + seach + "%' or NhaXuatBan like N'%" + seach + "%' "
+                + " or MoTa like N'%" + seach + "%' ";
         return DuAn1.conn.ExcuteQuerySelect(seach1);
     }
     
     
     public static ResultSet Seach_Sach_Phieu(String seach) {
-        String seach1 = "select * from Sach where   MaSach like  '%" + seach + "%'"
-                + " or TenSach like N'%" + seach + "%' or SoLuongSach like '%" + seach + "%'or GiaSach like '%" + seach + "%' ";
+       String seach1 = "select * from Sach where   MaSach like  '%" +seach +"%'"
+                + " or TenSach like N'%" + seach + "%' or SoLuongSach like '%" 
+               + seach + "%'or GiaSach like '%" + seach + "%' ";
         return DuAn1.conn.ExcuteQuerySelect(seach1);
     }
     public static ResultSet Get_IP() {
