@@ -314,13 +314,14 @@ public class pnl_CT_TraSach extends javax.swing.JPanel {
                     .addComponent(txtTongTien_Phat, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnCapNhat, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(13, 13, 13)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnHuy, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtTongTien, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(cbbNhanVien_PP, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(cbbNhanVien_PP, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(btnHuy, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtTongTien, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -500,24 +501,24 @@ public class pnl_CT_TraSach extends javax.swing.JPanel {
     private void tblSachPhatMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblSachPhatMouseClicked
         // TODO add your handling code here:
            int row = tblSachPhat.getSelectedRow();
-         DefaultTableModel tblNew = (DefaultTableModel)tblSachPhat.getModel();
+         DefaultTableModel table = (DefaultTableModel)tblSachPhat.getModel();
 
-        int SL = Integer.parseInt(tblNew.getValueAt(row, 4).toString());
-        String maSp = tblNew.getValueAt(row,1).toString();
+        
+        int SL = Integer.parseInt(table.getValueAt(row, 4).toString());
+        String maSp = table.getValueAt(row,1).toString();
 
-       DefaultTableModel tblCTPT = (DefaultTableModel)pnl_CT_TraSach.tblCTPT.getModel();
+        DefaultTableModel tbModelSP = (DefaultTableModel)tblCTPT.getModel();
         double  Tong = Double.parseDouble(BLL.ChuyenDoi_ThongBao.TienTeVeString(txtTongTien_Phat.getText())); 
-        for(int i = 0; i < tblCTPT.getRowCount(); i++){
-            String maSpBangSP = tblCTPT.getValueAt(i, 0).toString();
+        for(int i = 0; i < tbModelSP.getRowCount(); i++){
+            String maSpBangSP = tbModelSP.getValueAt(i, 2).toString();
             if(maSpBangSP.equals(maSp)){
+                int soLuongBangSP = Integer.parseInt(tbModelSP.getValueAt(i, 4).toString());
+                tbModelSP.setValueAt((soLuongBangSP + SL ), i, 4);
                 
-                
-                String SL_1 = tblSachPhat.getValueAt(i, 4).toString();
-                 if(!SL_1.equals("0")){
-               
-              String thanhtien = tblSachPhat.getValueAt(i, 5).toString();
-              double  Tong1 = Tong - Double.parseDouble(BLL.ChuyenDoi_ThongBao.TienTeVeString(thanhtien));             
-              txtTongTien_Phat.setText(BLL.ChuyenDoi_ThongBao.TienVietNam(Tong1));
+        String thanhtien = table.getValueAt(i, 5).toString();
+        double  Tong1 = Tong - Double.parseDouble(BLL.ChuyenDoi_ThongBao.TienTeVeString(thanhtien));             
+       
+        txtTongTien_Phat.setText(BLL.ChuyenDoi_ThongBao.TienVietNam(Tong1));
               
          String  TienPhat = txtTongTien_Phat.getText(); 
          String  TienGH   = txtTongTien_Giahan.getText();
@@ -526,18 +527,14 @@ public class pnl_CT_TraSach extends javax.swing.JPanel {
          double  Tien_GH  = Double.parseDouble(BLL.ChuyenDoi_ThongBao.TienTeVeString(TienGH));         
          double  Tongq    = TienP + Tien_GH;        
            
-       txtTongTien.setText(BLL.ChuyenDoi_ThongBao.TienVietNam(Tongq));  
-               
-         }else{
-                         
-          }
-                int soLuongBangSP = Integer.parseInt(tblCTPT.getValueAt(i, 4).toString());
-                tblCTPT.setValueAt((soLuongBangSP + SL ), i, 4);
+        txtTongTien.setText(BLL.ChuyenDoi_ThongBao.TienVietNam(Tongq)); 
             }
 
         }
         tblSachPhat.removeRowSelectionInterval(row, row);
-        BLL_PhieuThue.RemoveRowInTable(tblSachPhat, row); 
+        BLL_PhieuThue.RemoveRowInTable(tblSachPhat, row);
+        txtTongTien_Phat.setText(BLL_PhieuThue.TinhTongTien(tblSachPhat, 5) + "");
+       
     }//GEN-LAST:event_tblSachPhatMouseClicked
 
     private void btnHuyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHuyActionPerformed

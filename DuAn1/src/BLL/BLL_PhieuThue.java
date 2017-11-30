@@ -39,7 +39,6 @@ public class BLL_PhieuThue {
         DefaultTableModel table = (DefaultTableModel)Ten_table.getModel();        
         Object[] item = new Object[9]; // tạo mảng
         table.setRowCount(0); // set lại số dòng của bảng về 0
-        
         try {
             while(rs.next()){
                 item[0] = table.getRowCount() + 1;
