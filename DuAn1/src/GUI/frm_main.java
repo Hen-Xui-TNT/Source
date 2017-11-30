@@ -19,13 +19,7 @@ import static GUI.pnl_DocGia.tblDocGia;
 import static GUI.pnl_DocGia.cbbLoaiDG;
 import static GUI.pnl_LoaiDocGia.tblLoaiDocGia;
 import static GUI.pnl_TacGia.tblTacGia;
-<<<<<<< HEAD
-
-import static GUI.pnl_khuyenmai.tblKhuyenMai;
-
-=======
 import static GUI.pnl_khuyenmai.tbl_km;
->>>>>>> 00902e5200f60a235abf909b7417978186d59e27
 import static GUI.pnl_PhieuPhat.tblSach;
 import static GUI.pnl_PhieuPhat.cbbNhanVien_PP;
 import static GUI.pnl_PhieuPhat.cbbDocGia_PP;
@@ -45,12 +39,7 @@ import static GUI.pnl_nhacungcap.tblNCC;
 import static GUI.pnl_nhapkho.tbl_spnhap;
 import static GUI.pnl_giahan_trasach.tblPhieuThue_GHTS;
 import static GUI.pnl_giahan_trasach.txtTimKiem_GH;
-<<<<<<< HEAD
-
-=======
-import static GUI.pnl_giahan_trasach.cbbNhanVien_GH;
 import static GUI.pnl_TheLoai.*;
->>>>>>> 00902e5200f60a235abf909b7417978186d59e27
 import static GUI.pnl_danhmucsach.tbl_sach;
 import static GUI.pnl_nhanvien.tblnhanvien;
 import static GUI.pnl_nhanvien.cbbQuyen;
