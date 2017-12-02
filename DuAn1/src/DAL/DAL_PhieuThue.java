@@ -88,6 +88,15 @@ public class DAL_PhieuThue {
         String query = "Select TongTien from PhieuThue where MaPhieuThue = " + seach ;
         return DuAn1.conn.ExcuteQuerySelect(query);
     }
+    public static ResultSet DLTTHU_TL(String TuNgay,String DenNgay,String TenNV) {
+        String SQL = "set dateformat dmy select * from NhanVien,PhieuThue where "
+                + "NhanVien.MaNhanVien = PhieuThue.MaNhanVien "
+                + "and PhieuThue.NgayThue < '"+DenNgay+"'  "
+                + "and PhieuThue.NgayThue > '"+TuNgay+"' "
+                + "and TenNhanVien like N'%"+TenNV+"%' "
+                + "ORDER BY NgayThue ASC";
+        return DuAn1.conn.ExcuteQuerySelect(SQL);
+    }
     
     
 

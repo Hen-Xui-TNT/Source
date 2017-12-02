@@ -107,5 +107,22 @@ public class ChuyenDoi_ThongBao {
         //String xuatngay = datefm.format(date);
         return dinhDang;
     }
-    
+    public static String TinhTongTienDT(JTable tableCTHD,int cotthanhtien) {// tính tổng tiền
+        double tongtien = 0;
+        for (int i = 0; i < tableCTHD.getRowCount(); i++) {
+            if (tableCTHD.getValueAt(i, 3).equals("Thu")) {
+                tongtien += Double.parseDouble(ChuyenDoi_ThongBao.
+                    TienTeVeString(tableCTHD.
+                            getValueAt(i, cotthanhtien).toString()));
+            }else{
+                tongtien -= Double.parseDouble(ChuyenDoi_ThongBao.
+                    TienTeVeString(tableCTHD.
+                            getValueAt(i, cotthanhtien).toString()));
+            
+            }
+            
+        }
+        String rt = ChuyenDoi_ThongBao.TienVietNam(tongtien);
+        return rt;
+    }
 }

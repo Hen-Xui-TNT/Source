@@ -5,7 +5,9 @@
  */
 package BLL;
 
+import java.awt.Color;
 import java.awt.Component;
+import java.awt.GraphicsEnvironment;
 import javax.swing.JTabbedPane;
 
 /**
@@ -21,6 +23,8 @@ public class BLL_main {
         }else if (tongtab == 0) {
             tbn.addTab(tentab,TenFormHienThi);
             tbn.setTabComponentAt(tongtab,new ButtonTabComponent(tbn));
+            tbn.setBackgroundAt(tongtab , Color.yellow);
+            tbn.setSelectedIndex(tongtab);
         }else{
             
             for (int i = 0; i < tongtab; i++) {
@@ -34,9 +38,19 @@ public class BLL_main {
             if (check == 0) {
                 tbn.addTab(tentab,TenFormHienThi);
                 tbn.setTabComponentAt(tongtab,new ButtonTabComponent(tbn));
+                tbn.setBackgroundAt(tongtab, Color.yellow);
+                tbn.setSelectedIndex(tongtab);
             }
         }
         
         
     }
+    public static int GetMaxWidth() {
+          return GraphicsEnvironment.getLocalGraphicsEnvironment().getMaximumWindowBounds().width;
+     }
+     public static int GetMaxHeight() {
+         return GraphicsEnvironment.getLocalGraphicsEnvironment().getMaximumWindowBounds().height;
+     }
+
+    
 }

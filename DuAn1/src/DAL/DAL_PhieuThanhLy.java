@@ -50,4 +50,13 @@ public class DAL_PhieuThanhLy {
                 + " or TongTien like '%" + seach + "%'  or MaPhieuThanhLy like '%" + seach + "%' ";
         return DuAn1.conn.ExcuteQuerySelect(seach1);
     }
+    public static ResultSet DLTTHU_TL(String TuNgay,String DenNgay,String TenNV) {
+        String SQL = "set dateformat dmy select * from NhanVien,PhieuThanhLy where "
+                + "NhanVien.MaNhanVien = PhieuThanhLy.MaNhanVien "
+                + "and PhieuThanhLy.NgayThanhLy < '"+DenNgay+"'  "
+                + "and PhieuThanhLy.NgayThanhLy > '"+TuNgay+"' "
+                + "and TenNhanVien like N'%"+TenNV+"%' "
+                + "ORDER BY NgayThanhLy ASC";
+        return DuAn1.conn.ExcuteQuerySelect(SQL);
+    }
 }

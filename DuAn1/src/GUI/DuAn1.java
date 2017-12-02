@@ -6,6 +6,7 @@
 package GUI;
 import GUI.frm_main.*;
 import DAL.DAL_DBConnection;
+import java.awt.Toolkit;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 /**
@@ -27,6 +28,7 @@ public static pnl_CT_TraSach frm_TraSach = new pnl_CT_TraSach();
     public static void main(String[] args) {
         // TODO code application logic here
         frmlogin.setVisible(true);
+        frmlogin.setIconImage(Toolkit.getDefaultToolkit().getImage("src/Images/book.png"));
     
     }
 }

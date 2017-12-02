@@ -54,4 +54,13 @@ public class DAL_PhieuPhat {
         rs =   DuAn1.conn.ExcuteQuerySelect(SQL);
         return rs;
     }
+     public static ResultSet DLTTHU_TL(String TuNgay,String DenNgay,String TenNV) {
+        String SQL = "set dateformat dmy select * from NhanVien,PhieuPhat where "
+                + "NhanVien.MaNhanVien = PhieuPhat.MaNhanVien "
+                + "and PhieuPhat.NgayPhat < '"+DenNgay+"'  "
+                + "and PhieuPhat.NgayPhat > '"+TuNgay+"' "
+                + "and TenNhanVien like N'%"+TenNV+"%' "
+                + "ORDER BY NgayPhat ASC";
+        return DuAn1.conn.ExcuteQuerySelect(SQL);
+    }
 }

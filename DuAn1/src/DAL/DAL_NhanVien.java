@@ -31,7 +31,7 @@ public class DAL_NhanVien {
               +item.getTenDangNhap()+"','"+item.getMatKhau()+"',"
              +item.getMaQuyen()+","+item.getLuong()+",'"+item.getNgaySinh()+"','"
              +item.getNgayLam()+"'," +item.getGioiTinh()+ ",'"+item.getCMND()+"','"
-             +item.getSoDienThoai()+"',N'"+item.getDiaChi()+"',N'"+item.getGhiChu()+"')";
+             +item.getSoDienThoai()+"',N'"+item.getDiaChi()+"',N'"+item.getGhiChu()+"',N'')";
      return DuAn1.conn.ExcuteNonQuery(query);
  }
     public static int Delete_NhanVien(String MaNhanVien){
@@ -75,4 +75,9 @@ public class DAL_NhanVien {
         String query = "select * from NhanVien where TenDangNhap = N'"+user+"' and MatKhau = N'"+Pass+"'";
         return DuAn1.conn.ExcuteQuerySelect(query);
     }
+   public static ResultSet Seach_NhanVien_ND(String seach){
+   String seach1 = "select * from NhanVien where   MaNhanVien = '"+seach+"' ";
+     
+   return DuAn1.conn.ExcuteQuerySelect(seach1);
+   }
 }

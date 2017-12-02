@@ -47,4 +47,15 @@ public class DAL_PhieuNhap {
         rs =   DuAn1.conn.ExcuteQuerySelect(SQL);
         return rs;
     }
+      
+     public static ResultSet DLCHI_TL(String TuNgay,String DenNgay,String TenNV) {
+        String SQL = "set dateformat dmy select * from NhanVien,PhieuNhap where "
+                + "NhanVien.MaNhanVien = PhieuNhap.MaNhanVien "
+                + "and PhieuNhap.NgayNhap < '"+DenNgay+"'  "
+                + "and PhieuNhap.NgayNhap > '"+TuNgay+"' "
+                + "and TenNhanVien like N'%"+TenNV+"%' "
+                + "ORDER BY NgayNhap ASC";
+        return DuAn1.conn.ExcuteQuerySelect(SQL);
+    } 
+      
 }

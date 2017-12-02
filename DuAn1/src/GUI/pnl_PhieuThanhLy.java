@@ -577,13 +577,12 @@ public class pnl_PhieuThanhLy extends javax.swing.JPanel {
             //xuất dữ liệu ra file ngoài
             
             String a = "src/ireport/xuat_report.jrxml";
-            JasperReport report = JasperCompileManager.compileReport(a);
-            System.out.println(report);
+            JasperReport report1 = JasperCompileManager.compileReport(a);
             Hashtable hash = new Hashtable();
             
             hash.put("MaPhieuThanhLy" , MaHD);
             System.out.println(hash);
-            JasperPrint print = JasperFillManager.fillReport(report, hash, conn);
+            JasperPrint print = JasperFillManager.fillReport(report1, hash, conn);
             JasperViewer.viewReport(print);
         } catch (JRException ex) {
             System.out.println("Lỗi : " + ex);

@@ -6,8 +6,11 @@
 package GUI;
 
 import BLL.BLL_login;
+import BLL.BLL_main;
 import DAL.DAL_login;
+import static GUI.frm_main.tbn_main;
 import java.awt.Color;
+import java.awt.Toolkit;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
 import java.beans.PropertyChangeEvent;
@@ -200,6 +203,10 @@ public class frm_login extends javax.swing.JFrame {
                     pwt_matkhau.setText("");
                 }
                 DuAn1.frm.setVisible(true);
+                DuAn1.frm.setExtendedState(DuAn1.frm.getExtendedState() | JFrame.MAXIMIZED_BOTH);
+                DuAn1.frm.setIconImage(Toolkit.getDefaultToolkit().getImage("src/Images/book.png"));
+                pnl_gioithieu pnl = new pnl_gioithieu();
+                BLL_main.themtab("Giới thiệu", tbn_main, pnl);
                 DuAn1.frmlogin.dispose();
             }
     }//GEN-LAST:event_btn_dangnhapActionPerformed
