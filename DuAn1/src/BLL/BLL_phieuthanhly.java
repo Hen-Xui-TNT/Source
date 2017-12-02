@@ -120,7 +120,7 @@ public class BLL_phieuthanhly {
     
     public static void ThemVaoCTHD(JTable tableCTHD,String MaS,int SoLuong, String GhiChu,String KhuyenMai, String IPKhuyenMai){
         //truy vấn dữ liệu sang databa
-        ResultSet rs = DAL.DAL_Sach.Seach_Sach(MaS);
+        ResultSet rs = DAL.DAL_Sach.Seach_Sach_thanhly(MaS);
         Object[] item = new Object[10];//Tạo mảng
         DefaultTableModel table = (DefaultTableModel)tableCTHD.getModel();
         double ThanhTien,giasach = 0,giaKM = 0;

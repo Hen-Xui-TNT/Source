@@ -576,7 +576,7 @@ public class pnl_PhieuThanhLy extends javax.swing.JPanel {
         try {
             //xuất dữ liệu ra file ngoài
             
-            String a = "src/ireport/xuat_report.jrxml";
+            String a = "src/ireport/xuat.jrxml";
             JasperReport report1 = JasperCompileManager.compileReport(a);
             Hashtable hash = new Hashtable();
             
