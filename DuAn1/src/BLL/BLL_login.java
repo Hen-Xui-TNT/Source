@@ -98,7 +98,7 @@ public class BLL_login {
         try {
             while(rs.next()){
                 String Checkbox = rs.getString("Ma");
-                    quyenKhuyenMai = Checkbox.substring(8,9);
+                    quyenTheloai = Checkbox.substring(0, 1);
                     quyenNhaCungCap = Checkbox.substring(1, 2);
                     quyenNhanVien = Checkbox.substring(2, 3);
                     quyenNhapKho = Checkbox.substring(3,4);
@@ -106,7 +106,8 @@ public class BLL_login {
                     quyenSach = Checkbox.substring(5, 6);
                     quyenTacGia = Checkbox.substring(6, 7);
                     quyenThanhLy = Checkbox.substring(7, 8);
-                    quyenTheloai = Checkbox.substring(0, 1);
+                    quyenKhuyenMai = Checkbox.substring(8,9);
+                    
                 
             }
         } catch (SQLException ex) {

@@ -877,23 +877,41 @@ public class frm_main extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_gioithieuActionPerformed
 
     private void btnSachActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSachActionPerformed
+        if (BLL_login.quyenQuyen.equals("0")) {
         pnl_danhmucsach pnl = new pnl_danhmucsach();
         BLL_main.themtab("Danh mục sách", tbn_main, pnl);
 
         BLL_sach.DLTable(tbl_sach, DAL.DAL_Sach.GetAll());
+        
+        }
+        else{
+            ChuyenDoi_ThongBao.ThongBao_Loi("Bạn không có quyền truy cập chức năng này", "Lỗi Quyền");
+        }
     }//GEN-LAST:event_btnSachActionPerformed
 
   
     private void btn_phanquyenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_phanquyenActionPerformed
-        pnl_Quyen pnl = new pnl_Quyen();
-        BLL_main.themtab("Quyền", tbn_main, pnl);
-        BLL.BLL_Quyen.DLTable(tblQuyen,DAL_Quyen.GetAll());
+        
+        if (BLL_login.quyenQuyen.equals("0")) {
+            pnl_Quyen pnl = new pnl_Quyen();
+            BLL_main.themtab("Quyền", tbn_main, pnl);
+            BLL.BLL_Quyen.DLTable(tblQuyen,DAL_Quyen.GetAll());
+        }
+        else{
+            ChuyenDoi_ThongBao.ThongBao_Loi("Bạn không có quyền truy cập chức năng này", "Lỗi Quyền");
+        }
     }//GEN-LAST:event_btn_phanquyenActionPerformed
 
     private void btnTheLoaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTheLoaiActionPerformed
+        
+        if (BLL_login.quyenQuyen.equals("0")) {
         pnl_TheLoai pnl = new pnl_TheLoai();
         BLL_main.themtab("Thể Loại", tbn_main, pnl);
         BLL.BLL_TheLoai.DLTable(tblTheLoai, DAL_TheLoai.GetAll());
+        }
+        else{
+            ChuyenDoi_ThongBao.ThongBao_Loi("Bạn không có quyền truy cập chức năng này", "Lỗi Quyền");
+        }
     }//GEN-LAST:event_btnTheLoaiActionPerformed
 
 
@@ -925,9 +943,15 @@ public class frm_main extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_DocGiaActionPerformed
 
     private void btnTacGiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTacGiaActionPerformed
+        
+     if (BLL_login.quyenQuyen.equals("0")) {
         pnl_TacGia pnl = new pnl_TacGia();
         BLL_main.themtab("Tác Giả", tbn_main, pnl);
      BLL.BLL_TacGia.DuLieuDatabase_Table(tblTacGia,DAL.DAL_TacGia.GetAll());
+        }
+        else{
+            ChuyenDoi_ThongBao.ThongBao_Loi("Bạn không có quyền truy cập chức năng này", "Lỗi Quyền");
+        }
     }//GEN-LAST:event_btnTacGiaActionPerformed
 
     private void btn_PhieuPhatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_PhieuPhatActionPerformed
@@ -965,14 +989,26 @@ public class frm_main extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_Giahan_TrasachActionPerformed
 
     private void btnNCCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNCCActionPerformed
+        
+        if (BLL_login.quyenQuyen.equals("0")) {
         pnl_nhacungcap pnl = new pnl_nhacungcap();
         BLL_main.themtab("Nhà cung cấp", tbn_main, pnl);
         BLL.BLL_NhaCungCap.DuLieuDatabase_Table(tblNCC,DAL.DAL_NhaCungCap.GetAll()); 
+        }
+        else{
+            ChuyenDoi_ThongBao.ThongBao_Loi("Bạn không có quyền truy cập chức năng này", "Lỗi Quyền");
+        }
     }//GEN-LAST:event_btnNCCActionPerformed
 
     private void btn_gioithieu1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_gioithieu1ActionPerformed
-        pnl_khuyenmai pnl = new pnl_khuyenmai();
-        BLL_main.themtab("Khuyến mãi", tbn_main, pnl);
+        if (BLL_login.quyenKhuyenMai.equals("0")) {
+            pnl_khuyenmai pnl = new pnl_khuyenmai();
+            BLL_main.themtab("Khuyến mãi", tbn_main, pnl);
+        }
+        else{
+            ChuyenDoi_ThongBao.ThongBao_Loi("Bạn không có quyền truy cập chức năng này", "Lỗi Quyền");
+        }
+        
     }//GEN-LAST:event_btn_gioithieu1ActionPerformed
     
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
@@ -980,16 +1016,24 @@ public class frm_main extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowOpened
 
     private void btnThanhLyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThanhLyActionPerformed
+        
+        if (BLL_login.quyenQuyen.equals("0")) {
         pnl_PhieuThanhLy pnl = new pnl_PhieuThanhLy();
         BLL_main.themtab("Thanh lý", tbn_main, pnl);
         BLL_phieuthanhly.ThongTinSach((DefaultTableModel)pnl_PhieuThanhLy.tblSach.getModel(), DAL_Sach.GetAll());
         BLL_Combobox.LayDuLieuCombobox(DAL_NhanVien.GetAll(), pnl_PhieuThanhLy.cbbNhanVien, "TenNhanVien", "MaNhanVien");
         pnl_PhieuThanhLy.txtSoPhieu.setText(ChuyenDoi_ThongBao.TaoSoHoaDon());
         pnl_PhieuThanhLy.txt_ngaythanhly.setText(ChuyenDoi_ThongBao.TaoNgayLapHoaDon());
+        }
+        else{
+            ChuyenDoi_ThongBao.ThongBao_Loi("Bạn không có quyền truy cập chức năng này", "Lỗi Quyền");
+        }
     }//GEN-LAST:event_btnThanhLyActionPerformed
 
     private void btnPhieuNhapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPhieuNhapActionPerformed
-       pnl_nhapkho pnl = new pnl_nhapkho();
+       
+        if (BLL_login.quyenQuyen.equals("0")) {
+        pnl_nhapkho pnl = new pnl_nhapkho();
         BLL_main.themtab("Nhập kho", tbn_main, pnl);
         String seach = txt_TimKiem_PN.getText();
         DefaultTableModel table = (DefaultTableModel) tbl_spnhap.getModel();
@@ -1003,6 +1047,10 @@ public class frm_main extends javax.swing.JFrame {
            txtSoPhieuNhap.setText(BLL_PhieuNhap.TaoSoHoaDon());
         // Ngày lập hóa đơn:
           txtNgayTao_PN.setText(BLL_PhieuNhap.TaoNgayLapHoaDon());
+        }
+        else{
+            ChuyenDoi_ThongBao.ThongBao_Loi("Bạn không có quyền truy cập chức năng này", "Lỗi Quyền");
+        }
     }//GEN-LAST:event_btnPhieuNhapActionPerformed
 
 
@@ -1019,9 +1067,14 @@ public class frm_main extends javax.swing.JFrame {
 
     private void jButton20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton20ActionPerformed
         // TODO add your handling code here:
-        
+        if (BLL_login.quyenQuyen.equals("0")) {
         DuAn1.frm_TTsach.setVisible(true);
-        CNSach = 2; 
+        CNSach = 2;
+        }
+        else{
+            ChuyenDoi_ThongBao.ThongBao_Loi("Bạn không có quyền truy cập chức năng này", "Lỗi Quyền");
+        }
+         
     }//GEN-LAST:event_jButton20ActionPerformed
 
     private void btnThanhLy1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThanhLy1ActionPerformed

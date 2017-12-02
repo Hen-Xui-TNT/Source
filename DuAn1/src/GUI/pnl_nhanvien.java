@@ -603,7 +603,7 @@ public class pnl_nhanvien extends javax.swing.JPanel {
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         // TODO add your handling code here:
-         String maloai = (String)(BLL_Combobox.getSelectedItemID_Yuu(cbbQuyen));
+         String maloai = BLL_Combobox.getSelectedItemID_Yuu(cbbQuyen);
          BLL_NhanVien.Them(
                  txtTenNV.getText(),
                  txtTenDangNhap.getText(),

@@ -27,11 +27,18 @@ public class DAL_NhanVien {
     }
     
     public static int Them_NhanVien(DTO_NhanVien item){
-     String query ="set dateformat dmy insert into NhanVien values( N'" +item.getTenNV()+"','"
-              +item.getTenDangNhap()+"','"+item.getMatKhau()+"',"
-             +item.getMaQuyen()+","+item.getLuong()+",'"+item.getNgaySinh()+"','"
-             +item.getNgayLam()+"'," +item.getGioiTinh()+ ",'"+item.getCMND()+"','"
-             +item.getSoDienThoai()+"',N'"+item.getDiaChi()+"',N'"+item.getGhiChu()+"',N'')";
+     String query ="set dateformat dmy insert into NhanVien values( N'" +item.getTenNV()+"'"
+             + ",'"+item.getTenDangNhap()+"'"
+             + ",'"+item.getMatKhau()+"'"
+             + ","+item.getMaQuyen()+""
+             + ","+item.getLuong()+""
+             + ",'"+item.getNgaySinh()+"'"
+             + ",'"+item.getNgayLam()+"'"
+             + "," +item.getGioiTinh()+ ""
+             + ",'"+item.getCMND()+"'"
+             + ",'"+item.getSoDienThoai()+"'"
+             + ",N'"+item.getDiaChi()+"'"
+             + ",N'"+item.getGhiChu()+"')";
      return DuAn1.conn.ExcuteNonQuery(query);
  }
     public static int Delete_NhanVien(String MaNhanVien){
